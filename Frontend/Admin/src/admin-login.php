@@ -16,9 +16,9 @@
 
     <div class="container panel center-screen py-5 px-3">
 
-        <div class="row my-3">
-            <div class="col">
-                <img src="" alt="">
+        <div class="row mb-5">
+            <div class="col d-flex justify-content-center">
+                <img id="snaps-logo" class="image-fluid" src="../assets/snaps-logo.png" alt="SNAPS Logo">
             </div>
         </div>
 

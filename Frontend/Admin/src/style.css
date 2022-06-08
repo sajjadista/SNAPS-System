@@ -47,3 +47,8 @@ body {
 }
 
 /* ============== ID styles ============== */
+
+#snaps-logo {
+  height: 175px;
+  width: 350px;
+}
