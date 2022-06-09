@@ -1,29 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 /* ============== General Rules ============== */
-* {
+/* * {
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-  }
+  } */
 
 :root {
   padding: 0;
   margin: 0;
-  --font: 'Montserrat', sans-serif;
+  --font: "Montserrat", sans-serif;
   --dark-green: #206023;
   --light-green: #368149;
+  --brown: #381C07;
 }
-  
-  /* ============== Tag styles ============== */
-  
-  
-  
-  
-  /* ============== Class styles ============== */
-  
-  
-  
-  
-  /* ============== ID styles ============== */
-  
+
+body {
+  font-family: var(--font);
+  background-color: var(--dark-green);
+}
+
+/* ============== Tag styles ============== */
+a {
+  text-decoration: none;
+}
+
+/* ============== Class styles ============== */
+.main-button {
+  background-color: var(--brown);
+  color: white;
+}
+
+.main-text {
+  color: var(--dark-green);
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.link-text {
+  color: var(--light-green);
+}
+
+/* ============== ID styles ============== */
