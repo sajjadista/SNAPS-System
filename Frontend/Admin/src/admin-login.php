@@ -14,7 +14,7 @@
 
 <body>
 
-    <div class="container panel center-screen py-5 px-3">
+    <div class="container panel center-screen-admin-login py-5 px-3">
 
         <div class="row mb-5">
             <div class="col d-flex justify-content-center">

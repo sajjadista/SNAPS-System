@@ -17,7 +17,13 @@ body {
 
 /* ============== Class styles ============== */
 
-.center-screen {
+.center-screen-admin-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center-screen-user-details {
   position: absolute;
   top: 50%;
   left: 50%;
