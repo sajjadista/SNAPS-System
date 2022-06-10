@@ -25,10 +25,6 @@ a{
   color: white;
 }
 
-h2{
-  margin-top: 50px;
-  color: white;
-}
 
 
 /* ============== Class styles ============== */
@@ -77,6 +73,21 @@ h2{
   left: 10px;
 }
 
+.bottom{
+  position: absolute;
+  text-align: center;
+  top: 100px;
+  left: 500px;
+}
+
+.top{
+  position: absolute;
+  font-size: 30px;
+  text-align: center;
+  top: 25px;
+  left: 10px;
+}
+
 .button {
   border: none;
   color: white;
@@ -91,8 +102,11 @@ h2{
 
 .button1 {background-color: #4CAF50;} /* Green */
 .button2 {background-color: #FF0000;} /* Red */
+.button3 {
+  background-color: #4CAF50;
+  margin: 200px 250px 150px 600px;
+  } /* Red */
 
-.feedback {background-color: white;}
 
 
 /* ============== ID styles ============== */
