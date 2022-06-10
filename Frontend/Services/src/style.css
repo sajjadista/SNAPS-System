@@ -25,6 +25,11 @@ a{
   color: white;
 }
 
+h2{
+  margin-top: 50px;
+  color: white;
+}
+
 
 /* ============== Class styles ============== */
 
@@ -86,6 +91,8 @@ a{
 
 .button1 {background-color: #4CAF50;} /* Green */
 .button2 {background-color: #FF0000;} /* Red */
+
+.feedback {background-color: white;}
 
 
 /* ============== ID styles ============== */
