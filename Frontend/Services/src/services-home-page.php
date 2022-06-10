@@ -18,11 +18,17 @@
       <div class="left">BUKIT EKSPO</div>
     </div>
     <div class="item2">
-      <img id="machineries" class="image-fluid" src="../assets/machineries.jpg" alt="Machineries">
+      <img id="machineries" class="image-fluid" src="../assets/machineries1.jpg" alt="Machineries" width="1500px" height="300px">
       <div class="left">MACHINERIES</div>
     </div>
-    <div class="item3">MEETING AND LECTURE ROOMS</div>
-    <div class="item4">AGRICULTURAL COURSES</div>
+    <div class="item3">
+      <img id="meeting" class="image-fluid" src="../assets/lectureroom.jpg" alt="Meeting" width="1500px" height="300px">
+      <div class="left">MEETING AND LECTURE ROOMS</div>
+    </div>
+    <div class="item4">
+      <img id="agriculture" class="image-fluid" src="../assets/agriculturalcourses.jpg" alt="Agriculture" width="1500px" height="300px">
+      <div class="left">AGRICULTURAL COURSES</div>
+    </div>
   </div>
 
 

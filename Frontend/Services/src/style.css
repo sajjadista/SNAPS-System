@@ -19,13 +19,14 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto;
-  /* grid-template-rows: 10px 100px; */
+  grid-template-columns: 1500px;
+  /* grid-template-rows: 300px 100px; */
   grid-gap: 10px;
   background-color: #206023;
   padding: 10px;
   margin-top: 50px;
   margin-bottom: 50px;
+  /* margin-right: 50px; */
   position: relative;
 }
 
@@ -38,6 +39,8 @@ body {
   text-align: left;
   text-indent: 10px;
   color: white;
+  width: 1500px;
+  height: 300px;
 }
 
 .item1 {
@@ -51,24 +54,3 @@ body {
 
 
 /* ============== ID styles ============== */
-
-#snaps-logo {
-  height: 175px;
-  width: 350px;
-}
-
-#user-photo {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-}
-
-#bukit-ekspo {
-  height: 200px;
-  width: 200%;
-}
-
-#machineries {
-  height: 200px;
-  width: 200%;
-}
