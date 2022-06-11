@@ -17,24 +17,21 @@ body {
 
 /* ============== Class styles ============== */
 
-.center-screen-admin-login {
+.center-screen {
   position: absolute;
   top: 50%;
   left: 50%;
+}
+
+.admin-login {
   transform: translate(-50%, -50%);
 }
 
-.center-screen-user-details {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.user-details {
   transform: translate(-50%, -20%);
 }
 
-.center-screen-add-product {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.add-product {
   transform: translate(-50%, -30%);
 }
 

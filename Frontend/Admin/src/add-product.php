@@ -27,7 +27,7 @@
         };
     </script>
 
-    <div class="container panel center-screen-add-product py-4 px-3">
+    <div class="container panel center-screen add-product py-4 px-3">
 
         <div class="row my-3">
             <div class="col d-flex justify-content-center">
