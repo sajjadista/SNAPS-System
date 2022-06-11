@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNAPS Admin Portal Login</title>
+    <title>Login | SNAPS Admin Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
@@ -18,13 +23,13 @@
 
         <div class="row mb-5">
             <div class="col d-flex justify-content-center">
-                <img id="snaps-logo" class="image-fluid" src="../assets/snaps-logo.png" alt="SNAPS Logo">
+                <img id="snaps-logo" class="img-fluid" src="../assets/snaps-logo.png" alt="SNAPS Logo">
             </div>
         </div>
 
         <div class="row my-3">
             <div class="col d-flex justify-content-center">
-                <h2>Admin Login</h2>
+                <h1>Admin Login</h1>
             </div>
         </div>
 
