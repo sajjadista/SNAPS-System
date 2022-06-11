@@ -63,6 +63,11 @@ body {
 	display: flex;
 }
 
+.fx-end{
+	display: flex;
+	justify-content: flex-end;
+}
+
 .navbar-payment-logoside {
 	width: 100%;
 	float: left;
