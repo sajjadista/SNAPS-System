@@ -55,7 +55,7 @@
         </div>
 
 
-        <div class="row mb-2">
+        <div class="row mb-1">
             <div class="col d-flex justify-content-center">
                 <label class="label-theme">Product name:</label>
             </div>
@@ -67,7 +67,7 @@
             </div>
         </div>
 
-        <div class="row mb-2">
+        <div class="row mb-1">
             <div class="col d-flex justify-content-center">
                 <label class="label-theme">Product price:</label>
             </div>
@@ -79,7 +79,7 @@
             </div>
         </div>
 
-        <div class="row mb-2">
+        <div class="row mb-1">
             <div class="col d-flex justify-content-center">
                 <label class="label-theme">Variations:</label>
             </div>
@@ -91,7 +91,7 @@
             </div>
         </div>
 
-        <div class="row mb-2">
+        <div class="row mb-1">
             <div class="col d-flex justify-content-center">
                 <label class="label-theme">Description:</label>
             </div>
@@ -103,7 +103,7 @@
             </div>
         </div>
 
-        <div class="row mb-2">
+        <div class="row mb-1">
             <div class="col d-flex justify-content-center">
                 <label class="label-theme">Payment method:</label>
             </div>
