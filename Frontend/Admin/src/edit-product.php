@@ -36,101 +36,102 @@
         </div>
         <hr class="section-divider">
 
-
-        <div class="row my-3">
-            <div class="col d-flex justify-content-center">
-                <img id="uploaded-photo" class="img-fluid" src="../assets/photo-placeholder.svg" alt="Photo Placeholder">
-            </div>
-        </div>
-
-        <div class="row mt-3 mb-4">
-            <div class="col-6 d-flex justify-content-center">
-                <label class="label-theme" for="upload-picture">Upload product picture:</label>
-
-            </div>
-
-            <div class="col-6 d-flex justify-content-center">
-                <input type="file" id="upload-picture" onchange="loadFile(event)" accept="image/*">
-            </div>
-        </div>
-
-
-        <div class="row mb-1">
-            <div class="col d-flex justify-content-center">
-                <label class="label-theme">Product name:</label>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col d-flex justify-content-center">
-                <input class="textfield-theme" type="text" id="product-name" value="Chicken sauce">
-            </div>
-        </div>
-
-        <div class="row mb-1">
-            <div class="col d-flex justify-content-center">
-                <label class="label-theme">Product price:</label>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col d-flex justify-content-center">
-                <input class="textfield-theme" type="text" id="product-price" value="33.10">
-            </div>
-        </div>
-
-        <div class="row mb-1">
-            <div class="col d-flex justify-content-center">
-                <label class="label-theme">Variations:</label>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col d-flex justify-content-center">
-                <input class="textfield-theme" type="text" id="product-variation" value="Food,Spicy">
-            </div>
-        </div>
-
-        <div class="row mb-1">
-            <div class="col d-flex justify-content-center">
-                <label class="label-theme">Description:</label>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col d-flex justify-content-center">
-                <textarea class="textarea-theme" name="description" id="description" cols="40" rows="5">A very nice and spicy sauce</textarea>
-            </div>
-        </div>
-
-        <div class="row mb-1">
-            <div class="col d-flex justify-content-center">
-                <label class="label-theme">Payment method:</label>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-
-            <div class="col d-flex justify-content-center">
-                <div class="dropdown textfield-theme">
-                    <button class="dropdown-toggle dropdown-theme" type="button" id="payment-option" data-bs-toggle="dropdown">
-                        Payment method
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item" id="pay-in-store">Pay in Store</li>
-                        <li class="dropdown-item" id="online-payment">Online Payment</li>
-                    </ul>
+        <form action="">
+            <div class="row my-3">
+                <div class="col d-flex justify-content-center">
+                    <img id="uploaded-photo" class="img-fluid" src="../assets/photo-placeholder.svg" alt="Photo Placeholder">
                 </div>
             </div>
 
-        </div>
+            <div class="row mt-3 mb-4">
+                <div class="col-6 d-flex justify-content-center">
+                    <label class="label-theme" for="upload-picture">Upload product picture:</label>
 
-        <div class="row my-3">
-            <div class="col d-flex justify-content-center">
-                <button class="button-theme">Save details</button>
+                </div>
+
+                <div class="col-6 d-flex justify-content-center">
+                    <input type="file" id="upload-picture" onchange="loadFile(event)" accept="image/*">
+                </div>
             </div>
-        </div>
 
+
+            <div class="row mb-1">
+                <div class="col d-flex justify-content-center">
+                    <label class="label-theme">Product name:</label>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col d-flex justify-content-center">
+                    <input class="textfield-theme" type="text" id="product-name" value="Chicken sauce">
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col d-flex justify-content-center">
+                    <label class="label-theme">Product price:</label>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col d-flex justify-content-center">
+                    <input class="textfield-theme" type="text" id="product-price" value="33.10">
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col d-flex justify-content-center">
+                    <label class="label-theme">Variations:</label>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col d-flex justify-content-center">
+                    <input class="textfield-theme" type="text" id="product-variation" value="Food,Spicy">
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col d-flex justify-content-center">
+                    <label class="label-theme">Description:</label>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col d-flex justify-content-center">
+                    <textarea class="textarea-theme" name="description" id="description" cols="40" rows="5">A very nice and spicy sauce</textarea>
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col d-flex justify-content-center">
+                    <label class="label-theme">Payment method:</label>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+
+                <div class="col d-flex justify-content-center">
+                    <div class="dropdown textfield-theme">
+                        <button class="dropdown-toggle dropdown-theme" type="button" id="payment-option" data-bs-toggle="dropdown">
+                            Payment method
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item" id="pay-in-store">Pay in Store</li>
+                            <li class="dropdown-item" id="online-payment">Online Payment</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row my-3">
+                <div class="col d-flex justify-content-center">
+                    <input type="submit" class="button-theme" value="Save details">
+                </div>
+            </div>
+
+        </form>
 
     </div>
 

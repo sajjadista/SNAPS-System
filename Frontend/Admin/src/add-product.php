@@ -13,9 +13,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
-
-
-
 </head>
 
 <body>
@@ -37,98 +34,98 @@
         <hr class="section-divider">
 
 
-        <div class="row my-3">
-            <div class="col d-flex justify-content-center">
-                <img id="uploaded-photo" class="img-fluid" src="../assets/photo-placeholder.svg" alt="Photo Placeholder">
-            </div>
-        </div>
+        <form action="">
 
-        <div class="row my-3">
-            <div class="col-6 d-flex justify-content-center">
-                <label for="upload-picture">Upload product picture:</label>
-
+            <div class="row my-3">
+                <div class="col d-flex justify-content-center">
+                    <img id="uploaded-photo" class="img-fluid" src="../assets/photo-placeholder.svg" alt="Photo Placeholder">
+                </div>
             </div>
 
-            <div class="col-6 d-flex justify-content-center">
-                <input type="file" id="upload-picture" onchange="loadFile(event)" accept="image/*">
-            </div>
-        </div>
+            <div class="row my-3">
+                <div class="col-6 d-flex justify-content-center">
+                    <label for="upload-picture">Upload product picture:</label>
 
+                </div>
 
-        <div class="row my-3">
-
-            <div class="col d-flex justify-content-center">
-                <input class="textfield-theme" type="text" id="product-name" placeholder="Product Name">
-            </div>
-
-        </div>
-
-        <div class="row my-3">
-
-            <div class="col d-flex justify-content-center">
-                <input class="textfield-theme" type="text" id="product-price" placeholder="Product Price">
-            </div>
-
-        </div>
-
-        <div class="row my-3">
-
-            <div class="col d-flex justify-content-center">
-                <input class="textfield-theme" type="text" id="product-variation" placeholder="Variations">
-            </div>
-
-        </div>
-
-
-
-        <div class="row my-3">
-
-            <div class="col d-flex justify-content-center">
-                <textarea class="textarea-theme" name="description" id="description" placeholder="Description" cols="40" rows="5"></textarea>
-            </div>
-
-        </div>
-
-        <div class="row my-3">
-
-            <div class="col d-flex justify-content-center">
-                <input class="textfield-theme" type="text" id="product-variation" placeholder="Variations">
+                <div class="col-6 d-flex justify-content-center">
+                    <input type="file" id="upload-picture" onchange="loadFile(event)" accept="image/*">
+                </div>
             </div>
 
 
+            <div class="row my-3">
 
-        </div>
+                <div class="col d-flex justify-content-center">
+                    <input class="textfield-theme" type="text" id="product-name" placeholder="Product Name">
+                </div>
 
+            </div>
 
-        <div class="row my-3">
+            <div class="row my-3">
 
-            <div class="col d-flex justify-content-center">
+                <div class="col d-flex justify-content-center">
+                    <input class="textfield-theme" type="text" id="product-price" placeholder="Product Price">
+                </div>
 
-                <div class="dropdown textfield-theme">
-                    <button class="dropdown-toggle dropdown-theme" type="button" id="payment-option" data-bs-toggle="dropdown">
-                        Payment method
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item" id="pay-in-store">Pay in Store</li>
-                        <li class="dropdown-item" id="online-payment">Online Payment</li>
-                    </ul>
+            </div>
+
+            <div class="row my-3">
+
+                <div class="col d-flex justify-content-center">
+                    <input class="textfield-theme" type="text" id="product-variation" placeholder="Variations">
+                </div>
+
+            </div>
+
+            <div class="row my-3">
+
+                <div class="col d-flex justify-content-center">
+                    <textarea class="textarea-theme" name="description" id="description" placeholder="Description" cols="40" rows="5"></textarea>
+                </div>
+
+            </div>
+
+            <div class="row my-3">
+
+                <div class="col d-flex justify-content-center">
+                    <input class="textfield-theme" type="text" id="product-variation" placeholder="Variations">
                 </div>
 
 
 
             </div>
 
-        </div>
 
-        <div class="row my-3">
+            <div class="row my-3">
 
-            <div class="col d-flex justify-content-center">
-                <button class="button-theme">Add Product</button>
+                <div class="col d-flex justify-content-center">
+
+                    <div class="dropdown textfield-theme">
+                        <button class="dropdown-toggle dropdown-theme" type="button" id="payment-option" data-bs-toggle="dropdown">
+                            Payment method
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item" id="pay-in-store">Pay in Store</li>
+                            <li class="dropdown-item" id="online-payment">Online Payment</li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+
             </div>
 
-        </div>
+            <div class="row my-3">
 
+                <div class="col d-flex justify-content-center">
+                    <input type="submit" class="button-theme" value="Add Product">
+                </div>
 
+            </div>
+
+        </form>
 
     </div>
 
