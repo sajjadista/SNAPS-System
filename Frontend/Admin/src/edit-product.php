@@ -99,7 +99,7 @@
 
         <div class="row mb-3">
             <div class="col d-flex justify-content-center">
-                <textarea name="description" id="description" placeholder="Description" cols="40" rows="5">A very nice and spicy sauce</textarea>
+                <textarea class="textarea-theme" name="description" id="description" cols="40" rows="5">A very nice and spicy sauce</textarea>
             </div>
         </div>
 
