@@ -92,8 +92,6 @@
                     <input class="textfield-theme" type="text" id="product-variation" placeholder="Variations">
                 </div>
 
-
-
             </div>
 
 
@@ -101,17 +99,10 @@
 
                 <div class="col d-flex justify-content-center">
 
-                    <div class="dropdown textfield-theme">
-                        <button class="dropdown-toggle dropdown-theme" type="button" id="payment-option" data-bs-toggle="dropdown">
-                            Payment method
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-item" id="pay-in-store">Pay in Store</li>
-                            <li class="dropdown-item" id="online-payment">Online Payment</li>
-                        </ul>
-                    </div>
-
-
+                    <select class="textfield-theme" id="payment-method">
+                        <option value="pay-in-store">Pay in Store</option>
+                        <option value="online-payment">Online Payment</option>
+                    </select>
 
                 </div>
 
