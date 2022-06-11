@@ -1,218 +1,322 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 /* ============== General Rules ============== */
-/* * {
-    padding: 0;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-  } */
-
-p {
-	margin: 0;
-}
 
 :root {
-	padding: 0;
-	margin: 0;
-	--font: "Montserrat", sans-serif;
-	--dark-green: #206023;
-	--light-green: #368149;
-	--brown: #381C07;
+  padding: 0;
+  margin: 0;
+  --font: "Montserrat", sans-serif;
+  --dark-green: #206023;
+  --light-green: #368149;
+  --brown: #381c07;
 }
 
 body {
-	font-family: var(--font);
-	background-color: var(--dark-green);
+  font-family: var(--font);
+  background-color: var(--dark-green);
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 /* ============== Tag styles ============== */
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /* ============== Class styles ============== */
 .main-button {
-	background-color: var(--brown);
-	color: white;
+  background-color: var(--brown);
+  color: white;
 }
 
 .main-text {
-	color: var(--dark-green);
-	font-weight: bolder;
-	font-size: 20px;
+  color: var(--dark-green);
+  font-weight: bolder;
+  font-size: 20px;
 }
 
 .link-text {
-	color: var(--light-green);
+  color: var(--light-green);
 }
 
 /* ============== ID styles ============== */
 
 /* ============== Tag styles ============== */
 body {
-	background-color: #206023;
+  background-color: #206023;
 }
 
+input {
+  text-align: center;
+}
 
+footer {
+	background-color: var(--light-green);
+}
 
 /* ============== Class styles ============== */
 .navbar-payment {
-	/* vertical-align: middle; */
-	padding: 0.625rem 4.5rem 0.625rem 4.5rem;
-	background-color: #FFFFFF;
-	display: flex;
+  /* vertical-align: middle; */
+  padding: 0.625rem 4.5rem 0.625rem 4.5rem;
+  background-color: #ffffff;
+  display: flex;
 }
 
-.fx-end{
-	display: flex;
-	justify-content: flex-end;
+.fx-end {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .navbar-payment-logoside {
-	width: 100%;
-	float: left;
+  width: 100%;
+  float: left;
 }
 
 .navbar-payment-buttonside {
-	width: 100%;
-	float: right;
+  width: 100%;
+  float: right;
 }
 
 .navbar-payment-logo {
-	display: inline-block;
-	padding: 1.25rem;
+  display: inline-block;
+  padding: 1.25rem;
 }
 
 .navbar-payment-pagename {
-	display: inline-block;
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 1.25rem;
-	line-height: 1.5rem;
+  display: inline-block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 
-	color: #206023;
+  color: #206023;
 }
 
 .navbar-payment-btn-grps {
-	display: flex;
-	justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .navbar-payment-lang-dropbtn {
-	display: flex;
-	justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .navbar-payment-link {
-	padding: 0 0.625rem 0 0.625rem;
+  padding: 0 0.625rem 0 0.625rem;
 }
 
 .navbar-payment-link a {
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 0.75rem;
-	line-height: 0.75rem;
-	color: #206023;
-	text-decoration: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  color: #206023;
+  text-decoration: none;
 }
 
 .btn-group {
-	padding: 0.625rem;
+  padding: 0.625rem;
 }
 
 .btn-langs {
-	height: 6.25rem;
-	width: 6.25rem;
-	border: 0.0625rem solid #C4C4C4;
-	border-radius: 0.625rem;
-	font-weight: 700;
-	font-size: 1.875rem;
+  height: 6.25rem;
+  width: 6.25rem;
+  border: 0.0625rem solid #c4c4c4;
+  border-radius: 0.625rem;
+  font-weight: 700;
+  font-size: 1.875rem;
 }
 
 .content-payment {
-	width: -webkit-fill-available;
-	padding: 0 1.4375rem 0 1.4375rem;
-	margin: 2.5rem 1rem 0 1rem;
-	background: rgba(75, 158, 105, 0.54);
-	border-radius: 0.625rem;
+  width: -webkit-fill-available;
+  padding: 0 1.4375rem 0 1.4375rem;
+  margin: 2.5rem 1rem 0 1rem;
+  background: rgba(75, 158, 105, 0.54);
+  border-radius: 0.625rem;
 }
 
 .content-payment-title {
-	padding-top: 1.125rem;
-	margin-bottom: 5.5rem;
+  padding-top: 1.125rem;
+  margin-bottom: 5.5rem;
 }
 
 .content-payment-title-text p {
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 2.1875rem;
-	line-height: 2.6875rem;
-	color: #FFFFFF;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.1875rem;
+  line-height: 2.6875rem;
+  color: #ffffff;
 }
 
 .content-payment-list {
-	/* margin: 0 23rem 0 23rem; */
-	width: 50%;
-	margin: 0 auto;
-	margin-bottom: 6.0625rem;
-	/* justify-content: center; */
+  /* margin: 0 23rem 0 23rem; */
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 6.0625rem;
+  /* justify-content: center; */
 }
 
 .content-payment-list-row {
-	display: flex;
-	margin-bottom: 1.25rem;
+  display: flex;
+  margin-bottom: 1.25rem;
 }
 
 .content-payment-list-item {
-	width: 50%;
-	text-align: left;
+  width: 50%;
+  text-align: left;
 }
 
 .content-payment-list-item p {
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 1.875rem;
-	line-height: 2.3125rem;
-	color: #FFFFFF;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.875rem;
+  line-height: 2.3125rem;
+  color: #ffffff;
 }
 
 .content-payment-list-data {
-	/* float: right; */
-	width: 50%;
-	text-align: right;
+  /* float: right; */
+  width: 50%;
+  text-align: right;
 }
 
 .content-payment-list-data p {
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 1.875rem;
-	line-height: 2.3125rem;
-	color: #FFFFFF;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 2.3125rem;
+  color: #ffffff;
 }
 
 .content-payment-btn {
-	padding-bottom: 2rem;
-	text-align: center;
+  padding-bottom: 2rem;
+  text-align: center;
 }
 
 .content-payment-btn button {
-	width: 19.4375rem;
-	height: 3.4375rem;
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 1.5625rem;
-	line-height: 1.875rem;
-	text-align: center;
+  width: 19.4375rem;
+  height: 3.4375rem;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
+  text-align: center;
 
-	background: #206023;
-	border-radius: 1.25rem;
+  background: #206023;
+  border-radius: 1.25rem;
+}
+
+.profile-icon {
+  font-size: 100px;
+  color: var(--dark-green);
+}
+
+.fa-shopping-cart {
+  font-size: 30px;
+  color: var(--dark-green);
+}
+
+.home-body {
+	padding-right: 1em;
+}
+
+.navbar {
+  background-color: white;
+}
+
+.navbar-brand {
+  margin-left: 22rem;
+}
+
+.nav-icon,
+.nav-text {
+  color: var(--dark-green);
+}
+
+.category-container {
+  background-color: var(--light-green);
+  border-radius: 8px;
+}
+
+.category-text, .btn-link {
+	padding-top: 1em;
+	text-decoration: none;
+	color: white;
+}
+
+.dropdown-menu {
+  min-width: 70px;
+}
+
+.card-title, .price {
+	font-weight: bold;
+	color: var(--dark-green);
+}
+
+.product-info {
+	padding-left: 5rem;
+}
+
+.badge-home {
+	color: var(--dark-green);
+	border: solid 2px var(--light-green);
+}
+
+.badge {
+	background-color: white;
+	color: var(--dark-green);
+	border: solid 2px var(--light-green);
+}
+
+.see-more-button {
+	background-color: var(--light-green);
+	color: white;
+	width: 150px;
+	border-radius: 25px;
+}
+
+.contact-text {
+	color: white;
+}
+
+.category-nav {
+	background-color: #4B9E69;
+	border-radius: 8px;
+}
+
+.product-info {
+	color: white;
+	margin-right: 2rem;
+	margin-left: 1rem;
+}
+
+.cart-button {
+	background-color: #4B9E69;
+	color: white;
+	border: solid 2px white;
+}
+
+.fa-heart {
+	color: red;
+}
+
+.fa-whatsapp {
+	color: greenyellow;
+}
+
+.fa-facebook {
+	color: #1498EC;
 }
 
 
 /* ============== ID styles ============== */
+#dropdownMenuButton1 {
+	background-color: var(--dark-green);
+}
