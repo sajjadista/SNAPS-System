@@ -44,12 +44,14 @@
         </div>
 
         <div class="row my-3">
-            <div class="col d-flex justify-content-center">
+            <div class="col-6 d-flex justify-content-center">
                 <label for="upload-picture">Upload product picture:</label>
 
             </div>
 
-            <div class="col d-flex justify-content-center"><input type="file" id="upload-picture" onchange="loadFile(event)" accept="image/*"></div>
+            <div class="col-6 d-flex justify-content-center">
+                <input type="file" id="upload-picture" onchange="loadFile(event)" accept="image/*">
+            </div>
         </div>
 
 
