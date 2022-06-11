@@ -18,7 +18,7 @@
 
         <div class="row mb-5">
             <div class="col d-flex justify-content-center">
-                <img id="snaps-logo" class="image-fluid" src="../assets/snaps-logo.png" alt="SNAPS Logo">
+                <img id="snaps-logo" class="img-fluid" src="../assets/snaps-logo.png" alt="SNAPS Logo">
             </div>
         </div>
 

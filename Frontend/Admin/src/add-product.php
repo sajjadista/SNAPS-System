@@ -39,7 +39,7 @@
 
         <div class="row my-3">
             <div class="col d-flex justify-content-center">
-                <img id="uploaded-photo" class="image-fluid" src="../assets/photo-placeholder.svg" alt="Photo Placeholder">
+                <img id="uploaded-photo" class="img-fluid" src="../assets/photo-placeholder.svg" alt="Photo Placeholder">
             </div>
         </div>
 
