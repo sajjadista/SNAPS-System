@@ -6,149 +6,149 @@
     margin: 0;
     font-family: 'Montserrat', sans-serif;
   } */
-  
-p{
-	 margin: 0;
+
+p {
+	margin: 0;
 }
 
 :root {
-  padding: 0;
-  margin: 0;
-  --font: "Montserrat", sans-serif;
-  --dark-green: #206023;
-  --light-green: #368149;
-  --brown: #381C07;
+	padding: 0;
+	margin: 0;
+	--font: "Montserrat", sans-serif;
+	--dark-green: #206023;
+	--light-green: #368149;
+	--brown: #381C07;
 }
 
 body {
-  font-family: var(--font);
-  background-color: var(--dark-green);
+	font-family: var(--font);
+	background-color: var(--dark-green);
 }
 
 /* ============== Tag styles ============== */
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 /* ============== Class styles ============== */
 .main-button {
-  background-color: var(--brown);
-  color: white;
+	background-color: var(--brown);
+	color: white;
 }
 
 .main-text {
-  color: var(--dark-green);
-  font-weight: bolder;
-  font-size: 20px;
+	color: var(--dark-green);
+	font-weight: bolder;
+	font-size: 20px;
 }
 
 .link-text {
-  color: var(--light-green);
+	color: var(--light-green);
 }
 
 /* ============== ID styles ============== */
-  
-  /* ============== Tag styles ============== */
+
+/* ============== Tag styles ============== */
 body {
 	background-color: #206023;
 }
-  
-  
-  
-  /* ============== Class styles ============== */
-.navbar-payment{
+
+
+
+/* ============== Class styles ============== */
+.navbar-payment {
 	/* vertical-align: middle; */
 	padding: 0.625rem 4.5rem 0.625rem 4.5rem;
 	background-color: #FFFFFF;
 	display: flex;
 }
 
-.navbar-payment-logoside{
+.navbar-payment-logoside {
 	width: 100%;
 	float: left;
 }
 
-.navbar-payment-buttonside{
+.navbar-payment-buttonside {
 	width: 100%;
 	float: right;
 }
 
-.navbar-payment-logo{
+.navbar-payment-logo {
 	display: inline-block;
 	padding: 1.25rem;
 }
-  
-.navbar-payment-pagename{
+
+.navbar-payment-pagename {
 	display: inline-block;
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 500;
 	font-size: 1.25rem;
 	line-height: 1.5rem;
-	
+
 	color: #206023;
 }
 
-.navbar-payment-btn-grps{
+.navbar-payment-btn-grps {
 	display: flex;
 	justify-content: flex-end;
 }
 
-.navbar-payment-lang-dropbtn{
+.navbar-payment-lang-dropbtn {
 	display: flex;
 	justify-content: flex-end;
 }
 
-.navbar-payment-link{
+.navbar-payment-link {
 	padding: 0 0.625rem 0 0.625rem;
 }
 
-.navbar-payment-link a{
+.navbar-payment-link a {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 700;
-	font-size: 12px;
-	line-height: 15px;
+	font-size: 0.75rem;
+	line-height: 0.75rem;
 	color: #206023;
 	text-decoration: none;
 }
 
-.btn-group{
+.btn-group {
 	padding: 0.625rem;
 }
 
-.btn-langs{
+.btn-langs {
 	height: 6.25rem;
 	width: 6.25rem;
 	border: 0.0625rem solid #C4C4C4;
-	border-radius: 10px;
+	border-radius: 0.625rem;
 	font-weight: 700;
 	font-size: 1.875rem;
 }
 
-.content-payment{
+.content-payment {
 	width: -webkit-fill-available;
 	padding: 0 1.4375rem 0 1.4375rem;
 	margin: 2.5rem 1rem 0 1rem;
 	background: rgba(75, 158, 105, 0.54);
-	border-radius: 10px;
+	border-radius: 0.625rem;
 }
 
-.content-payment-title{
+.content-payment-title {
 	padding-top: 1.125rem;
 	margin-bottom: 5.5rem;
 }
 
-.content-payment-title-text p{
+.content-payment-title-text p {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 600;
-	font-size: 35px;
-	line-height: 43px;
+	font-size: 2.1875rem;
+	line-height: 2.6875rem;
 	color: #FFFFFF;
 }
 
-.content-payment-list{
+.content-payment-list {
 	/* margin: 0 23rem 0 23rem; */
 	width: 50%;
 	margin: 0 auto;
@@ -156,17 +156,17 @@ body {
 	/* justify-content: center; */
 }
 
-.content-payment-list-row{
+.content-payment-list-row {
 	display: flex;
 	margin-bottom: 1.25rem;
 }
 
-.content-payment-list-item{
+.content-payment-list-item {
 	width: 50%;
 	text-align: left;
 }
 
-.content-payment-list-item p{
+.content-payment-list-item p {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 500;
@@ -175,13 +175,13 @@ body {
 	color: #FFFFFF;
 }
 
-.content-payment-list-data{
+.content-payment-list-data {
 	/* float: right; */
 	width: 50%;
 	text-align: right;
 }
 
-.content-payment-list-data p{
+.content-payment-list-data p {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 700;
@@ -190,18 +190,24 @@ body {
 	color: #FFFFFF;
 }
 
-.content-payment-btn{
+.content-payment-btn {
 	padding-bottom: 2rem;
 	text-align: center;
 }
 
-.content-payment-btn button{
+.content-payment-btn button {
 	width: 311px;
 	height: 55px;
-	
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 25px;
+	line-height: 30px;
+	text-align: center;
+
 	background: #206023;
 	border-radius: 20px;
 }
 
-  
-  /* ============== ID styles ============== */
+
+/* ============== ID styles ============== */
