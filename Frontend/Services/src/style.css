@@ -1,19 +1,112 @@
 /* ============== General Rules ============== */
 * {
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* ============== Tag styles ============== */
-  
-  
-  
-  
-  /* ============== Class styles ============== */
-  
-  
-  
-  
-  /* ============== ID styles ============== */
-  
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::placeholder {
+  text-align: center;
+}
+
+/* ============== Tag styles ============== */
+
+body {
+  background-color: #206023;
+}
+
+p{
+  text-align: center;
+  color: white;
+}
+
+a{
+  text-align: center;
+  color: white;
+}
+
+
+
+/* ============== Class styles ============== */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1500px;
+  /* grid-template-rows: 300px 100px; */
+  grid-gap: 10px;
+  background-color: #206023;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  /* margin-right: 50px; */
+  position: relative;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-style: solid;
+  border-color: white;
+  position: relative;
+  /* padding: 5px 0; */
+  font-size: 50px;
+  font-weight: bold;
+  text-align: left;
+  /* text-indent: 10px; */
+  color: white;
+  width: 1500px;
+  height: 300px;
+}
+
+.item1 {
+  grid-row: 1;
+}
+
+.left {
+  position: absolute;
+  top: 125px;
+  left: 10px;
+}
+
+.right{
+  position: absolute;
+  top: 75px;
+  left: 10px;
+}
+
+.bottom{
+  position: absolute;
+  text-align: center;
+  top: 100px;
+  left: 500px;
+}
+
+.top{
+  position: absolute;
+  font-size: 30px;
+  text-align: center;
+  top: 25px;
+  left: 10px;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 52px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 200px 250px 150px 250px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #FF0000;} /* Red */
+.button3 {
+  background-color: #4CAF50;
+  margin: 200px 250px 150px 600px;
+  } /* Red */
+
+
+
+/* ============== ID styles ============== */
