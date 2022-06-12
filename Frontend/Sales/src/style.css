@@ -51,7 +51,7 @@ input {
 }
 
 footer {
-	background-color: var(--light-green);
+  background-color: var(--light-green);
 }
 
 /* ============== Class styles ============== */
@@ -62,8 +62,8 @@ footer {
   display: flex;
 }
 
-.navbar-payment-brand{
-	margin: 0;
+.navbar-payment-brand {
+  margin: 0;
 }
 
 .fx-end {
@@ -81,14 +81,14 @@ footer {
   float: right;
 }
 
-.navbar-payment-form-control{
-	margin: 2.3rem 0;
-	padding: 0.5rem 0;
-	width: 100%;
-	
-	background: #FFFFFF;
-	border: 0.125rem solid #C4C4C4;
-	border-radius: 0.625rem;
+.navbar-payment-form-control {
+  margin: 2.3rem 0;
+  padding: 0.5rem 0;
+  width: 100%;
+
+  background: #ffffff;
+  border: 0.125rem solid #c4c4c4;
+  border-radius: 0.625rem;
 }
 
 .navbar-payment-logo {
@@ -238,7 +238,7 @@ footer {
 }
 
 .home-body {
-	padding-right: 1em;
+  padding-right: 1em;
 }
 
 .navbar {
@@ -259,238 +259,241 @@ footer {
   border-radius: 8px;
 }
 
-.category-text, .btn-link {
-	padding-top: 1em;
-	text-decoration: none;
-	color: white;
+.category-text,
+.btn-link {
+  padding-top: 1em;
+  text-decoration: none;
+  color: white;
 }
 
 .dropdown-menu {
   min-width: 70px;
 }
 
-.card-title, .price {
-	font-weight: bold;
-	color: var(--dark-green);
+.card-title,
+.price {
+  font-weight: bold;
+  color: var(--dark-green);
 }
 
 .product-info {
-	padding-left: 5rem;
+  padding-left: 5rem;
 }
 
 .badge-home {
-	color: var(--dark-green);
-	border: solid 2px var(--light-green);
+  color: var(--dark-green);
+  border: solid 2px var(--light-green);
 }
 
 .badge {
-	background-color: white;
-	color: var(--dark-green);
-	border: solid 2px var(--light-green);
+  background-color: white;
+  color: var(--dark-green);
+  border: solid 2px var(--light-green);
 }
 
 .see-more-button {
-	background-color: var(--light-green);
-	color: white;
-	width: 150px;
-	border-radius: 25px;
+  background-color: var(--light-green);
+  color: white;
+  width: 150px;
+  border-radius: 25px;
 }
 
 .contact-text {
-	color: white;
+  color: white;
+  text-align: left;
 }
 
 .category-nav {
-	background-color: #4B9E69;
-	border-radius: 8px;
+  background-color: #4b9e69;
+  border-radius: 8px;
 }
 
 .product-info {
-	color: white;
-	margin-right: 2rem;
-	margin-left: 1rem;
+  color: white;
+  margin-right: 2rem;
+  margin-left: 1rem;
 }
 
 .cart-button {
-	background-color: #4B9E69;
-	color: white;
-	border: solid 2px white;
+  background-color: #4b9e69;
+  color: white;
+  border: solid 2px white;
 }
 
 .fa-heart {
-	color: red;
+  color: red;
 }
 
 .fa-whatsapp {
-	color: greenyellow;
+  color: greenyellow;
 }
 
 .fa-facebook {
-	color: #1498EC;
+  color: #1498ec;
 }
 
-.content-address-search{
-	padding: 0;
-	margin: 0.6875rem 0 2rem 0;
+.content-address-search {
+  padding: 0;
+  margin: 0.6875rem 0 2rem 0;
 }
 
-.content-address-search-bar{
-	padding: 2.0625rem 2.375rem 2.0625rem 2.375rem;
-	border-style: none;
-	background: #378149;
-	border-radius: 1.25rem;
+.content-address-search-bar {
+  padding: 2.0625rem 2.375rem 2.0625rem 2.375rem;
+  border-style: none;
+  background: #378149;
+  border-radius: 1.25rem;
 }
 
-.content-address-search-bar p{
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 1.5625rem;
-	line-height: 1.875rem;
-	
-	color: #FFFFFF;
+.content-address-search-bar p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
+
+  color: #ffffff;
 }
 
-.content-address-list-item{
-	display: flex;
-	margin: 0.625rem 0;
-	padding: 4.75rem 1.75rem;
-	background: #378149;
-	border-radius: 1.25rem;
+.content-address-list-item {
+  display: flex;
+  margin: 0.625rem 0;
+  padding: 4.75rem 1.75rem;
+  background: #378149;
+  border-radius: 1.25rem;
 }
 
-.content-address-list-item-user-info{
-	margin-bottom: 0.9375rem;
+.content-address-list-item-user-info {
+  margin-bottom: 0.9375rem;
 }
 
-.content-address-list-item-user-info p{
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 1.5625rem;
-	line-height: 1.875rem;
-	
-	color: #FFFFFF;
+.content-address-list-item-user-info p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
+
+  color: #ffffff;
 }
 
-.content-address-list-item-user-addr p{
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 1.25rem;
-	line-height: 1.5rem;
+.content-address-list-item-user-addr p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 
-	color: #FFFFFF;
-}.
-
-.content-address-list-item-radio{
-	margin: 0.625rem;
+  color: #ffffff;
 }
 
-.content-address-list-item-radio label{
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 1.25rem;
-	line-height: 1.5rem;
-	
-	color: #C4C4C4;
+.content-address-list-item-radio {
+  margin: 0.625rem;
 }
 
-.content-address-list-item-edit{
-	margin: 0.625rem;
-	text-align: center;
+.content-address-list-item-radio label {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+
+  color: #c4c4c4;
 }
 
-.content-address-list-item-edit a{
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 1.25rem;
-	line-height: 1.5rem;
-	
-	color: #C4C4C4;
-	text-decoration: none;
+.content-address-list-item-edit {
+  margin: 0.625rem;
+  text-align: center;
 }
 
+.content-address-list-item-edit a {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 
-.address-add-button{
-	/* width: 1401px;
+  color: #c4c4c4;
+  text-decoration: none;
+}
+
+.address-add-button {
+  /* width: 1401px;
 	height: 152px; */
-	padding: 3.1875rem 0;
-	background: #378149;
-	border-style: none;
-	border-radius: 1.25rem;
-	margin-bottom: 6.25rem;
+  padding: 3.1875rem 0;
+  background: #378149;
+  border-style: none;
+  border-radius: 1.25rem;
+  margin-bottom: 6.25rem;
 }
 
-.address-add-button svg{
-	color: #FFFFFF;
-	width: 3.125rem;
-	height: 3.125rem;
+.address-add-button svg {
+  color: #ffffff;
+  width: 3.125rem;
+  height: 3.125rem;
 }
 
-.sales-footer{
-	padding: 1.25rem;
-	background: rgba(0, 0, 0, 0.3);
+.sales-footer {
+  padding: 1.25rem;
+  background: rgba(0, 0, 0, 0.3);
 }
 
-.footer-contact-title p{
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 1.25rem;
-	line-height: 1.5rem;
-	
-	color: #FFFFFF;
+.footer-contact-title p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+
+  color: #ffffff;
 }
 
-.footer-org-name p{
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 0.75rem;
-	line-height: 0.9375rem;
+.footer-org-name p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
 
-	color: #FFFFFF;
+  color: #ffffff;
 }
 
-.footer-addr p{
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 0.625rem;
-	line-height: 0.75rem;
-	
-	color: #FFFFFF;
+.footer-addr p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.625rem;
+  line-height: 0.75rem;
+
+  color: #ffffff;
 }
 
-.footer-org-name p, .footer-addr p{
-	margin: 0;
+.footer-org-name p,
+.footer-addr p {
+  margin: 0;
 }
 
-.footer-addr{
-	margin-bottom: 0.625rem;
+.footer-addr {
+  margin-bottom: 0.625rem;
 }
 
-.footer-tele p, .footer-fax p, .footer-email p{
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 0.625rem;
-	line-height: 0.75rem;
-	
-	color: #FFFFFF;
+.footer-tele p,
+.footer-fax p,
+.footer-email p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.625rem;
+  line-height: 0.75rem;
+
+  color: #ffffff;
 }
 
-.footer-logo-groups{
-	margin: 2.5rem 0;
-	text-align: center;
+.footer-logo-groups {
+  margin: 2.5rem 0;
+  text-align: center;
 }
-
-
 
 /* ============== ID styles ============== */
 #dropdownMenuButton1 {
-	background-color: var(--dark-green);
+  background-color: var(--dark-green);
 }
