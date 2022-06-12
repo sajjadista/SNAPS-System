@@ -83,10 +83,10 @@
 								</div>
 							</div>
 							<div class="navbar-payment-lang-dropbtn">
-								<form class="container-fluid" method="post">
+								<!-- <form class="container-fluid" method="post">
 									<input class="navbar-payment-form-control me-2" type="text" 
 									placeholder="Search for groceries, services, anything">
-								</form>
+								</form> -->
 								<div class="btn-group" role="group">
 									<button type="button" class="btn dropdown-toggle btn-langs" id="navbarDropdown"
 										data-bs-toggle="dropdown" aria-expanded="false">
@@ -109,7 +109,12 @@
 		<div class="content-address container-fluid">
 			<div class="content-address-search container-fluid">
 				<div class="content-address-search-bar">
-					<p>Delivery address</p>
+					<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor-fill" viewBox="0 0 16 16">
+					  <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
+					</svg>
+					
+					Delivery address</p>
 				</div>
 			</div>
 			<div class="content-address-list-item container-fluid">
