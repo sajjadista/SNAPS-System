@@ -62,6 +62,10 @@ footer {
   display: flex;
 }
 
+.navbar-payment-brand{
+	margin: 0;
+}
+
 .fx-end {
   display: flex;
   justify-content: flex-end;
@@ -75,6 +79,16 @@ footer {
 .navbar-payment-buttonside {
   width: 100%;
   float: right;
+}
+
+.navbar-payment-form-control{
+	margin: 2.3rem 0;
+	padding: 0.5rem 0;
+	width: 100%;
+	
+	background: #FFFFFF;
+	border: 0.125rem solid #C4C4C4;
+	border-radius: 0.625rem;
 }
 
 .navbar-payment-logo {
@@ -315,19 +329,19 @@ footer {
 	color: #1498EC;
 }
 
-.content-checkout-search{
+.content-address-search{
 	padding: 0;
 	margin: 0.6875rem 0 2rem 0;
 }
 
-.content-checkout-search-bar{
+.content-address-search-bar{
 	padding: 2.0625rem 2.375rem 2.0625rem 2.375rem;
 	border-style: none;
 	background: #378149;
 	border-radius: 1.25rem;
 }
 
-.content-checkout-search-bar p{
+.content-address-search-bar p{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 500;
@@ -337,7 +351,7 @@ footer {
 	color: #FFFFFF;
 }
 
-.content-checkout-list-item{
+.content-address-list-item{
 	display: flex;
 	margin: 0.625rem 0;
 	padding: 4.75rem 1.75rem;
@@ -345,11 +359,11 @@ footer {
 	border-radius: 1.25rem;
 }
 
-.content-checkout-list-item-user-info{
+.content-address-list-item-user-info{
 	margin-bottom: 0.9375rem;
 }
 
-.content-checkout-list-item-user-info p{
+.content-address-list-item-user-info p{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 700;
@@ -359,7 +373,7 @@ footer {
 	color: #FFFFFF;
 }
 
-.content-checkout-list-item-user-addr p{
+.content-address-list-item-user-addr p{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 500;
@@ -369,11 +383,11 @@ footer {
 	color: #FFFFFF;
 }.
 
-.content-checkout-list-item-radio{
+.content-address-list-item-radio{
 	margin: 0.625rem;
 }
 
-.content-checkout-list-item-radio label{
+.content-address-list-item-radio label{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 500;
@@ -383,12 +397,12 @@ footer {
 	color: #C4C4C4;
 }
 
-.content-checkout-list-item-edit{
+.content-address-list-item-edit{
 	margin: 0.625rem;
 	text-align: center;
 }
 
-.content-checkout-list-item-edit a{
+.content-address-list-item-edit a{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 500;
@@ -407,13 +421,74 @@ footer {
 	background: #378149;
 	border-style: none;
 	border-radius: 1.25rem;
+	margin-bottom: 6.25rem;
 }
 
 .address-add-button svg{
 	color: #FFFFFF;
-	width: 50px;
-	height: 50px;
+	width: 3.125rem;
+	height: 3.125rem;
 }
+
+.sales-footer{
+	padding: 1.25rem;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.footer-contact-title p{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	
+	color: #FFFFFF;
+}
+
+.footer-org-name p{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 0.75rem;
+	line-height: 0.9375rem;
+
+	color: #FFFFFF;
+}
+
+.footer-addr p{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 0.625rem;
+	line-height: 0.75rem;
+	
+	color: #FFFFFF;
+}
+
+.footer-org-name p, .footer-addr p{
+	margin: 0;
+}
+
+.footer-addr{
+	margin-bottom: 0.625rem;
+}
+
+.footer-tele p, .footer-fax p, .footer-email p{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 0.625rem;
+	line-height: 0.75rem;
+	
+	color: #FFFFFF;
+}
+
+.footer-logo-groups{
+	margin: 2.5rem 0;
+	text-align: center;
+}
+
+
 
 /* ============== ID styles ============== */
 #dropdownMenuButton1 {
