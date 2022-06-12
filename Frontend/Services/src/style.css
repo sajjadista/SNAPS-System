@@ -27,6 +27,7 @@ a{
 
 
 
+
 /* ============== Class styles ============== */
 
 .grid-container {
@@ -106,6 +107,66 @@ a{
   background-color: #4CAF50;
   margin: 200px 250px 150px 600px;
   } /* Red */
+
+  /* navbar & footer */
+:root {
+    padding: 0;
+    margin: 0;
+    --font: "Montserrat", sans-serif;
+    --dark-green: #206023;
+    --light-green: #368149;
+    --brown: #381c07;
+}
+
+.home-body {
+	padding-right: 1em;
+  color: white;
+}
+
+.contact-text {
+    padding: 150px 520px;
+    color: white;
+}
+
+.navbar {
+    background-color: white;
+}
+
+.navbar-brand {
+    margin-left: 22rem;
+}
+
+.nav-icon,
+.nav-text {
+    color: var(--dark-green);
+}
+
+.profile-icon {
+    font-size: 100px;
+    color: var(--dark-green);
+}
+
+.fa-shopping-cart {
+    font-size: 30px;
+    color: var(--dark-green);
+}
+
+.dropdown-menu {
+    min-width: 70px;
+}
+
+#dropdownMenuButton1 {
+    background-color: var(--dark-green);
+}
+
+.nav-icon,
+.nav-text {
+    color: var(--dark-green);
+}
+
+footer {
+    background-color: var(--light-green);
+}
 
 
 
