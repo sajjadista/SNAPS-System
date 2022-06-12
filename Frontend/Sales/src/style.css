@@ -680,6 +680,25 @@ footer {
 	color: #FFFFFF;
 }
 
+.mypurchase-searching{
+	margin: 0.625rem 0;
+}
+
+.mypurchase-searchbar-form-control{
+	width: 100%;
+	padding: 0.625rem;
+	background: #4B9E69;
+	border-radius: 0.625rem;
+	border: none;
+	
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 100%;
+	
+	color: #FFFFFF;
+}
+
 /* ============== ID styles ============== */
 #dropdownMenuButton1 {
 	background-color: var(--dark-green);
