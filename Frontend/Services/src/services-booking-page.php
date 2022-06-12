@@ -63,6 +63,26 @@
         cursor: pointer;
       }
 
+      input[type=text] {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 5px 15px;
+        text-decoration: none;
+        margin: 4px 0px;
+        cursor: pointer;
+      }
+
+      input[type=datetime-local] {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 5px 15px;
+        text-decoration: none;
+        margin: 4px 0px;
+        cursor: pointer;
+      }
+
 
     </style>
 </head>
@@ -74,48 +94,48 @@
   <p>
     <form action="services-upload-booking.php">
         <label for="bookingtime">1. Date and time of booking?</label>
-        <input type="datetime-local" id="bookingtime" name="bookingtime">
+        <input style="margin-left:500px" type="datetime-local" id="bookingtime" name="bookingtime">
       <br></br>
         <label for="machinery">2. What machinery do you need?</label>
       <br></br>
-          <input type="radio" id="tractor" name="machinery" value="TRACTOR">
+          <input style="margin-left:700px" type="radio" id="tractor" name="machinery" value="TRACTOR">
         <label for="tractor">Tractor</label><br>
-          <input type="radio" id="lorry" name="machinery" value="LORRY">
+          <input style="margin-left:700px" type="radio" id="lorry" name="machinery" value="LORRY">
         <label for="lorry">Lorry</label><br>
-          <input type="radio" id="fertilizer truck" name="machinery" value="FERTILIZER TRUCK">
+          <input style="margin-left:700px" type="radio" id="fertilizer truck" name="machinery" value="FERTILIZER TRUCK">
         <label for="fertilizer truck">Ferlitizer Truck</label>
       <br></br>
         <label for="quantity">3. Quantity of the machinery needed?</label>
-          <input type="text" id="quantity" name="quantity"><br><br>
+          <input style="margin-left:435px" type="text" id="quantity" name="quantity"><br><br>
         <label for="machinery">4. Do you need a driver?</label>
       <br></br>
-        <input type="radio" id="yes" name="driver" value="YES">
+        <input style="margin-left:700px" type="radio" id="yes" name="driver" value="YES">
         <label for="html">Yes</label><br>
-          <input type="radio" id="no" name="driver" value="NO">
+          <input style="margin-left:700px" type="radio" id="no" name="driver" value="NO">
         <label for="css">No</label><br>
       <br>
         <label for="purpose">5. Intended purpose for machine?</label>
-          <input type="text" id="purpose" name="purpose"><br>
+          <input style="margin-left:462px" type="text" id="purpose" name="purpose"><br>
       <br>
         <label for="coveragesize">6. Preferred coverage size?</label>
       <br></br>
-          <input type="radio" id="50,000" name="coveragesize" value="50,000">
+          <input style="margin-left:700px" type="radio" id="50,000" name="coveragesize" value="50,000">
         <label for="50,000">RM 50,000</label><br>
-          <input type="radio" id="100,000" name="coveragesize" value="100,000">
+          <input style="margin-left:700px" type="radio" id="100,000" name="coveragesize" value="100,000">
         <label for="100,000">RM 100,000</label><br>
-          <input type="radio" id="200,000" name="coveragesize" value="200,000">
+          <input style="margin-left:700px" type="radio" id="200,000" name="coveragesize" value="200,000">
         <label for="200,000">RM 200,000</label><br>
-          <input type="radio" id="500,000" name="coveragesize" value="500,000">
+          <input style="margin-left:700px" type="radio" id="500,000" name="coveragesize" value="500,000">
         <label for="500,000">RM 500,000</label><br>
-          <input type="radio" id="1,000,000" name="coveragesize" value="1,000,000">
+          <input style="margin-left:700px" type="radio" id="1,000,000" name="coveragesize" value="1,000,000">
         <label for="1,000,000">RM 1,000,000</label><br>
-          <input type="radio" name="coveragesize" value="">Other (RM) <input type="text" name="coveragesize" />
+          <input style="margin-left:700px" type="radio" name="coveragesize" value=""> Other (RM) <input style="margin-left:608px" type="text" name="coveragesize" />
       <br></br>
         <label for="commitment">7. What is your estimated monthly commitment? (RM)</label>
-          <input type="text" id="commitment" name="commitment"><br>
+          <input style="margin-left:319px" type="text" id="commitment" name="commitment"><br>
       <br>
         <label for="commitment">8. What amount are you willing to pay monthly in total for your insurance? (RM)</label>
-          <input type="text" id="commitment" name="commitment"><br>
+          <input style="margin-left:140px" type="text" id="commitment" name="commitment"><br>
       <br>
         <input type="submit" value="Download">
     </form>
