@@ -34,6 +34,42 @@
     </p>
   </div>
 
+  <footer>
+    <div class="container-fluid px-3">
+      <div class="row">
+        <div class="col-md-4 contact-text pt-3">
+          <h5 class="fw-bolder">Contact us</h5>
+          <h6 class="fw-bold">Pusat Pertanian Universiti</h6>
+          <p>
+            Universiti Putra Malaysia
+            <br />43400 UPM Serdang<br />
+            Selangor Darul Ehsan
+          </p>
+          <p>
+            <i class="fa fa-phone" aria-hidden="true"></i>  +603 9769 7282/7301
+          </p>
+          <p><i class="fa fa-fax" aria-hidden="true"></i>  +603 8942 4076</p>
+          <p>
+            <i class="fa fa-envelope" aria-hidden="true"></i>  dir.tpu@upm.edu.my
+          </p>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="row align-items-center">
+            <div class="col align-items-center">
+              <img class="w-75" src="../assets/csit_logo.png" alt="" />
+            </div>
+            <div class="col">
+              <img class="w-75" src="../assets/upm_logo_horizontal.png" alt="" />
+            </div>
+            <div class="col">
+              <img class="w-75" src="../assets/SNAPS_PAC.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
