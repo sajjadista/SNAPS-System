@@ -120,7 +120,7 @@
         <label for="coveragesize">6. Preferred coverage size?</label>
       <br></br>
           <input style="margin-left:700px" type="radio" id="50,000" name="coveragesize" value="50,000">
-        <label for="50,000">RM 50,000</label><br>
+         <label for="50,000">RM 50,000</label><br>
           <input style="margin-left:700px" type="radio" id="100,000" name="coveragesize" value="100,000">
         <label for="100,000">RM 100,000</label><br>
           <input style="margin-left:700px" type="radio" id="200,000" name="coveragesize" value="200,000">
@@ -129,7 +129,7 @@
         <label for="500,000">RM 500,000</label><br>
           <input style="margin-left:700px" type="radio" id="1,000,000" name="coveragesize" value="1,000,000">
         <label for="1,000,000">RM 1,000,000</label><br>
-          <input style="margin-left:700px" type="radio" name="coveragesize" value=""> Other (RM) <input style="margin-left:608px" type="text" name="coveragesize" />
+          <input style="margin-left:700px" type="radio" name="coveragesize" value=""> Other (RM) <input style="margin-left:705px" type="text" name="coveragesize" />
       <br></br>
         <label for="commitment">7. What is your estimated monthly commitment? (RM)</label>
           <input style="margin-left:319px" type="text" id="commitment" name="commitment"><br>
