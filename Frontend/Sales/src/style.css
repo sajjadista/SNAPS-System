@@ -348,8 +348,7 @@ footer {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 500;
-	font-size: 1.5625rem;
-	line-height: 1.875rem;
+	font-size: 100%;
 
 	color: #FFFFFF;
 }
@@ -371,7 +370,6 @@ footer {
 	font-style: normal;
 	font-weight: 700;
 	font-size: 1.5625rem;
-	line-height: 1.875rem;
 
 	color: #FFFFFF;
 }
@@ -614,6 +612,17 @@ footer {
 	color: #FFFFFF;
 }
 
+.product-table-total-sub p{
+	margin: 0;
+	text-align: right;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 70%;
+	
+	color: #FFFFFF;
+}
+
 .product-table-total-sum .total-money{
 	font-family: 'Montserrat';
 	font-style: normal;
@@ -652,6 +661,23 @@ footer {
 
 .shopping-option-p{
 	background: #206023;
+}
+
+.content-address-selector-user, .content-address-selector-detail, .content-address-selector-default, .content-address-selector-action{
+	margin: 0 0.625rem;
+}
+
+.content-address-selector-default, .content-address-selector-action{
+	
+}
+
+.content-address-selector-user p{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 100%;
+	
+	color: #FFFFFF;
 }
 
 /* ============== ID styles ============== */
