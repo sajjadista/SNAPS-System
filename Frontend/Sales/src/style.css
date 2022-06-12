@@ -315,6 +315,105 @@ footer {
 	color: #1498EC;
 }
 
+.content-checkout-search{
+	padding: 0;
+	margin: 0.6875rem 0 2rem 0;
+}
+
+.content-checkout-search-bar{
+	padding: 2.0625rem 2.375rem 2.0625rem 2.375rem;
+	border-style: none;
+	background: #378149;
+	border-radius: 1.25rem;
+}
+
+.content-checkout-search-bar p{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1.5625rem;
+	line-height: 1.875rem;
+	
+	color: #FFFFFF;
+}
+
+.content-checkout-list-item{
+	display: flex;
+	margin: 0.625rem 0;
+	padding: 4.75rem 1.75rem;
+	background: #378149;
+	border-radius: 1.25rem;
+}
+
+.content-checkout-list-item-user-info{
+	margin-bottom: 0.9375rem;
+}
+
+.content-checkout-list-item-user-info p{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1.5625rem;
+	line-height: 1.875rem;
+	
+	color: #FFFFFF;
+}
+
+.content-checkout-list-item-user-addr p{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+
+	color: #FFFFFF;
+}.
+
+.content-checkout-list-item-radio{
+	margin: 0.625rem;
+}
+
+.content-checkout-list-item-radio label{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	
+	color: #C4C4C4;
+}
+
+.content-checkout-list-item-edit{
+	margin: 0.625rem;
+	text-align: center;
+}
+
+.content-checkout-list-item-edit a{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	
+	color: #C4C4C4;
+	text-decoration: none;
+}
+
+
+.address-add-button{
+	/* width: 1401px;
+	height: 152px; */
+	padding: 3.1875rem 0;
+	background: #378149;
+	border-style: none;
+	border-radius: 1.25rem;
+}
+
+.address-add-button svg{
+	color: #FFFFFF;
+	width: 50px;
+	height: 50px;
+}
 
 /* ============== ID styles ============== */
 #dropdownMenuButton1 {
