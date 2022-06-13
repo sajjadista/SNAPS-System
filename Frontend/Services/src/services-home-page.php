@@ -185,18 +185,18 @@
         <div class="col-md-4 contact-text pt-3">
           <h5 class="fw-bolder">Contact us</h5>
           <h6 class="fw-bold">Pusat Pertanian Universiti</h6>
-          <p>
+
             Universiti Putra Malaysia
             <br />43400 UPM Serdang<br />
             Selangor Darul Ehsan
-          </p>
-          <p>
+
+          <br></br>
             <i class="fa fa-phone" aria-hidden="true"></i>  +603 9769 7282/7301
-          </p>
-          <p><i class="fa fa-fax" aria-hidden="true"></i>  +603 8942 4076</p>
-          <p>
+          <br>
+          <i class="fa fa-fax" aria-hidden="true"></i>  +603 8942 4076
+          <br>
             <i class="fa fa-envelope" aria-hidden="true"></i>  dir.tpu@upm.edu.my
-          </p>
+
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div class="row align-items-center">
