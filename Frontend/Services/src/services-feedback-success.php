@@ -160,7 +160,7 @@
   <div class="grid-container">
     <div class="item1">
       <div class="top">Feedback</div>
-      <div class="bottom"><center>Feedback is successful!</center></div>
+      <div class="bottom" style="margin-left:500px">Feedback is successful!</div>
         <a href="services-home-page.php">
           <button class="button button3">Proceed to main page</button>
         </a>
