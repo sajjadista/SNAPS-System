@@ -16,15 +16,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-      h2 {
+      <!-- /* h2 {
         color: green;
         font-weight: bold;
         margin: 50px;
-      }
+      } */
 
-      div.feedback1 {
+      /* div.feedback1 {
         background-color:green;
         height: 250px;
         width: 350px;
@@ -34,19 +34,19 @@
         padding-left: 80px;
         margin: 150px 350px 250px 550px;
         /* text-align:center; */
-      }
 
-      p{
-        /* text-align: justify; */
+
+      /* p{
+        text-align: justify;
         color: green;
         text-indent: 550px;
       }
 
       a{
-        /* text-align: justify; */
+        text-align: justify;
         color: green;
         text-indent: 550px;
-      }
+      } */
 
       /* navbar & footer */
       :root {
@@ -60,6 +60,7 @@
 
       .home-body {
       	padding-right: 1em;
+
         color: white;
         background-color:white;
         font-family: Arial, Helvetica, sans-serif;
@@ -115,9 +116,8 @@
       footer {
           background-color: var(--light-green);
           width: 1520px;
-      }
+      } -->
 
-    </style>
 </head>
 
 <body class="home-body">
@@ -272,9 +272,9 @@
         </br>
       </form>
     </div>
-      <p>
+      <h4>
         <a href="services-home-page.php">Click here to download a blank feedback form</a>
-      </p>
+      </h4>
 
   </div>
   <footer>

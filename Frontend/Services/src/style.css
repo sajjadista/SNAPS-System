@@ -109,6 +109,70 @@ a{
   margin: 200px 250px 150px 600px;
   } /* Red */
 
+  div.feedback {
+    background-color:white;
+    width: 1535px;
+    height: 750px;
+    /* height: 850px;
+    width: 850px; */
+  }
+
+  div.feedback1 {
+    background-color:#206023;
+    height: 250px;
+    width: 350px;
+    padding-top: 20px;
+    padding-right: 130px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    margin: 150px 350px 250px 550px;
+    /* text-align:center; */
+  }
+
+  h2 {
+    color: green;
+    font-weight: bold;
+    text-indent: 20px;
+    /* margin: 50px; */
+  }
+
+  h4{
+    text-align: justify;
+    color: green;
+    text-indent: 550px;
+  }
+/*
+  input[type=submit] {
+      background-color: #206023;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 800px;
+      cursor: pointer;
+  }
+
+  input[type=text] {
+      background-color: #206023;
+      border: none;
+      color: white;
+      padding: 5px 15px;
+      text-decoration: none;
+      margin: 4px 0px;
+      cursor: pointer;
+  }
+
+  input[type=datetime-local] {
+      background-color: #206023;
+      border: none;
+      color: white;
+      padding: 5px 15px;
+      text-decoration: none;
+      margin: 4px 0px;
+      cursor: pointer;
+  } */
+
+
   /* navbar & footer */
 :root {
     padding: 0;
@@ -121,7 +185,7 @@ a{
 
 .home-body {
 	padding-right: 1em;
-  width: 1500px;
+  width: 1520px;
   color: white;
 }
 
@@ -174,7 +238,7 @@ a{
 
 footer {
     background-color: var(--light-green);
-    width: 1520px;
+    width: 1535px;
 }
 
 
