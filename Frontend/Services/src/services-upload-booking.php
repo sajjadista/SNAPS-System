@@ -49,7 +49,7 @@
   <div class="feedback">
     <h2> Upload service booking form </h2>
     <div class="feedback1">
-      <form action="services-order-page.php" method="post" enctype="multipart/form-data">
+      <form action="services-upload-success.php" method="post" enctype="multipart/form-data">
         <br>
           <b>Select file to upload:</b>
         </br>
