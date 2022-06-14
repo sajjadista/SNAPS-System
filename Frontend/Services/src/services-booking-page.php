@@ -262,7 +262,7 @@
                   <label for="fertilizer truck">Ferlitizer Truck</label>
                 <br></br>
                 <label for="quantity">3. Quantity of the machinery needed?</label>
-                <input style="margin-left:435px" type="text" id="quantity" name="quantity"><br><br>
+                <input class ="green-box" style="margin-left:435px" type="text" id="quantity" name="quantity"><br><br>
                 <label for="machinery">4. Do you need a driver?</label>
                 <br></br>
                   <input style="margin-left:700px" type="radio" id="yes" name="driver" value="YES">
@@ -271,31 +271,32 @@
                   <label for="css">No</label><br>
                 <br>
                 <label for="purpose">5. Intended purpose for machine?</label>
-                <input style="margin-left:462px" type="text" id="purpose" name="purpose"><br>
+                <input class ="green-box" style="margin-left:462px" type="text" id="purpose" name="purpose"><br>
                 <br>
                 <label for="coveragesize">6. Preferred coverage size?</label>
                 <br></br>
                 <input style="margin-left:700px" type="radio" id="50,000" name="coveragesize" value="50,000">
                   <label for="50,000">RM 50,000</label><br>
-                  <input style="margin-left:700px" type="radio" id="100,000" name="coveragesize" value="100,000">
-                <label for="100,000">RM 100,000</label><br>
-                  <input style="margin-left:700px" type="radio" id="200,000" name="coveragesize" value="200,000">
+                <input style="margin-left:700px" type="radio" id="100,000" name="coveragesize" value="100,000">
+                  <label for="100,000">&nbsp;&nbsp;RM 100,000</label><br>
+                <input style="margin-left:700px" type="radio" id="200,000" name="coveragesize" value="200,000">
                   <label for="200,000">RM 200,000</label><br>
                 <input style="margin-left:700px" type="radio" id="500,000" name="coveragesize" value="500,000">
                   <label for="500,000">RM 500,000</label><br>
                 <input style="margin-left:700px" type="radio" id="1,000,000" name="coveragesize" value="1,000,000">
-                <label for="1,000,000">RM 1,000,000</label><br>
-                <input style="margin-left:700px" type="radio" name="coveragesize" value=""> Other (RM) <input
-                    style="margin-left:705px" type="text" name="coveragesize" />
+                  <label for="1,000,000">&nbsp;&nbsp;RM 1,000,000</label><br>
+                <input style="margin-left:700px" type="radio" name="coveragesize" value="">&nbsp;&nbsp; Other (RM) <input
+                    class ="green-box" style="margin-left:705px" type="text" name="coveragesize" />
                 <br></br>
                 <label for="commitment">7. What is your estimated monthly commitment? (RM)</label>
-                <input style="margin-left:319px" type="text" id="commitment" name="commitment"><br>
+                <input class ="green-box" style="margin-left:319px" type="text" id="commitment" name="commitment"><br>
                 <br>
                 <label for="commitment">8. What amount are you willing to pay monthly in total for your insurance?
                     (RM)</label>
-                <input style="margin-left:140px" type="text" id="commitment" name="commitment"><br>
+                <input class ="green-box" style="margin-left:140px" type="text" id="commitment" name="commitment"><br>
                 <br>
-                <input type="submit" value="Download">
+                <br>
+                <input class ="green-box" style="margin-left:940px" type="submit" value="Download">
             </form>
             </p>
         </div>

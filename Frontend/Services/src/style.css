@@ -112,9 +112,39 @@ a{
   div.feedback {
     background-color:white;
     width: 1535px;
-    height: 750px;
+    height: 1000px;
+    color: black;
     /* height: 850px;
     width: 850px; */
+    input[type=submit] {
+        background-color: #206023;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 800px;
+        cursor: pointer;
+    }
+
+    input[type=text] {
+        background-color: #206023;
+        border: none;
+        color: white;
+        padding: 5px 15px;
+        text-decoration: none;
+        margin: 4px 0px;
+        cursor: pointer;
+    }
+  }
+
+  input[type=datetime-local] {
+      background-color: #206023;
+      border: none;
+      color: white;
+      padding: 5px 15px;
+      text-decoration: none;
+      margin: 4px 0px;
+      cursor: pointer;
   }
 
   div.feedback1 {
@@ -141,39 +171,23 @@ a{
     color: green;
     text-indent: 550px;
   }
-/*
-  input[type=submit] {
-      background-color: #206023;
-      border: none;
-      color: white;
-      padding: 16px 32px;
-      text-decoration: none;
-      margin: 4px 800px;
-      cursor: pointer;
-  }
 
-  input[type=text] {
-      background-color: #206023;
-      border: none;
-      color: white;
-      padding: 5px 15px;
-      text-decoration: none;
-      margin: 4px 0px;
-      cursor: pointer;
-  }
 
-  input[type=datetime-local] {
-      background-color: #206023;
-      border: none;
-      color: white;
-      padding: 5px 15px;
-      text-decoration: none;
-      margin: 4px 0px;
-      cursor: pointer;
-  } */
+
+
 
   .green-text{
     color:green;
+  }
+
+  .green-box{
+        background-color: #206023;
+        border: none;
+        color: white;
+        padding: 5px 15px;
+        text-decoration: none;
+        margin: 4px 0px;
+        cursor: pointer;
   }
 
 
