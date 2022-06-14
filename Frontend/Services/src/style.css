@@ -172,6 +172,10 @@ a{
       cursor: pointer;
   } */
 
+  .green-text{
+    color:green;
+  }
+
 
   /* navbar & footer */
 :root {

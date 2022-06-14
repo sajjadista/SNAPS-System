@@ -207,7 +207,7 @@
       </form>
     </div>
       <h4>
-        <a href="services-booking-page.php" font color = "green">Click here to download a blank booking form</a>
+        <a class="green-text" href="services-booking-page.php" font color = "green">Click here to download a blank booking form</a>
       </h4>
   </div>
 
