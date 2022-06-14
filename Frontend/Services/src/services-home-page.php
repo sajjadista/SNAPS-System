@@ -159,20 +159,28 @@
 
   <div class="grid-container">
     <div class="item1">
+      <a href="services-booking-page.php">
       <img id="bukit-ekspo" class="image-fluid" src="../assets/bukit ekspo.JPG" alt="Bukit Ekspo" width="1495px" height="295px">
       <div class="left">BUKIT EKSPO</div>
+      </a>
     </div>
     <div class="item2">
+      <a href="services-booking-page.php">
       <img id="machineries" class="image-fluid" src="../assets/machineries1.jpg" alt="Machineries" width="1495px" height="295px">
       <div class="left">MACHINERIES</div>
+      </a>
     </div>
     <div class="item3">
+      <a href="services-booking-page.php">
       <img id="meeting" class="image-fluid" src="../assets/lectureroom.jpg" alt="Meeting" width="1495px" height="295px">
       <div class="left">MEETING AND LECTURE ROOMS</div>
+      </a>
     </div>
     <div class="item4">
+      <a href="services-booking-page.php">
       <img id="agriculture" class="image-fluid" src="../assets/agriculturalcourses.jpg" alt="Agriculture" width="1495px" height="295px">
       <div class="left">AGRICULTURAL COURSES</div>
+      </a>
     </div>
     <p>
       <a href="services-order-page.php">Your Orders </a>
