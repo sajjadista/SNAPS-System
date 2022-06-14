@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNAPS Service Home Page</title>
+    <title>SNAPS Service Feedback</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--font-awesome cdn-->
 
@@ -17,6 +17,40 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css">
+
+      <!-- body {
+        background-color:white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h2 {
+        color: green;
+        font-weight: bold;
+        margin: 50px;
+      }
+
+      div.feedback1 {
+        background-color:green;
+        height: 250px;
+        width: 350px;
+        padding-top: 20px;
+        padding-right: 130px;
+        padding-bottom: 50px;
+        padding-left: 80px;
+        margin: 150px 350px 250px 550px;
+        /* text-align:center; */
+      }
+
+      p{
+        /* text-align: justify; */
+        color: green;
+        text-indent: 550px;
+      }
+
+      a{
+        /* text-align: justify; */
+        color: green;
+        text-indent: 550px;
+      } -->
 
 </head>
 
@@ -157,34 +191,24 @@
     </div>
   </nav>
 
-  <div class="grid-container">
-    <div class="item1">
-      <a href="services-booking-page.php">
-      <img id="bukit-ekspo" class="image-fluid" src="../assets/bukit ekspo.JPG" alt="Bukit Ekspo" width="1495px" height="295px">
-      <div class="left">BUKIT EKSPO</div>
-      </a>
+  <div class="feedback">
+    <h2> Upload service booking form </h2>
+    <div class="feedback1">
+      <form action="services-upload-success.php" method="post" enctype="multipart/form-data">
+        <br>
+          <b>Select file to upload:</b>
+        </br>
+        <br>
+          <input type="file" name="fileToUpload" id="fileToUpload">
+        </br>
+        <br>
+          <input type="submit" value="Upload" name="submit">
+        </br>
+      </form>
     </div>
-    <div class="item2">
-      <a href="services-machinery-booking.php">
-      <img id="machineries" class="image-fluid" src="../assets/machineries1.jpg" alt="Machineries" width="1495px" height="295px">
-      <div class="left">MACHINERIES</div>
-      </a>
-    </div>
-    <div class="item3">
-      <a href="services-booking-page.php">
-      <img id="meeting" class="image-fluid" src="../assets/lectureroom.jpg" alt="Meeting" width="1495px" height="295px">
-      <div class="left">MEETING AND LECTURE ROOMS</div>
-      </a>
-    </div>
-    <div class="item4">
-      <a href="services-booking-page.php">
-      <img id="agriculture" class="image-fluid" src="../assets/agriculturalcourses.jpg" alt="Agriculture" width="1495px" height="295px">
-      <div class="left">AGRICULTURAL COURSES</div>
-      </a>
-    </div>
-    <p>
-      <a href="services-order-page.php">Your Orders </a>
-    </p>
+      <h4>
+        <a class="green-text" href="../PDF folder/Perkhidmatan Kenderaan & Jentera.pdf" target="_blank">Click here to download a blank booking form</a>
+      </h4>
   </div>
 
   <footer>
@@ -225,5 +249,4 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
-
 </html>
