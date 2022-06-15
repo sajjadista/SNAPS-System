@@ -4,6 +4,9 @@ session_start();
 
 require_once '../../../Backend/pdo.php';
 
+$_SESSION["servicename"] = "";
+$_SESSION["bookingtime"] = "";
+
 if(!isset($_SESSION['message']))
 {
   $_SESSION['message'] = "";
@@ -14,20 +17,25 @@ if(isset($_GET['message']))
   $_SESSION['message']=$message;
 }
 
-if($_GET["type"] == "Kemudahan dan Infrastruktur – CES, Gazebo, Astaka "){
-
-}else if($_GET["type"] == "Kemudahan dan Infrastruktur – CES, Gazebo, Astaka ")
-
-$_SESSION["type"] = $_GET["type"];
+if($_GET["type"] == "bukit"){
+    $_SESSION["type"] = "Kemudahan dan Infrastruktur";
+}else if($_GET["type"] == "machineries"){
+    $_SESSION["type"] = "Kenderaan dan Jentera Pertanian";
+}else{
+    header("Location: services-home-page.php");
+}
 
 if(isset($_POST["submit"])){
-    if(isset($_POST["bookingtime"]) && $_POST["bookingtime"] != ""){
+    if(isset($_POST["bookingtime"]) && $_POST["bookingtime"] != "" &&
+    isset($_POST["servicename"]) && $_POST["servicename"] != ""){
         $_SESSION["message"] = "";
+        $_SESSION["servicename"] = $_POST["servicename"];
+        $_SESSION["bookingtime"] = $_POST["bookingtime"]
         header("Location: services-upload-booking.php");
         exit();
     }else{
-        $_SESSION["message"] = "Please enter a date.";
-        header("Location: services-booking-page.php");
+        $_SESSION["message"] = "Please fill in all fields.";
+        header("Location: services-booking-page.php?type=".$_GET["type"]);
         exit();
     }
 }
@@ -53,7 +61,7 @@ if(isset($_POST["submit"])){
                 tr, td {
                     padding: 15px;
                 }
-                td {
+                td, th {
                     text-align: left;
                 }
             </style>
@@ -298,16 +306,23 @@ if(isset($_POST["submit"])){
                 <br>
                 <br>
                 <label for="servicename">Which service would you like to book?</label>
+                <br><br>
                 <table border-spacing="30px">
-                <?php
-                    $stmt = $pdo->query("SELECT name FROM services");
-                    while ( ($row = $stmt->fetch(PDO::FETCH_ASSOC)) ) {
-                        echo '<tr>';
-                        echo '<td><input type="radio" id="'.$row["name"].'" name="bookingtime"></td>';
-                        echo '<td style="color:black;">'.$row["name"].'</td>';
-                        echo '</tr>';
-                    }
-                ?>
+                    <tr>
+                        <th>Select</th>
+                        <th style="color:black;">Service name</th>
+                        <th style="color:black;">Price</th>
+                    </tr>
+                    <?php
+                        $stmt = $pdo->query('SELECT name, price FROM services WHERE type = \''.$_SESSION["type"].'\'');
+                        while ( ($row = $stmt->fetch(PDO::FETCH_ASSOC)) ) {
+                            echo '<tr>';
+                            echo '<td><input type="radio" id="'.$row["name"].'" value="'.$row["name"].'" name="servicename"></td>';
+                            echo '<td style="color:black;">'.$row["name"].'</td>';
+                            echo '<td style="color:black;">'.$row["price"].'</td>';
+                            echo '</tr>';
+                        }
+                    ?>
                 </table>
                 <br>
                 <br>

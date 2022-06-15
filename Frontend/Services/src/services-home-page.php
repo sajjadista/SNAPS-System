@@ -2,7 +2,7 @@
 
 session_start();
 
-$_SESSION["services_error_message"] = "";
+$_SESSION["message"] = "";
 
 ?>
 <!DOCTYPE html>
@@ -172,7 +172,7 @@ $_SESSION["services_error_message"] = "";
       </a>
     </div>
     <div class="item2">
-      <a href="services-machinery-booking.php?type=machineries">
+      <a href="services-booking-page.php?type=machineries">
       <img id="machineries" class="image-fluid" src="../assets/machineries1.jpg" alt="Machineries" width="1495px" height="295px">
       <div class="left">FARMING MACHINERY AND EQUIPMENT</div>
       </a>
