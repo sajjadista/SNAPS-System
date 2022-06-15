@@ -30,7 +30,7 @@ if(isset($_POST["submit"])){
     isset($_POST["servicename"]) && $_POST["servicename"] != ""){
         $_SESSION["message"] = "";
         $_SESSION["servicename"] = $_POST["servicename"];
-        $_SESSION["bookingtime"] = $_POST["bookingtime"]
+        $_SESSION["bookingtime"] = $_POST["bookingtime"];
         header("Location: services-upload-booking.php");
         exit();
     }else{
