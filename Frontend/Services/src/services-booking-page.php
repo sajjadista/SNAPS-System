@@ -1,3 +1,38 @@
+<?php
+
+session_start();
+
+require_once '../../../Backend/pdo.php';
+
+if(!isset($_SESSION['message']))
+{
+  $_SESSION['message'] = "";
+}
+
+if(isset($_GET['message']))
+{
+  $_SESSION['message']=$message;
+}
+
+if($_GET["type"] == "Kemudahan dan Infrastruktur – CES, Gazebo, Astaka "){
+
+}else if($_GET["type"] == "Kemudahan dan Infrastruktur – CES, Gazebo, Astaka ")
+
+$_SESSION["type"] = $_GET["type"];
+
+if(isset($_POST["submit"])){
+    if(isset($_POST["bookingtime"]) && $_POST["bookingtime"] != ""){
+        $_SESSION["message"] = "";
+        header("Location: services-upload-booking.php");
+        exit();
+    }else{
+        $_SESSION["message"] = "Please enter a date.";
+        header("Location: services-booking-page.php");
+        exit();
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +48,16 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
+
+            <style>
+                tr, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: left;
+                }
+            </style>
+
 
         <!-- body {
             background-color: white;
@@ -244,59 +289,31 @@
     </nav>
 
     <div class="feedback">
-        <h2> Fill in the form so we can allocate a slot for your booking </h2>
+        <h2>Choose date and time to allocate a slot for your booking </h2>
         <div class="container">
             <p>
-            <form action="services-upload-booking.php">
-                <label for="bookingtime">1. Date and time of booking?</label>
+            <form method="post">
+                <label for="bookingtime">Date and time of booking?</label>
                 <input style="margin-left:500px" type="datetime-local" id="bookingtime" name="bookingtime">
-                <br></br>
-                <label for="machinery">2. What machinery do you need?</label>
-                <br></br>
-                  <input style="margin-left:700px" type="radio" id="tractor" name="machinery" value="TRACTOR">
-                  <label for="tractor">Tractor</label><br>
-                  <input style="margin-left:700px" type="radio" id="lorry" name="machinery" value="LORRY">
-                  <label for="lorry">Lorry</label><br>
-                  <input style="margin-left:700px" type="radio" id="fertilizer truck" name="machinery"
-                    value="FERTILIZER TRUCK">
-                  <label for="fertilizer truck">Ferlitizer Truck</label>
-                <br></br>
-                <label for="quantity">3. Quantity of the machinery needed?</label>
-                <input class ="green-box" style="margin-left:435px" type="text" id="quantity" name="quantity"><br><br>
-                <label for="machinery">4. Do you need a driver?</label>
-                <br></br>
-                  <input style="margin-left:700px" type="radio" id="yes" name="driver" value="YES">
-                  <label for="html">Yes</label><br>
-                  <input style="margin-left:700px" type="radio" id="no" name="driver" value="NO">
-                  <label for="css">No</label><br>
-                <br>
-                <label for="purpose">5. Intended purpose for machine?</label>
-                <input class ="green-box" style="margin-left:462px" type="text" id="purpose" name="purpose"><br>
-                <br>
-                <label for="coveragesize">6. Preferred coverage size?</label>
-                <br></br>
-                <input style="margin-left:700px" type="radio" id="50,000" name="coveragesize" value="50,000">
-                  <label for="50,000">RM 50,000</label><br>
-                <input style="margin-left:700px" type="radio" id="100,000" name="coveragesize" value="100,000">
-                  <label for="100,000">&nbsp;&nbsp;RM 100,000</label><br>
-                <input style="margin-left:700px" type="radio" id="200,000" name="coveragesize" value="200,000">
-                  <label for="200,000">RM 200,000</label><br>
-                <input style="margin-left:700px" type="radio" id="500,000" name="coveragesize" value="500,000">
-                  <label for="500,000">RM 500,000</label><br>
-                <input style="margin-left:700px" type="radio" id="1,000,000" name="coveragesize" value="1,000,000">
-                  <label for="1,000,000">&nbsp;&nbsp;RM 1,000,000</label><br>
-                <input style="margin-left:700px" type="radio" name="coveragesize" value="">&nbsp;&nbsp; Other (RM) <input
-                    class ="green-box" style="margin-left:705px" type="text" name="coveragesize" />
-                <br></br>
-                <label for="commitment">7. What is your estimated monthly commitment? (RM)</label>
-                <input class ="green-box" style="margin-left:319px" type="text" id="commitment" name="commitment"><br>
-                <br>
-                <label for="commitment">8. What amount are you willing to pay monthly in total for your insurance?
-                    (RM)</label>
-                <input class ="green-box" style="margin-left:140px" type="text" id="commitment" name="commitment"><br>
                 <br>
                 <br>
-                <input class ="green-box" style="margin-left:940px" type="submit" value="Download">
+                <label for="servicename">Which service would you like to book?</label>
+                <table border-spacing="30px">
+                <?php
+                    $stmt = $pdo->query("SELECT name FROM services");
+                    while ( ($row = $stmt->fetch(PDO::FETCH_ASSOC)) ) {
+                        echo '<tr>';
+                        echo '<td><input type="radio" id="'.$row["name"].'" name="bookingtime"></td>';
+                        echo '<td style="color:black;">'.$row["name"].'</td>';
+                        echo '</tr>';
+                    }
+                ?>
+                </table>
+                <br>
+                <br>
+                <p style="color:red;"><?php echo $_SESSION["message"]?></p>
+                <br>
+                <input class ="green-box" style="margin-left:940px" type="submit" value="Download" name="submit">
             </form>
             </p>
         </div>

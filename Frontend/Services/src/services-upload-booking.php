@@ -1,3 +1,42 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['message']))
+{
+  $_SESSION['message'] = "";
+}
+
+if(isset($_GET['message']))
+{
+  $_SESSION['message']=$message;
+}
+
+if(isset($_POST["submit"])){
+  if($_FILES['fileToUpload']['size'] != 0){
+      $_SESSION["message"] = "";
+
+      $stmt = $pdo->prepare("UPDATE project SET name=:n, owner=:o, financial=:f, duration=:du, mode=:mo, complexity=:co, rating=:ra
+                            WHERE id='".$id."';");
+
+      $stmt->execute(array( ':n' => $_POST['name'],
+                      ':o' => $_POST['owner'],
+                      ':f' => $_POST['financial'],
+                      ':du' => $years.$months.$days,
+                      ':mo' => $_POST['mode'],
+                      ':ra' => $_POST['rating'],
+                      ':co' => $_POST['complexity']));
+
+      header("Location: services-upload-success.php");
+      exit();
+  }else{
+      $_SESSION["message"] = "Please select a file to upload.";
+      header("Location: services-upload-booking.php");
+      exit();
+  }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -194,7 +233,7 @@
   <div class="feedback">
     <h2> Upload service booking form </h2>
     <div class="feedback1">
-      <form action="services-upload-success.php" method="post" enctype="multipart/form-data">
+      <form method="post" enctype="multipart/form-data">
         <br>
           <b>Select file to upload:</b>
         </br>
@@ -203,6 +242,7 @@
         </br>
         <br>
           <input type="submit" value="Upload" name="submit">
+          <p style="color:red;"><?php echo $_SESSION["message"]?></p>
         </br>
       </form>
     </div>

@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+$_SESSION["services_error_message"] = "";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -159,29 +166,29 @@
 
   <div class="grid-container">
     <div class="item1">
-      <a href="services-booking-page.php">
+      <a href="services-booking-page.php?type=bukit">
       <img id="bukit-ekspo" class="image-fluid" src="../assets/bukit ekspo.JPG" alt="Bukit Ekspo" width="1495px" height="295px">
-      <div class="left">BUKIT EKSPO</div>
+      <div class="left">FACILITIES AND INFRASTRUCTURE - CES, Gazebo, Astaka</div>
       </a>
     </div>
     <div class="item2">
-      <a href="services-machinery-booking.php">
+      <a href="services-machinery-booking.php?type=machineries">
       <img id="machineries" class="image-fluid" src="../assets/machineries1.jpg" alt="Machineries" width="1495px" height="295px">
-      <div class="left">MACHINERIES</div>
+      <div class="left">FARMING MACHINERY AND EQUIPMENT</div>
       </a>
     </div>
-    <div class="item3">
-      <a href="services-booking-page.php">
+    <!-- <div class="item3">
+      <a href="services-booking-page.php?type=lecture">
       <img id="meeting" class="image-fluid" src="../assets/lectureroom.jpg" alt="Meeting" width="1495px" height="295px">
       <div class="left">MEETING AND LECTURE ROOMS</div>
       </a>
     </div>
     <div class="item4">
-      <a href="services-booking-page.php">
+      <a href="services-booking-page.php?type=courses">
       <img id="agriculture" class="image-fluid" src="../assets/agriculturalcourses.jpg" alt="Agriculture" width="1495px" height="295px">
       <div class="left">AGRICULTURAL COURSES</div>
       </a>
-    </div>
+    </div> -->
     <p>
       <a href="services-order-page.php">Your Orders </a>
     </p>
