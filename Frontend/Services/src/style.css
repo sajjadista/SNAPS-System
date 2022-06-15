@@ -136,7 +136,7 @@ a{
     padding-right: 130px;
     padding-bottom: 50px;
     padding-left: 80px;
-    margin: 150px 350px 250px 600px;
+    margin: 150px 250px 50px 600px;
     /* text-align:center; */
   }
 
@@ -151,6 +151,7 @@ a{
     text-align: justify;
     color: green;
     text-indent: 550px;
+    margin-top: 100px;
   }
 
 
