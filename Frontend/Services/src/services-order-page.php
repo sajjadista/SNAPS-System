@@ -4,6 +4,18 @@ session_start();
 
 require_once '../../../Backend/pdo.php';
 
+if(isset($_POST["feedback"])){
+  header("Location: services-feedback-page.php?booking-id=".$_POST["feedback"]);
+
+  exit();
+}if(isset($_POST["cancel"])){
+  $stmt = $pdo->prepare('UPDATE `service_booking` SET status = "Cancelled" WHERE sbookid='.$_POST["cancel"].';');    
+  $stmt->execute();
+
+  header("Location: services-order-page.php");
+  exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -163,6 +175,7 @@ require_once '../../../Backend/pdo.php';
       </div>
     </div>
   </nav>
+  <form  method="post">
   <div class="grid-container">
     <?php
       $stmt = $pdo->query("SELECT * FROM service_booking ORDER BY serviceid DESC");
@@ -172,27 +185,22 @@ require_once '../../../Backend/pdo.php';
           $stmt2 = $pdo->query('SELECT name FROM `services` WHERE serviceid='.$row["serviceid"].';');
           $service = $stmt2->fetch(PDO::FETCH_ASSOC);
           echo $service["name"]." for ".$row["datetime"];
-          echo '</div><button class="button button1">Feedback</button><button class="button button2">Cancel</button></div>';
+          echo "<br>";
+          echo "Status: ".$row["status"]."</div>";
+            if(isset($row["feedback_form_path"])){
+              echo '<button class="button button1" type="button">Feedback submitted</button>';
+            }else{
+              echo '<button class="button button1" type="submit" name="feedback" value="'.$row["sbookid"].'">Feedback</button>';
+            }
+            echo '<button class="button button2" type="submit" name="cancel" value="'.$row["sbookid"].'">Cancel</button></div>';
+
       }
     ?>
-    <!-- <div class="item">
-      <div class="right">Bukit Ekspo booking for 18th April 2022</div>
-          <button class="button button1">Feedback</button>
-          <button class="button button2">Cancel</button>
-    </div>
-    <div class="item">
-      <div class="right">Machineries booking for 20th May 2022</div>
-        <a href="services-feedback-page.php">
-          <button class="button button1">Feedback</button>
-        </a>
-        <a href="services-home-page.php">
-          <button class="button button2">Cancel</button>
-        </a>
-    </div> -->
     <p>
       <a href="services-home-page.php">Back to Services </a>
     </p>
   </div>
+    </form>
 
   <footer>
     <div class="container-fluid px-3">
@@ -231,6 +239,7 @@ require_once '../../../Backend/pdo.php';
   </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+
+  </body>
 
 </html>

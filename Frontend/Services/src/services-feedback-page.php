@@ -1,3 +1,68 @@
+<?php
+
+session_start();
+
+require_once '../../../Backend/pdo.php';
+
+if(!isset($_SESSION['message']))
+{
+  $_SESSION['message'] = "";
+}
+
+if(isset($_GET['message']))
+{
+  $_SESSION['message']=$message;
+}
+
+$booking_exists = FALSE;
+$stmt = $pdo->query("SELECT sbookid FROM service_booking");
+
+while ( ($row = $stmt->fetch(PDO::FETCH_ASSOC)) ) {
+  if($_GET["booking-id"] == $row["sbookid"]){
+    $booking_exists = TRUE;
+    break;
+  }
+}
+
+if(!$booking_exists){
+  header("Location: services-order-page.php");
+  exit();
+}else{
+
+  if(isset($_POST["submit"])){
+    if($_FILES['fileToUpload']['size'] != 0){
+  
+        $uploaddir = '../../../Backend/Form folders/Feedback forms/';
+        $filename  = basename($_FILES['fileToUpload']['name']);
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $date = date('m-d-Y h-i-s a');
+        $new = "$date.$extension";
+        $uploadfile = $uploaddir . $new;
+        
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "$uploadfile")){
+          
+          $_SESSION["message"] = "";
+    
+          $stmt = $pdo->prepare('UPDATE `service_booking` SET feedback_form_path = :f WHERE sbookid='.$_GET["booking-id"].';');
+    
+          $stmt->execute(array(
+            ':f' => $uploadfile));
+  
+          header("Location: services-upload-success.php");
+        }else{
+          $_SESSION["message"] = "File upload unsuccessful.";
+          header("Location: services-feedback-page.php?booking-id=".$_GET["booking-id"]);
+        }
+    }else{
+        $_SESSION["message"] = "Please select a file to upload.";
+        header("Location: services-feedback-page.php?booking-id=".$_GET["booking-id"]);
+    }
+    exit();
+  }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -260,7 +325,7 @@
   <div class="feedback">
     <h2> Upload service feedback form </h2>
     <div class="feedback1">
-      <form action="services-feedback-success.php" method="post" enctype="multipart/form-data">
+      <form method="post" enctype="multipart/form-data">
         <br>
           <b>Select file to upload:</b>
         </br>
@@ -269,6 +334,7 @@
         </br>
         <br>
           <input type="submit" value="Upload" name="submit">
+          <p style="color:red;"><?php echo $_SESSION["message"]?></p>
         </br>
       </form>
     </div>
