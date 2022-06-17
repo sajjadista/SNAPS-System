@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+require_once '../../../Backend/pdo.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -157,16 +164,23 @@
     </div>
   </nav>
   <div class="grid-container">
-    <div class="item1">
+    <?php
+      $stmt = $pdo->query("SELECT * FROM service_booking ORDER BY serviceid DESC");
+      $i = 1;
+      while ( ($row = $stmt->fetch(PDO::FETCH_ASSOC)) ) {
+          echo '<div><div class="right">';
+          $stmt2 = $pdo->query('SELECT name FROM `services` WHERE serviceid='.$row["serviceid"].';');
+          $service = $stmt2->fetch(PDO::FETCH_ASSOC);
+          echo $service["name"]." for ".$row["datetime"];
+          echo '</div><button class="button button1">Feedback</button><button class="button button2">Cancel</button></div>';
+      }
+    ?>
+    <!-- <div class="item">
       <div class="right">Bukit Ekspo booking for 18th April 2022</div>
-        <a href="services-feedback-page.php">
           <button class="button button1">Feedback</button>
-        </a>
-        <a href="services-home-page.php">
           <button class="button button2">Cancel</button>
-        </a>
     </div>
-    <div class="item2">
+    <div class="item">
       <div class="right">Machineries booking for 20th May 2022</div>
         <a href="services-feedback-page.php">
           <button class="button button1">Feedback</button>
@@ -174,7 +188,7 @@
         <a href="services-home-page.php">
           <button class="button button2">Cancel</button>
         </a>
-    </div>
+    </div> -->
     <p>
       <a href="services-home-page.php">Back to Services </a>
     </p>

@@ -16,21 +16,30 @@ if(isset($_GET['message']))
 
 if(isset($_POST["submit"])){
   if($_FILES['fileToUpload']['size'] != 0){
-      $_SESSION["message"] = "";
-
-      $stmt = $pdo->query('SELECT serviceid FROM `services` WHERE name="'.$_SESSION["servicename"].'";');
-      $service_id = $stmt->fetch(PDO::FETCH_ASSOC);
-
-      $stmt = $pdo->prepare('INSERT INTO `service_booking` (`serviceid`, `datetime`) VALUES (:s, :b);');
-
-      $stmt->execute(array(
-        ':s' => $service_id["serviceid"],
-        ':b' => $_SESSION["bookingtime"]));
 
       $uploaddir = '../../../Backend/Form folders/Service booking forms/';
-      $uploadfile = $uploaddir . basename($_FILES['fileToUpload']['name']);
+      $filename  = basename($_FILES['fileToUpload']['name']);
+      $extension = pathinfo($filename, PATHINFO_EXTENSION);
+      $date = date('m-d-Y h-i-s a');
+      $new = "$date.$extension";
+      $uploadfile = $uploaddir . $new;
       
       if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "$uploadfile")){
+        
+        $_SESSION["message"] = "";
+  
+        $stmt = $pdo->query('SELECT serviceid FROM `services` WHERE name="'.$_SESSION["servicename"].'";');
+        $service_id = $stmt->fetch(PDO::FETCH_ASSOC);
+  
+        $stmt = $pdo->prepare('INSERT INTO `service_booking` (`serviceid`, `datetime`, `type`, `status`, `form_path`) VALUES (:si, :d, :t, :st, :f);');
+  
+        $stmt->execute(array(
+          ':si' => $service_id["serviceid"],
+          ':d' => $_SESSION["bookingtime"],
+          ':t' => $_SESSION["type"],
+          ':st' => "Pending",
+          ':f' => $uploadfile));
+
         header("Location: services-upload-success.php");
       }else{
         $_SESSION["message"] = "File upload unsuccessful.";
