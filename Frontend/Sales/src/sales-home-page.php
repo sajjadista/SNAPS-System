@@ -136,19 +136,19 @@ $conn->close();
 
         <div class="row mt-3 mx-2 me-3">
             <div class="col-md-8">
-                <a href="">
+                <a href="sales-home-page.php">
                     <div class="card">
                         <img src="../assets/ads board 1.png" alt="" />
                     </div>
                 </a>
             </div>
             <div class="col-md-4 px-0 py-0 mx-0 my-0">
-                <a href="">
+                <a href="sales-home-page.php">
                     <div class="card mb-1">
                         <img src="../assets/ads board 2.png" alt="" />
                     </div>
                 </a>
-                <a href="">
+                <a href="../../Services/src/services-home-page.php">
                     <div class="card">
                         <img src="../assets/ads board 3.png" alt="" />
                     </div>
@@ -160,30 +160,30 @@ $conn->close();
 
         <div class="col justify-content-center mx-3 my-3">
             <div class="col-md-12 d-flex justify-content-around category-container pt-2">
-                <button type="button" class="btn btn-link">
+                <a type="button" class="btn btn-link" href="sales-home-page.php">
                     <img src="../assets/category_img1.png" alt="" />
                     <p class="category-text">Groceries</p>
-                </button>
-                <button type="button" class="btn btn-link">
+                </a>
+                <a type="button" class="btn btn-link" href="../../Services/src/services-home-page.php">
                     <img src="../assets/category_img2.png" alt="" />
                     <p class="category-text">Services</p>
-                </button>
-                <button type="button" class="btn btn-link">
+                </a>
+                <a type="button" class="btn btn-link" href="sales-home-page.php">
                     <img src="../assets/category_img3.png" alt="" />
                     <p class="category-text">Vegetables</p>
-                </button>
-                <button type="button" class="btn btn-link">
+                </a>
+                <a type="button" class="btn btn-link" href="sales-home-page.php">
                     <img src="../assets/category_img4.png" alt="" />
                     <p class="category-text">Fruits</p>
-                </button>
-                <button type="button" class="btn btn-link">
+                </a>
+                <a type="button" class="btn btn-link" href="../../Services/src/services-home-page.php">
                     <img src="../assets/category_img5.png" alt="" />
                     <p class="category-text">Machinery</p>
-                </button>
-                <button type="button" class="btn btn-link">
+                </a>
+                <a type="button" class="btn btn-link" href="../../Services/src/services-home-page.php">
                     <img src="../assets/category_img6.png" alt="" />
                     <p class="category-text">Rental</p>
-                </button>
+                </a>
             </div>
         </div>
 
