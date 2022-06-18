@@ -2,25 +2,8 @@
 require_once '../../../Backend/pdo.php';
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "tpu");
-// if ( isset($_POST['email']) && isset($_POST['password'])) {
-//
-//     $email = $_POST['email'];
-//     $password = $_POST['password'];
-//     $hash = md5($password);
-//     $query = "SELECT * FROM user WHERE username='$email'and password='$hash'";
-//     $result = mysqli_query($conn,$query) ;
-//     $rows = mysqli_num_rows($result);
-//         if($rows==1){
-//         $_SESSION['email'] = $email;
-//
-//         header("Location: sales-home-page.php");
-//          }else{
-//         echo'<script>alert("Your Username and Password is Invalid")</script>';
-//
-//     }
-//
-// }
-$sql = " SELECT * FROM product ORDER BY pid DESC ";
+
+$sql = " SELECT * FROM product where stat='View' ORDER BY pid DESC ";
 $result = $conn->query($sql);
 $conn->close();
 
@@ -206,7 +189,8 @@ $conn->close();
 
         <!-- product-card -->
 
-
+<!-- <a href="sales-product-page.php?find=<?php echo $id;?>"> -->
+<a href="sales-product-page.php">
         <div class="col mx-3">
             <div class="row">
               <?php
@@ -214,14 +198,18 @@ $conn->close();
                              while($rows=$result->fetch_assoc())
                              {
                          ?>
+
                 <div class="col-md-3">
-                    <div class="card">
+                    <div class="card" href="sales-product-page.php">
                         <img src="../assets/product_img1.png" alt="" />
                         <div class="card-body">
                             <h6 class="card-title"><?php echo $rows['productname'];?></h6>
                             <div class="row justify-content-between">
                                 <div class="col d-flex justify-content-start">
                                     <span class="badge badge-home">Local seller</span>
+                                </div>
+                                <div class="col d-flex justify-content-start">
+                                    <span class="badge badge-home"><?php echo $rows['availability'];?></span>
                                 </div>
                                 <div class="col d-flex justify-content-end">
                                     <span class="price"><?php echo $rows['price'];?></span>
@@ -238,6 +226,7 @@ $conn->close();
 
             </div>
         </div>
+      </a>
 
 
 
@@ -246,11 +235,11 @@ $conn->close();
 
         <!-- see-more-button -->
 
-        <div class="row justify-content-center">
+        <!-- <div class="row justify-content-center">
             <button class="btn  see-more-button my-3" type="button">
                 See more
             </button>
-        </div>
+        </div> -->
 
         <!-- footer -->
         <footer>
