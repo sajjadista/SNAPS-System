@@ -1,3 +1,29 @@
+<?php
+
+session_start();
+
+require_once '../../../Backend/pdo.php';
+
+if(isset($_POST['submit'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $phone_number = $_POST['phone_number'];
+    $unit_number = $_POST['unit_number'];
+    $street = $_POST['street'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $postal_code = $_POST['postal_code'];
+    $inlineRadioOptions = $_POST['inlineRadioOptions'];
+    $sql = 'INSERT INTO user VALUES($email,$password,$phone_number,$unit_number,$street,$city,$state,$postal_code,$inlineRadioOptions)';
+    $stmt = $pdo->prepare($sql);
+    // $stmt = $pdo->prepare("INSERT INTO user (username,password,phone,unit,street,city,state,postal,gender)VALUES('$email','$password','$phone_number','$unit_number','$street','$city','$state','$postal_code','$inlineRadioOptions')");
+    $stmt->execute();
+
+  header("Location: sales-login-page.php");
+  exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,6 +66,7 @@
                       type="email"
                       name="email"
                       placeholder="Username"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -48,30 +75,34 @@
                       type="password"
                       name="password"
                       placeholder="Password"
+                      required
                     />
                   </div>
                   <div class="mb-3">
                     <input
                       class="form-control"
                       type="password"
-                      name="confirm-password"
+                      name="confirm_password"
                       placeholder="Confirm Password"
+                      required
                     />
                   </div>
                   <div class="mb-3">
                     <input
                       class="form-control"
                       type="text"
-                      name="phone-number"
+                      name="phone_number"
                       placeholder="Phone Number"
+                      required
                     />
                   </div>
                   <div class="mb-3">
                     <input
                       class="form-control"
                       type="text"
-                      name="unit-number"
+                      name="unit_number"
                       placeholder="Unit Number"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -80,6 +111,7 @@
                       type="text"
                       name="street"
                       placeholder="Street"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -88,6 +120,7 @@
                       type="text"
                       name="city"
                       placeholder="City"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -96,14 +129,16 @@
                       type="text"
                       name="state"
                       placeholder="State"
+                      required
                     />
                   </div>
                   <div class="mb-3">
                     <input
                       class="form-control"
                       type="text"
-                      name="postal-code"
+                      name="postal_code"
                       placeholder="Postal Code"
+                      required
                     />
                   </div>
                   <div>
@@ -115,7 +150,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="inlineRadio1"
-                      value="option1"
+                      value="Male"
                     />
                     <label class="form-check-label" for="inlineRadio1">Male</label>
                   </div>
@@ -125,7 +160,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="inlineRadio2"
-                      value="option2"
+                      value="Female"
                     />
                     <label class="form-check-label" for="inlineRadio2">Female</label>
                   </div>
@@ -134,10 +169,10 @@
                       Sign up
                     </button>
                   </div>
-                
-          
+
+
                   <p class="text-center">
-                    Have an account already?<a class="link-text" href=""> Sign in</a>
+                    Have an account already?<a class="link-text" href="sales-login-page.php"> Sign in</a>
                   </p>
                 </form>
               </div>

@@ -82,7 +82,7 @@
             <div class="card mb-5">
               <div class="card-body d-flex flex-column align-items-center">
                 <p class="text-center py-5">
-                  Don’t have an account?<a class="link-text" href="">
+                  Don’t have an account?<a class="link-text" href="sales-signup-page.php">
                     Sign up</a
                   >
                 </p>
