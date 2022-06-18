@@ -2,33 +2,54 @@
 require_once '../../../Backend/pdo.php';
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "tpu");
-if(!isset($_SESSION["email"])){
-  header("Location: login.php");
-}
 
-if (isset($_POST["submit"])) {
+
+if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_number']) && isset($_POST['unit_number']) && isset($_POST['street']) && isset($_POST['city']) && isset($_POST['state'])
+  && isset($_POST['postal_code']) && isset($_POST['inlineRadioOptions'])) {
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
-    $password = mysqli_real_escape_string($conn, md5($_POST["password"]));
-    $confirm_password = mysqli_real_escape_string($conn, md5($_POST["confirm_password"]));
+    $password = mysqli_real_escape_string($conn, ($_POST["password"]));
+    $confirm_password = mysqli_real_escape_string($conn,  ($_POST["confirm_password"]));
     $phone_number = mysqli_real_escape_string($conn, $_POST["phone_number"]);
     $unit_number = mysqli_real_escape_string($conn, $_POST["unit_number"]);
-    $street = mysqli_real_escape_string($conn, $_POST["streer"]);
+    $street = mysqli_real_escape_string($conn, $_POST["street"]);
     $city = mysqli_real_escape_string($conn,$_POST["city"]);
     $state = mysqli_real_escape_string($conn,$_POST["state"]);
     $postal_code = mysqli_real_escape_string($conn,$_POST["postal_code"]);
     $inlineRadioOptions = mysqli_real_escape_string($conn,$_POST['inlineRadioOptions']);
 
-    if ($password === $confirm_password) {
-            $sql = "UPDATE user SET username='$email', password='$password', phone='$phone_number', unit='$unit_number', street='$street', city='$city', state='$state', postal='$postal_code', gender='$inlineRadioOptions' WHERE username='{$_SESSION["email"]}'";
-            $result = mysqli_query($conn, $sql);
-            if ($result) {
-                echo "<script>alert('Profile Updated successfully.');</script>";
-            } else {
-                echo "<script>alert('Profile can not Updated.');</script>";
-            }
+    $queryget = mysqli_query($conn, "SELECT password FROM user WHERE username='$email'") or
+    die(mysqli_error());
+    $row = mysqli_fetch_assoc($queryget);
+    $currentpasswordDB = $row['password'];
+
+    if ($password!=$currentpasswordDB){
+    if ($password == $confirm_password) {
+      $password = mysqli_real_escape_string($conn, md5($_POST["password"]));
+      $sql = "UPDATE user SET username='$email', password='$password', phone='$phone_number', unit='$unit_number', street='$street', city='$city', state='$state', postal='$postal_code', gender='$inlineRadioOptions' WHERE username='{$_SESSION["email"]}'";
+      $result = mysqli_query($conn, $sql);
+      if ($result) {
+          echo'<script>alert("Profile has been successfully updated.")</script>';
+          header('Refresh: 0; url=sales-home-page.php');
+      } else {
+          echo "<script>alert('Profile update has failed.')</script>";
+          header('Refresh: 0; url=sales-profile-page.php');
+      }
     } else {
-        echo "<script>alert('Password not matched. Please try again.');</script>";
+        echo "<script>alert('Password did not match. Please try again.')</script>";
+        header('Refresh: 0; url=sales-profile-page.php');
+      }
     }
+    else{
+    $sql = "UPDATE user SET username='$email', password='$password', phone='$phone_number', unit='$unit_number', street='$street', city='$city', state='$state', postal='$postal_code', gender='$inlineRadioOptions' WHERE username='{$_SESSION["email"]}'";
+    $result = mysqli_query($conn, $sql);
+    if ($result) {
+        echo'<script>alert("Profile has been successfully updated.")</script>';
+        header('Refresh: 0; url=sales-home-page.php');
+    } else {
+        echo "<script>alert('Profile update has failed.')</script>";
+        header('Refresh: 0; url=sales-profile-page.php');
+    }
+  }
 }
 ?>
 
@@ -103,8 +124,9 @@ if (isset($_POST["submit"])) {
                     <input
                       class="form-control"
                       type="password"
-                      name="confirm-password"
+                      name="confirm_password"
                       placeholder="Confirm Password"
+                      value = "<?php echo $row['password']; ?>"
                       required
                     />
                   </div>
@@ -112,7 +134,7 @@ if (isset($_POST["submit"])) {
                     <input
                       class="form-control"
                       type="number"
-                      name="phone-number"
+                      name="phone_number"
                       placeholder="Phone Number"
                       value = "<?php echo $row['phone']; ?>"
                       required
@@ -122,7 +144,7 @@ if (isset($_POST["submit"])) {
                     <input
                       class="form-control"
                       type="number"
-                      name="unit-number"
+                      name="unit_number"
                       placeholder="Unit Number"
                       value = "<?php echo $row['unit']; ?>"
                       required
@@ -162,7 +184,7 @@ if (isset($_POST["submit"])) {
                     <input
                       class="form-control"
                       type="number"
-                      name="postal-code"
+                      name="postal_code"
                       placeholder="Postal Code"
                       value = "<?php echo $row['postal']; ?>"
                       required
@@ -178,7 +200,7 @@ if (isset($_POST["submit"])) {
                       name="inlineRadioOptions"
                       <?php if($row['gender'] == "Male") { echo "checked"; }?>
                       id="inlineRadio1"
-                      value="option1"
+                      value="Male"
                     />
                     <label class="form-check-label" for="inlineRadio1"
                       >Male</label
@@ -191,7 +213,7 @@ if (isset($_POST["submit"])) {
                       name="inlineRadioOptions"
                       <?php if($row['gender'] == "Female") { echo "checked"; }?>
                       id="inlineRadio2"
-                      value="option2"
+                      value="Female"
                     />
                     <label class="form-check-label" for="inlineRadio2"
                       >Female</label
