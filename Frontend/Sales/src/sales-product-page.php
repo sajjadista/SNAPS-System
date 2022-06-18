@@ -1,3 +1,21 @@
+<?php
+require_once '../../../Backend/pdo.php';
+session_start();
+$conn = mysqli_connect("localhost", "root", "", "tpu");
+
+$sql = " SELECT * FROM product where pid= ";
+$result = $conn->query($sql);
+$conn->close();
+
+
+// $connection = mysqli_connect("localhost", "root", "", "insurance");
+// if(isset($_GET['find'])){
+// $id =$_GET['find'];
+// $sql_find ="DELETE FROM product WHERE pid='$id'";
+// $result = $connection-> query($sql_delete);
+// }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
