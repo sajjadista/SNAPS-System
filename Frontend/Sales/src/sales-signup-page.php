@@ -4,7 +4,9 @@ session_start();
 
 require_once '../../../Backend/pdo.php';
 
-if(isset($_POST['submit'])){
+if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_number']) && isset($_POST['unit_number']) && isset($_POST['street']) && isset($_POST['city']) && isset($_POST['state'])
+  && isset($_POST['postal_code']) && isset($_POST['inlineRadioOptions'])) {
+
     $email = $_POST['email'];
     $password = $_POST['password'];
     $phone_number = $_POST['phone_number'];
