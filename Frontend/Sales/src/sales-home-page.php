@@ -198,12 +198,12 @@ $conn->close();
                              while($rows=$result->fetch_assoc())
                              {
                          ?>
-
-  <a href="sales-product-page.php?update=<?php echo $rows['pid'];?>">
-
                 <div class="col-md-3" >
+                    <a href="sales-product-page.php?update=<?php echo $rows['pid'];?>">
                     <div class="card" >
+
                         <img src="../assets/product_img1.png" alt="" />
+
                         <div class="card-body">
                             <h6 class="card-title"><?php echo $rows['productname'];?></h6>
                             <div class="row justify-content-between">
@@ -217,11 +217,13 @@ $conn->close();
                                     <span class="price"><?php echo $rows['price'];?></span>
                                 </div>
                             </div>
+
                         </div>
                     </div>
+                    </a>
                     <br>
                 </div>
-                </a>
+
                 <?php
                                }
                            ?>
