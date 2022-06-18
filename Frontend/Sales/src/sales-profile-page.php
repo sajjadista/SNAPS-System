@@ -1,3 +1,37 @@
+<?php
+require_once '../../../Backend/pdo.php';
+session_start();
+$conn = mysqli_connect("localhost", "root", "", "tpu");
+if(!isset($_SESSION["email"])){
+  header("Location: login.php");
+}
+
+if (isset($_POST["submit"])) {
+    $email = mysqli_real_escape_string($conn, $_POST["email"]);
+    $password = mysqli_real_escape_string($conn, md5($_POST["password"]));
+    $confirm_password = mysqli_real_escape_string($conn, md5($_POST["confirm_password"]));
+    $phone_number = mysqli_real_escape_string($conn, $_POST["phone_number"]);
+    $unit_number = mysqli_real_escape_string($conn, $_POST["unit_number"]);
+    $street = mysqli_real_escape_string($conn, $_POST["streer"]);
+    $city = mysqli_real_escape_string($conn,$_POST["city"]);
+    $state = mysqli_real_escape_string($conn,$_POST["state"]);
+    $postal_code = mysqli_real_escape_string($conn,$_POST["postal_code"]);
+    $inlineRadioOptions = mysqli_real_escape_string($conn,$_POST['inlineRadioOptions']);
+
+    if ($password === $confirm_password) {
+            $sql = "UPDATE user SET username='$email', password='$password', phone='$phone_number', unit='$unit_number', street='$street', city='$city', state='$state', postal='$postal_code', gender='$inlineRadioOptions' WHERE username='{$_SESSION["email"]}'";
+            $result = mysqli_query($conn, $sql);
+            if ($result) {
+                echo "<script>alert('Profile Updated successfully.');</script>";
+            } else {
+                echo "<script>alert('Profile can not Updated.');</script>";
+            }
+    } else {
+        echo "<script>alert('Password not matched. Please try again.');</script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,12 +70,23 @@
                 </i>
                 <br>
                 <form class="text-center w-75" method="post">
+
+                  <?php
+
+                  $sql = "SELECT * FROM user WHERE username='{$_SESSION["email"]}'";
+                  $result = mysqli_query($conn, $sql);
+                  if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                  ?>
+
                   <div class="mb-3">
                     <input
                       class="form-control"
                       type="email"
                       name="email"
                       placeholder="Username"
+                      value = "<?php echo $row['username']; ?>"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -50,6 +95,8 @@
                       type="password"
                       name="password"
                       placeholder="Password"
+                      value = "<?php echo $row['password']; ?>"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -58,22 +105,27 @@
                       type="password"
                       name="confirm-password"
                       placeholder="Confirm Password"
+                      required
                     />
                   </div>
                   <div class="mb-3">
                     <input
                       class="form-control"
-                      type="text"
+                      type="number"
                       name="phone-number"
                       placeholder="Phone Number"
+                      value = "<?php echo $row['phone']; ?>"
+                      required
                     />
                   </div>
                   <div class="mb-3">
                     <input
                       class="form-control"
-                      type="text"
+                      type="number"
                       name="unit-number"
                       placeholder="Unit Number"
+                      value = "<?php echo $row['unit']; ?>"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -82,6 +134,8 @@
                       type="text"
                       name="street"
                       placeholder="Street"
+                      value = "<?php echo $row['street']; ?>"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -90,6 +144,8 @@
                       type="text"
                       name="city"
                       placeholder="City"
+                      value = "<?php echo $row['city']; ?>"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -98,14 +154,18 @@
                       type="text"
                       name="state"
                       placeholder="State"
+                      value = "<?php echo $row['state']; ?>"
+                      required
                     />
                   </div>
                   <div class="mb-3">
                     <input
                       class="form-control"
-                      type="text"
+                      type="number"
                       name="postal-code"
                       placeholder="Postal Code"
+                      value = "<?php echo $row['postal']; ?>"
+                      required
                     />
                   </div>
                   <div>
@@ -116,6 +176,7 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
+                      <?php if($row['gender'] == "Male") { echo "checked"; }?>
                       id="inlineRadio1"
                       value="option1"
                     />
@@ -128,6 +189,7 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
+                      <?php if($row['gender'] == "Female") { echo "checked"; }?>
                       id="inlineRadio2"
                       value="option2"
                     />
@@ -135,6 +197,12 @@
                       >Female</label
                     >
                   </div>
+
+                  <?php
+                    }
+                  }
+                  ?>
+
                   <div class="mb-3">
                     <button class="btn main-button d-block w-100" type="submit">
                       Edit

@@ -106,7 +106,7 @@ $conn->close();
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#">
+                                        <a class="nav-link active" href="sales-profile-page.php">
                                             <i class="fas fa-user-circle nav-icon"></i> <span class="nav-text">
                                                 User</span>
                                         </a>
