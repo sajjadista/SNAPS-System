@@ -64,6 +64,7 @@ if ( isset($_POST['email']) && isset($_POST['password'])) {
                       type="email"
                       name="email"
                       placeholder="Username"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -72,6 +73,7 @@ if ( isset($_POST['email']) && isset($_POST['password'])) {
                       type="password"
                       name="password"
                       placeholder="Password"
+                      required
                     />
                   </div>
                   <div class="mb-3">

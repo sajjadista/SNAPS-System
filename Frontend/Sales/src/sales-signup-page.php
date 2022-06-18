@@ -19,6 +19,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
     $stmt = $pdo->prepare("INSERT INTO user (username,password,phone,unit,street,city,state,postal,gender)VALUES('$email','$hash','$phone_number','$unit_number','$street','$city','$state','$postal_code','$inlineRadioOptions')");
     $stmt->execute();
 
+ 
   header("Location: sales-login-page.php");
   return;
 }
