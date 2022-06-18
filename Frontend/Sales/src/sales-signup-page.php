@@ -92,7 +92,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                   <div class="mb-3">
                     <input
                       class="form-control"
-                      type="text"
+                      type="number"
                       name="phone_number"
                       placeholder="Phone Number"
                       required
@@ -101,7 +101,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                   <div class="mb-3">
                     <input
                       class="form-control"
-                      type="text"
+                      type="number"
                       name="unit_number"
                       placeholder="Unit Number"
                       required
@@ -137,7 +137,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                   <div class="mb-3">
                     <input
                       class="form-control"
-                      type="text"
+                      type="number"
                       name="postal_code"
                       placeholder="Postal Code"
                       required

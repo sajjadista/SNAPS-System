@@ -34,7 +34,7 @@
                 <i
                   class="fas fa-user-circle profile-icon mt-3">
                 </i>
-                <p class="main-text">User</p>
+                <br>
                 <form class="text-center w-75" method="post">
                   <div class="mb-3">
                     <input
