@@ -7,7 +7,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
 
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $hash = md5($password);
     $phone_number = $_POST['phone_number'];
     $unit_number = $_POST['unit_number'];
     $street = $_POST['street'];

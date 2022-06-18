@@ -6,7 +6,7 @@ if ( isset($_POST['email']) && isset($_POST['password'])) {
 
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $hash = md5($password);
     $query = "SELECT * FROM user WHERE username='$email'and password='$hash'";
     $result = mysqli_query($conn,$query) ;
     $rows = mysqli_num_rows($result);
@@ -15,25 +15,10 @@ if ( isset($_POST['email']) && isset($_POST['password'])) {
 
         header("Location: sales-home-page.php");
          }else{
-        header("Location: sales-login-page.php");
+        echo'<script>alert("Your Username and Password is Invalid")</script>';
 
     }
 
-  //
-  //   $hash = password_hash($password, PASSWORD_DEFAULT);
-  //   $phone_number = $_POST['phone_number'];
-  //   $unit_number = $_POST['unit_number'];
-  //   $street = $_POST['street'];
-  //   $city = $_POST['city'];
-  //   $state = $_POST['state'];
-  //   $postal_code = $_POST['postal_code'];
-  //   $inlineRadioOptions = $_POST['inlineRadioOptions'];
-  //
-  //   $stmt = $pdo->prepare("INSERT INTO user (username,password,phone,unit,street,city,state,postal,gender)VALUES('$email','$hash','$phone_number','$unit_number','$street','$city','$state','$postal_code','$inlineRadioOptions')");
-  //   $stmt->execute();
-  //
-  // header("Location: sales-login-page.php");
-  // return;
 }
 
 ?>
