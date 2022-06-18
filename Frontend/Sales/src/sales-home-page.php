@@ -5,6 +5,28 @@ $conn = mysqli_connect("localhost", "root", "", "tpu");
 
 $sql = " SELECT * FROM product where stat='View' ORDER BY pid DESC ";
 $result = $conn->query($sql);
+
+
+if ( isset($_GET['Fruits'])) {
+
+  $sql = " SELECT * FROM product where stat='View' and category='Fruits' ORDER BY pid DESC ";
+  $result = $conn->query($sql);
+
+}
+
+if ( isset($_GET['Vegetables'])) {
+
+  $sql = " SELECT * FROM product where stat='View' and category='Vegetables' ORDER BY pid DESC ";
+  $result = $conn->query($sql);
+
+}
+if ( isset($_GET['Groceries'])) {
+
+  $sql = " SELECT * FROM product where stat='View' and category='Groceries' ORDER BY pid DESC ";
+  $result = $conn->query($sql);
+
+}
+
 $conn->close();
 
 ?>
@@ -160,7 +182,7 @@ $conn->close();
 
         <div class="col justify-content-center mx-3 my-3">
             <div class="col-md-12 d-flex justify-content-around category-container pt-2">
-                <a type="button" class="btn btn-link" href="sales-home-page.php">
+                <a type="button" class="btn btn-link" href="sales-home-page.php?Groceries">
                     <img src="../assets/category_img1.png" alt="" />
                     <p class="category-text">Groceries</p>
                 </a>
@@ -168,11 +190,11 @@ $conn->close();
                     <img src="../assets/category_img2.png" alt="" />
                     <p class="category-text">Services</p>
                 </a>
-                <a type="button" class="btn btn-link" href="sales-home-page.php">
+                <a type="button" class="btn btn-link" href="sales-home-page.php?Vegetables">
                     <img src="../assets/category_img3.png" alt="" />
                     <p class="category-text">Vegetables</p>
                 </a>
-                <a type="button" class="btn btn-link" href="sales-home-page.php">
+                <a type="button" class="btn btn-link" href="sales-home-page.php?Fruits">
                     <img src="../assets/category_img4.png" alt="" />
                     <p class="category-text">Fruits</p>
                 </a>
