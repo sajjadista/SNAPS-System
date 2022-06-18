@@ -16,8 +16,11 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
     $state = $_POST['state'];
     $postal_code = $_POST['postal_code'];
     $inlineRadioOptions = $_POST['inlineRadioOptions'];
-    $sql = 'INSERT INTO user VALUES($email,$password,$phone_number,$unit_number,$street,$city,$state,$postal_code,$inlineRadioOptions)';
-    $stmt = $pdo->prepare($sql);
+
+    $sql = "INSERT INTO user (username,password,phone,unit,street,city,state,postal,gender) VALUES(':email',':password',':phone_number',':unit_number',':street',':city',':state',':postal_code',':inlineRadioOptions') "
+
+    // $sql = 'INSERT INTO user VALUES($email,$password,$phone_number,$unit_number,$street,$city,$state,$postal_code,$inlineRadioOptions)';
+    // $stmt = $pdo->prepare($sql);
     // $stmt = $pdo->prepare("INSERT INTO user (username,password,phone,unit,street,city,state,postal,gender)VALUES('$email','$password','$phone_number','$unit_number','$street','$city','$state','$postal_code','$inlineRadioOptions')");
     $stmt->execute();
 
