@@ -3,16 +3,15 @@ require_once '../../../Backend/pdo.php';
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "tpu");
 
-$sql = " SELECT * FROM product where pid= ";
+if(isset($_GET['update'])){
+$pid =$_GET['update'];
+$sql = "SELECT * FROM product WHERE pid='$pid'";
 $result = $conn->query($sql);
 $conn->close();
+}
 
-
-// $connection = mysqli_connect("localhost", "root", "", "insurance");
-// if(isset($_GET['find'])){
-// $id =$_GET['find'];
-// $sql_find ="DELETE FROM product WHERE pid='$id'";
-// $result = $connection-> query($sql_delete);
+// if(!isset($_SESSION["productname"])){
+//   header("Location: sales-home-page.php");
 // }
 
 ?>
@@ -189,11 +188,17 @@ $conn->close();
     </nav>
 
     <!-- product -->
+    <?php
+
+    // LOOP TILL END OF DATA
+    while($rows=$result->fetch_assoc())
+    {
+    ?>
     <div class="col product-info px-3">
       <div class="col description-box mx-3 py-3 my-3">
         <div class="row category-nav pt-3 mb-3">
           <p>
-            Pusat Pertanian Putra > Food > Package Foods > Hot Sauce Anchovies
+            Pusat Pertanian Putra > Food > Package Foods > <?php echo $rows['productname'];?>
           </p>
         </div>
         <div class="row">
@@ -218,7 +223,7 @@ $conn->close();
           <div class="col-md-8 ps-3">
             <div class="col">
               <span class="badge">Local seller</span>
-              <span>Hot Sauce Anchovies</span>
+              <span><?php echo $rows['productname'];?></span>
             </div>
             <div class="col pt-3">
               <span class="rating">5.0</span>
@@ -227,10 +232,10 @@ $conn->close();
               <span class="fa fa-star"></span>
               <span class="fa fa-star"></span>
               <span class="fa fa-star"></span>
-              <span>| 3 ratings | 5 sold</span>
+              <span>| 3 ratings |<?php echo $rows['sold'];?> sold</span>
             </div>
             <div class="col pt-3">
-              <h1>RM 12.20</h1>
+              <h1>RM <?php echo $rows['price'];?></h1>
             </div>
             <div class="row">
               <div class="col">
@@ -303,7 +308,7 @@ $conn->close();
                   pattern=""
                   inputmode=""
                 /><input type="button" value="+" class="plus" />
-                <span>100 pieces available</span>
+                <span><?php echo $rows['quantity'];?> pieces available</span>
               </div>
             </div>
             <button type="button" class="btn btn-outline-success cart-button my-3 px-3 fw-bold w-25">
@@ -317,11 +322,16 @@ $conn->close();
           <div class="container-fluid">
             <h5 class="fw-bold">Description</h5>
             <p>
-              Hot Sauce Anchovies made out of fresh anchovies that has been sun
-              dried for 3 days. Spicy, sweet and salty.
+            <?php echo $rows['description'];?>
             </p>
           </div>
         </div>
+
+        <?php
+          }
+
+        ?>
+
 
         <!-- recommendation -->
         <div class="row my-3">

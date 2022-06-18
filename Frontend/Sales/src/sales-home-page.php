@@ -189,9 +189,9 @@ $conn->close();
 
         <!-- product-card -->
 
-<!-- <a href="sales-product-page.php?find=<?php echo $id;?>"> -->
-<a href="sales-product-page.php">
+
         <div class="col mx-3">
+
             <div class="row">
               <?php
                              // LOOP TILL END OF DATA
@@ -199,8 +199,10 @@ $conn->close();
                              {
                          ?>
 
-                <div class="col-md-3">
-                    <div class="card" href="sales-product-page.php">
+  <a href="sales-product-page.php?update=<?php echo $rows['pid'];?>">
+
+                <div class="col-md-3" >
+                    <div class="card" >
                         <img src="../assets/product_img1.png" alt="" />
                         <div class="card-body">
                             <h6 class="card-title"><?php echo $rows['productname'];?></h6>
@@ -219,14 +221,12 @@ $conn->close();
                     </div>
                     <br>
                 </div>
-
+                </a>
                 <?php
                                }
                            ?>
-
             </div>
         </div>
-      </a>
 
 
 
