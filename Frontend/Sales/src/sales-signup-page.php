@@ -1,8 +1,6 @@
 <?php
-
-session_start();
-
 require_once '../../../Backend/pdo.php';
+session_start();
 
 if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_number']) && isset($_POST['unit_number']) && isset($_POST['street']) && isset($_POST['city']) && isset($_POST['state'])
   && isset($_POST['postal_code']) && isset($_POST['inlineRadioOptions'])) {
@@ -17,15 +15,11 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
     $postal_code = $_POST['postal_code'];
     $inlineRadioOptions = $_POST['inlineRadioOptions'];
 
-    $sql = "INSERT INTO user (username,password,phone,unit,street,city,state,postal,gender) VALUES(':email',':password',':phone_number',':unit_number',':street',':city',':state',':postal_code',':inlineRadioOptions') "
-
-    // $sql = 'INSERT INTO user VALUES($email,$password,$phone_number,$unit_number,$street,$city,$state,$postal_code,$inlineRadioOptions)';
-    // $stmt = $pdo->prepare($sql);
-    // $stmt = $pdo->prepare("INSERT INTO user (username,password,phone,unit,street,city,state,postal,gender)VALUES('$email','$password','$phone_number','$unit_number','$street','$city','$state','$postal_code','$inlineRadioOptions')");
+    $stmt = $pdo->prepare("INSERT INTO user (username,password,phone,unit,street,city,state,postal,gender)VALUES('$email','$password','$phone_number','$unit_number','$street','$city','$state','$postal_code','$inlineRadioOptions')");
     $stmt->execute();
 
   header("Location: sales-login-page.php");
-  exit();
+  return;
 }
 
 ?>
