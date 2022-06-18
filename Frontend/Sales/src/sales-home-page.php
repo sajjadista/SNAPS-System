@@ -205,16 +205,15 @@ $conn->close();
         </div>
 
         <!-- product-card -->
-        <?php
-                       // LOOP TILL END OF DATA
-                       while($rows=$result->fetch_assoc())
-                       {
-                   ?>
 
 
         <div class="col mx-3">
             <div class="row">
-
+              <?php
+                             // LOOP TILL END OF DATA
+                             while($rows=$result->fetch_assoc())
+                             {
+                         ?>
                 <div class="col-md-3">
                     <div class="card">
                         <img src="../assets/product_img1.png" alt="" />
@@ -231,16 +230,18 @@ $conn->close();
                         </div>
                     </div>
                 </div>
+
+                <?php
+                               }
+                           ?>
+
             </div>
         </div>
 
-      </div>
-  </div>
-        <br>
 
-        <?php
-                       }
-                   ?>
+
+
+
 
         <!-- see-more-button -->
 
