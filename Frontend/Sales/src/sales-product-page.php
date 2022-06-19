@@ -12,13 +12,20 @@ $sql = "SELECT * FROM product WHERE pid='$pid'";
 $result = $conn->query($sql);
 
 
-  if (  isset($_POST['quantity'])) {
 
+
+  if (  isset($_POST['quantity'])) {
+    $getval = $result->fetch_assoc();
+    $oldquantity = $getval['quantity'];
 
       $uid = $_SESSION["uid"];
       $quantity = $_POST['quantity'];
       $stmt = $conn->prepare("INSERT INTO cart (uid,pid,quantity,paymentstatus)VALUES('$uid','$pid','$quantity','Not payed')");
       $stmt->execute();
+      $newquantity = $oldquantity-$quantity;
+      $stmts = "UPDATE product SET quantity='$newquantity' where pid='$pid'";
+      $result = mysqli_query($conn, $stmts);
+
       header("Location: sales-checkout-page.php");
       return;
       }
