@@ -230,6 +230,7 @@ $conn->close();
 					<div class="product-table-card-info-text-deep product-table-index-sm">
 						<?php $total_price = $rows['quantity'] * $rows['price']?>
 						<p>RM <?php echo $total_price?></p>
+						<input name="total_price" type="hidden">
 					</div>
 					<div class="product-table-card-info-action product-table-index-sm">
 						<br><br><br>
@@ -238,6 +239,7 @@ $conn->close();
 				</div>
 				<?php
 					$grand_total += $total_price;
+					 $_SESSION['grand_total'] = $grand_total;
 					}
 				?>
 
