@@ -2,8 +2,10 @@
 require_once '../../../Backend/pdo.php';
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "tpu");
+
 $uid = $_SESSION['uid'];
-$sql = "$sql = " SELECT purchase.puruid,purchase.uid,purchase.pid,purchase.quantity,purchase.time,purchase.total,product.productname,product.price FROM purchase INNER JOIN product ON purchase.pid=product.pid where cart.uid='$uid' ORDER BY purchase.pid DESC "; SELECT * FROM purchase where uid = '$uid'";
+
+$sql = " SELECT purchase.puruid,purchase.uid,purchase.pid,purchase.quantity,purchase.time,purchase.total,product.productname,product.price FROM purchase INNER JOIN product ON purchase.pid=product.pid where purchase.uid='$uid' ORDER BY purchase.pid DESC ";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -144,8 +146,8 @@ $conn->close();
 					</div>
 				</div>
 				<?php
-					while($rows=$result->fetch_assoc())
-					{
+				while($rows=$result->fetch_assoc())
+				{
 				?>
 				<div class="product-table-item d-flex">
 					<div class="product-table-index-la">
@@ -171,7 +173,7 @@ $conn->close();
 
 					</div>
 					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<?php $total_price = $rows['quantity'] * $rows['price']?>
+
 						<p>RM <?php echo $total_price?></p>
 						<input name="total_price" type="hidden">
 					</div>
@@ -180,11 +182,12 @@ $conn->close();
 						<a href="sales-checkout-page.php?delete=<?php echo $rows["pid"];?>" onClick="return confirm('Are you sure you want to remove this product?');">Delete</a>
 					</div>
 				</div>
+				<?php
+					}
+				?>
 			</div>
 		</div>
-		<?php
-			}
-		?>
+
 
 		<!-- Footer -->
 		<footer class="sales-footer container-fluid">
