@@ -18,7 +18,6 @@ if ( isset($_POST['email']) && isset($_POST['password'])) {
         header("Location: sales-home-page.php");
          }else{
         echo'<script>alert("Your Username and Password is Invalid")</script>';
-
     }
 
 }
