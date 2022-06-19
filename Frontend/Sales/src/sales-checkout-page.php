@@ -19,8 +19,7 @@ if(isset($_GET["delete"])){
 	header('Refresh: 0; url=sales-checkout-page.php');
 }
 
-<<<<<<< HEAD
-=======
+
 if (isset($_POST['total_price'])) {
 
 	$result_select = mysqli_query($conn,$sql);
@@ -43,7 +42,7 @@ if (isset($_POST['total_price'])) {
 
 $conn->close();
 
->>>>>>> 37f614d2051b2a0600637b6fb8123d1204d7c5d5
+
 ?>
 
 <!DOCTYPE html>
