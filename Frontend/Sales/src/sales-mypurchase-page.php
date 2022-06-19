@@ -5,7 +5,7 @@ $conn = mysqli_connect("localhost", "root", "", "tpu");
 
 $uid = $_SESSION['uid'];
 
-$sql = " SELECT purchase.puruid,purchase.uid,purchase.pid,purchase.quantity,purchase.time,purchase.total,product.productname,product.price FROM purchase INNER JOIN product ON purchase.pid=product.pid where purchase.uid='$uid' ORDER BY purchase.pid DESC ";
+$sql = " SELECT purchase.purid,purchase.uid,purchase.pid,purchase.quantity,purchase.time,purchase.total,product.productname,product.price FROM purchase INNER JOIN product ON purchase.pid=product.pid where purchase.uid='$uid' ORDER BY purchase.pid DESC ";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -174,7 +174,7 @@ $conn->close();
 					</div>
 					<div class="product-table-card-info-text-deep product-table-index-sm">
 
-						<p>RM <?php echo $total_price?></p>
+						<p>RM <?php echo  $rows['total'];?></p>
 						<input name="total_price" type="hidden">
 					</div>
 					<div class="product-table-card-info-action product-table-index-sm">
