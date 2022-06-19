@@ -3,9 +3,18 @@ require_once '../../../Backend/pdo.php';
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "tpu");
 $uid = $_SESSION['uid'];
-$sql = " SELECT * FROM purchase where uid ='$uid' ORDER BY pid DESC ";
+$sql = " SELECT * FROM cart where uid ='$uid' ORDER BY pid DESC ";
 $result = $conn->query($sql);
 
+
+if (isset($_POST['done'])) {
+	$stmts = "UPDATE cart SET paymentstatus='Payed' where uid='$uid'";
+	$result = mysqli_query($conn, $stmts);
+		echo'<script>alert("Payment Completed.")</script>';
+		header('Refresh: 0; url=sales-home-page.php');
+}
+
+//header("Location: sales-checkout-page.php");
 
 //$conn->close();
 
@@ -106,9 +115,11 @@ $result = $conn->query($sql);
 		</nav>
 
 		<!-- content -->
+
 		<?php
 
 		?>
+		<form method="post">
 		<div class="content-payment container-fluid">
 			<div class="content-payment-title">
 				<div class="content-payment-title-text">
@@ -122,6 +133,7 @@ $result = $conn->query($sql);
 					</div>
 					<div class="content-payment-list-data">
 						<p>RM <?php echo $_SESSION['grand_total'] ?></p>
+						<input name="done" type="hidden" value="done">
 					</div>
 				</div>
 				<!-- <div class="content-payment-list-row">
@@ -142,13 +154,14 @@ $result = $conn->query($sql);
 				</div>
 			</div>
 			<div class="content-payment-btn">
-				<a type="button" class="btn btn-success" href='sales-done.php'>Pay</a>
+				<button type="submit" class="btn btn-success" >Pay</button>
 			</div>
 		</div>
-
+</form>
 		<?php
 
 		?>
+
 
 		<!-- footer (hidden) -->
 
