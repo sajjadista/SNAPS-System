@@ -176,6 +176,7 @@ $conn->close();
 						<p>Actions</p>
 					</div>
 				</div>
+
 				<?php
 					while($rows=$result->fetch_assoc())
 					{
@@ -187,7 +188,8 @@ $conn->close();
 								<img width="100%" src="../assets/product_img1.png" >
 							</div>
 							<div class="product-table-card-info">
-								<h6 class="product-table-card-info-title"><?php echo $rows['pid'];?></h6>
+								<div class="product-table-card-info-title">
+									<p><?php echo $rows['pid'];?></p>
 								</div>
 								<div class="product-table-card-info-tag">
 									<span class="badge badge-light">Local Seller</span>
@@ -205,12 +207,16 @@ $conn->close();
 						<p>RM24.40</p>
 					</div>
 					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="sales-checkout-page.php?delete">Delete</a></p>
+						<p><a href="">Delete</a></p>
 					</div>
 				</div>
 				<?php
 					}
 				?>
+
+				<div class="product-table-total">
+				<div class="row">
+					<div class="col-sm-6">
 
 					</div>
 					<div class="col-sm-3">
