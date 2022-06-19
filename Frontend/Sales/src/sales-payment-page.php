@@ -1,3 +1,16 @@
+<?php
+require_once '../../../Backend/pdo.php';
+session_start();
+$conn = mysqli_connect("localhost", "root", "", "tpu");
+$uid = $_SESSION['uid'];
+$sql = " SELECT * FROM purchase where uid ='$uid' ORDER BY pid DESC ";
+$result = $conn->query($sql);
+
+
+//$conn->close();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -93,6 +106,9 @@
 		</nav>
 
 		<!-- content -->
+		<?php
+
+		?>
 		<div class="content-payment container-fluid">
 			<div class="content-payment-title">
 				<div class="content-payment-title-text">
@@ -105,17 +121,17 @@
 						<p>Total Payment</p>
 					</div>
 					<div class="content-payment-list-data">
-						<p>RM 95.90</p>
+						<p>RM <?php echo $_SESSION['grand_total'] ?></p>
 					</div>
 				</div>
-				<div class="content-payment-list-row">
+				<!-- <div class="content-payment-list-row">
 					<div class="content-payment-list-item">
 						<p>Order ID</p>
 					</div>
 					<div class="content-payment-list-data">
 						<p>1234567</p>
 					</div>
-				</div>
+				</div> -->
 				<div class="content-payment-list-row">
 					<div class="content-payment-list-item">
 						<p>Payment method</p>
@@ -129,6 +145,10 @@
 				<button type="button" class="btn btn-success">Pay</button>
 			</div>
 		</div>
+
+		<?php
+
+		?>
 
 		<!-- footer (hidden) -->
 

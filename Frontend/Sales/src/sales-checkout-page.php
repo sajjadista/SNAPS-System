@@ -19,6 +19,31 @@ if(isset($_GET["delete"])){
 	header('Refresh: 0; url=sales-checkout-page.php');
 }
 
+<<<<<<< HEAD
+=======
+if (isset($_POST['total_price'])) {
+
+	$result_select = mysqli_query($conn,$sql);
+	$rows = array();
+	while($row = mysqli_fetch_array($result_select)){
+		$rows[] = $row;
+	}
+	foreach($rows as $row){
+			$quantity = stripslashes($row['quantity']);
+			$total_price = stripcslashes($row['quantity']*$row['price']);
+			$pid = stripslashes($row['pid']);
+			$time = date("Y-m-d");
+			$stmt = $conn->prepare("INSERT INTO purchase (uid,pid,quantity,total,time)VALUES('$uid','$pid','$quantity','$total_price','$time')");
+			$stmt->execute();
+	}
+
+		header("Location: sales-payment-page.php");
+		return;
+		}
+
+$conn->close();
+
+>>>>>>> 37f614d2051b2a0600637b6fb8123d1204d7c5d5
 ?>
 
 <!DOCTYPE html>
@@ -166,7 +191,7 @@ if(isset($_GET["delete"])){
 				?>
 			</div>
 		</div>
-
+<form method="post">
 		<div class="cart-content container-fluid">
 			<div class="product-table-panel container-fluid">
 				<div class="product-table-index d-flex">
@@ -213,10 +238,12 @@ if(isset($_GET["delete"])){
 					</div>
 					<div class="product-table-card-info-text product-table-index-sm">
 						<p><?php echo $rows['quantity'];?></p>
+
 					</div>
 					<div class="product-table-card-info-text-deep product-table-index-sm">
 						<?php $total_price = $rows['quantity'] * $rows['price']?>
 						<p>RM <?php echo $total_price?></p>
+						<input name="total_price" type="hidden">
 					</div>
 					<div class="product-table-card-info-action product-table-index-sm">
 						<br><br><br>
@@ -225,6 +252,7 @@ if(isset($_GET["delete"])){
 				</div>
 				<?php
 					$grand_total += $total_price;
+					 $_SESSION['grand_total'] = $grand_total;
 					}
 				?>
 
@@ -243,9 +271,9 @@ if(isset($_GET["delete"])){
 
 					</div>
 				</div>
+
 					<div class="row">
 						<div class="col-sm-6">
-
 						</div>
 						<div class="col-sm-3">
 							<div class="product-table-total-sum">
@@ -254,14 +282,17 @@ if(isset($_GET["delete"])){
 								</p>
 							</div>
 						</div>
+
 						<div class="col-sm-3">
-							<button type="button" class="shopping-option-p">Place order</button>
+							<button type="submit" class="shopping-option-p">Place order</button>
 						</div>
+
 					</div>
+
 				</div>
 			</div>
 		</div>
-
+</form>
 		<!-- Footer -->
 		<footer class="sales-footer container-fluid">
 			<div class="row">
