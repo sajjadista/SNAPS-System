@@ -1,3 +1,25 @@
+<?php
+require_once '../../../Backend/pdo.php';
+session_start();
+$conn = mysqli_connect("localhost", "root", "", "tpu");
+
+if (isset($_SESSION["uid"])){
+$uid = $_SESSION['uid'];
+$sql = " SELECT * FROM cart where paymentstatus='Not Payed' AND uid='$uid' ORDER BY pid DESC ";
+$result = $conn->query($sql);
+
+if(isset($_POST["delete"])){
+	$id = $_POST["delete"];
+	$stmt = $db->prepare("DELETE FROM cart WHERE pid=:pid");
+	$stmt->execute(array(":pid"=>$id));
+
+	echo'<script>alert("Product has been successfully deleted.")</script>';
+}
+}
+$conn->close();
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,7 +35,7 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		
+
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="navbar-payment container-fluid">
@@ -33,7 +55,7 @@
 							</li>
 						</ul>
 					</div>
-		
+
 					<div class="col-sm-9">
 						<div class="navbar-payment-link-group">
 							<div class="d-flex fx-end">
@@ -103,7 +125,7 @@
 				</div>
 			</div>
 		</nav>
-		
+
 		<!-- Content -->
 		<div class="content-address container-fluid">
 			<div class="content-address-search container-fluid">
@@ -131,11 +153,11 @@
 							<a href="">Change</a>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="cart-content container-fluid">
 			<div class="product-table-panel container-fluid">
 				<div class="product-table-index d-flex">
@@ -155,6 +177,42 @@
 						<p>Actions</p>
 					</div>
 				</div>
+				<?php
+					while($rows=$result->fetch_assoc())
+					{
+				?>
+				<div class="product-table-item d-flex">
+					<div class="product-table-index-la">
+						<div class="product-table-card d-flex">
+							<div class="product-table-card-img">
+								<img width="100%" src="../assets/product_img1.png" >
+							</div>
+							<div class="product-table-card-info">
+								<h6 class="product-table-card-info-title"><?php echo $rows['pid'];?></h6>
+								</div>
+								<div class="product-table-card-info-tag">
+									<span class="badge badge-light">Local Seller</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="product-table-card-info-text product-table-index-sm">
+						<p>RM12.20</p>
+					</div>
+					<div class="product-table-card-info-text product-table-index-sm">
+						<p>2</p>
+					</div>
+					<div class="product-table-card-info-text-deep product-table-index-sm">
+						<p>RM24.40</p>
+					</div>
+					<div class="product-table-card-info-action product-table-index-sm">
+						<p><a href="sales-checkout-page.php?delete">Delete</a></p>
+					</div>
+				</div>
+				<?php
+					}
+				?>
+
 				<div class="product-table-item d-flex">
 					<div class="product-table-index-la">
 						<div class="product-table-card d-flex">
@@ -184,7 +242,7 @@
 						<p><a href="">Delete</a></p>
 					</div>
 				</div>
-				
+
 				<div class="product-table-item d-flex">
 					<div class="product-table-index-la">
 						<div class="product-table-card d-flex">
@@ -214,7 +272,7 @@
 						<p><a href="">Delete</a></p>
 					</div>
 				</div>
-				
+
 				<div class="product-table-item d-flex">
 					<div class="product-table-index-la">
 						<div class="product-table-card d-flex">
@@ -244,37 +302,7 @@
 						<p><a href="">Delete</a></p>
 					</div>
 				</div>
-				
-				<div class="product-table-item d-flex">
-					<div class="product-table-index-la">
-						<div class="product-table-card d-flex">
-							<div class="product-table-card-img">
-								<img width="100%" src="../assets/product_img1.png" >
-							</div>
-							<div class="product-table-card-info">
-								<div class="product-table-card-info-title">
-									<p>Hot sauce anchovies</p>
-								</div>
-								<div class="product-table-card-info-tag">
-									<span class="badge badge-light">Local Seller</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>RM12.20</p>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>2</p>
-					</div>
-					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<p>RM24.40</p>
-					</div>
-					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="">Delete</a></p>
-					</div>
-				</div>
-				
+
 				<div class="product-table-item d-flex">
 					<div class="product-table-index-la">
 						<div class="product-table-card d-flex">
@@ -307,7 +335,7 @@
 				<div class="product-table-total">
 				<div class="row">
 					<div class="col-sm-6">
-					
+
 					</div>
 					<div class="col-sm-3">
 						<div class="product-table-total-sub">
@@ -316,16 +344,16 @@
 						</div>
 					</div>
 					<div class="col-sm-3">
-						
+
 					</div>
 				</div>
 					<div class="row">
 						<div class="col-sm-6">
-						
+
 						</div>
 						<div class="col-sm-3">
 							<div class="product-table-total-sum">
-								<p>Total (5 items): 
+								<p>Total (5 items):
 									<span class="total-money">RM91.90</span>
 								</p>
 							</div>
@@ -337,7 +365,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- Footer -->
 		<footer class="sales-footer container-fluid">
 			<div class="row">
@@ -360,7 +388,7 @@
 								<path
 									d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
 							</svg>
-		
+
 							+603 9769 7282/7301
 						</p>
 					</div>
@@ -373,7 +401,7 @@
 								<path
 									d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
 							</svg>
-		
+
 							+603 8942 4076
 						</p>
 					</div>
@@ -384,7 +412,7 @@
 								<path
 									d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
 							</svg>
-		
+
 							dir.tpu@upm.edu.my
 						</p>
 					</div>
@@ -397,10 +425,10 @@
 					</div>
 				</div>
 				<div class="col-sm-2">
-		
+
 				</div>
 			</div>
 		</footer>
-		
+
 	</body>
 </html>

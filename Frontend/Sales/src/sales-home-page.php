@@ -134,6 +134,7 @@ $conn->close();
                         <div class="col-md-2 d-flex justify-content-center">
                             <div class="row">
                                 <div class="col">
+                                  <a class="nav-link active" href="sales-cart-page.php">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                 </div>
                                 <div class="col">
