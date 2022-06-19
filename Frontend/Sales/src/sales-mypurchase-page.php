@@ -3,7 +3,7 @@ require_once '../../../Backend/pdo.php';
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "tpu");
 $uid = $_SESSION['uid'];
-$sql = " SELECT * FROM purchase where uid = '$uid'";
+$sql = "$sql = " SELECT purchase.puruid,purchase.uid,purchase.pid,purchase.quantity,purchase.time,purchase.total,product.productname,product.price FROM purchase INNER JOIN product ON purchase.pid=product.pid where cart.uid='$uid' ORDER BY purchase.pid DESC "; SELECT * FROM purchase where uid = '$uid'";
 $result = $conn->query($sql);
 
 $conn->close();
