@@ -19,7 +19,6 @@ if ( isset($_POST['email']) && isset($_POST['password'])) {
          }else{
         echo'<script>alert("Your Username and Password is Invalid")</script>';
     }
-
 }
 
 ?>
