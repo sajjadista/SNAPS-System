@@ -41,6 +41,7 @@ if (isset($_POST['total_price'])) {
 
 $conn->close();
 
+
 ?>
 
 <!DOCTYPE html>

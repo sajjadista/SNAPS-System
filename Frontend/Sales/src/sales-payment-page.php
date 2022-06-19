@@ -136,14 +136,7 @@ if (isset($_POST['done'])) {
 						<input name="done" type="hidden" value="done">
 					</div>
 				</div>
-				<!-- <div class="content-payment-list-row">
-					<div class="content-payment-list-item">
-						<p>Order ID</p>
-					</div>
-					<div class="content-payment-list-data">
-						<p>1234567</p>
-					</div>
-				</div> -->
+			
 				<div class="content-payment-list-row">
 					<div class="content-payment-list-item">
 						<p>Payment method</p>
