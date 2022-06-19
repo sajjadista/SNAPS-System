@@ -8,6 +8,15 @@ $uid = $_SESSION['uid'];
 $sql = " SELECT purchase.purid,purchase.uid,purchase.pid,purchase.quantity,purchase.time,purchase.total,product.productname,product.price FROM purchase INNER JOIN product ON purchase.pid=product.pid where purchase.uid='$uid' ORDER BY purchase.pid DESC ";
 $result = $conn->query($sql);
 
+if(isset($_GET["delete"])){
+	$id = $_GET["delete"];
+	$stmt = $pdo->prepare("DELETE FROM purchase WHERE pid=:pid");
+	$stmt->execute(array(":pid"=>$id));
+
+	echo'<script>alert("Purchase has been successfully deleted.")</script>';
+	header('Refresh: 0; url=sales-mypurchase-page.php');
+}
+
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -174,12 +183,12 @@ $conn->close();
 					</div>
 					<div class="product-table-card-info-text-deep product-table-index-sm">
 
-						<p>RM <?php echo  $rows['total'];?></p>
+						<p>RM <?php echo $rows['total'];?></p>
 						<input name="total_price" type="hidden">
 					</div>
 					<div class="product-table-card-info-action product-table-index-sm">
 						<br><br><br>
-						<a href="sales-checkout-page.php?delete=<?php echo $rows["pid"];?>" onClick="return confirm('Are you sure you want to remove this product?');">Delete</a>
+						<a href="sales-mypurchase-page.php?delete=<?php echo $rows["pid"];?>" onClick="return confirm('Are you sure you want to remove this product?');">Delete</a>
 					</div>
 				</div>
 				<?php
