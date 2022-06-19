@@ -5,7 +5,9 @@ $conn = mysqli_connect("localhost", "root", "", "tpu");
 
 $uid = $_SESSION['uid'];
 $sql = " SELECT cart.uid,cart.pid,cart.quantity,cart.paymentstatus,product.productname,product.price FROM cart INNER JOIN product ON cart.pid=product.pid where cart.paymentstatus='Not payed' AND cart.uid='$uid' ORDER BY cart.pid DESC ";
+$sql2 = " SELECT * FROM user where uid = '$uid'";
 $result = $conn->query($sql);
+$result2 = $conn->query($sql2);
 $rowcount=mysqli_num_rows($result);
 
 if(isset($_GET["delete"])){
@@ -16,8 +18,6 @@ if(isset($_GET["delete"])){
 	echo'<script>alert("Product has been successfully deleted.")</script>';
 	header('Refresh: 0; url=sales-checkout-page.php');
 }
-
-$conn->close();
 
 ?>
 
@@ -40,7 +40,7 @@ $conn->close();
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="navbar-payment container-fluid">
-				<a class="navbar-payment-brand" href="#">
+				<a class="navbar-payment-brand" href="sales-home-page.php">
 					<img width="150" src="../assets/SNAPS_PAC.png" alt="SNAPS_PAC.png">
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -61,7 +61,7 @@ $conn->close();
 						<div class="navbar-payment-link-group">
 							<div class="d-flex fx-end">
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="sales-mypurchase-page.php">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
 											<path
@@ -71,7 +71,7 @@ $conn->close();
 									</a>
 								</div>
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="https://www.facebook.com/pacupm/">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
 											<path
@@ -86,7 +86,7 @@ $conn->close();
 									</a>
 								</div>
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="../../Services/src/services-home-page.php">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-box2-fill" viewBox="0 0 16 16">
 											<path
@@ -95,7 +95,7 @@ $conn->close();
 										Services</a>
 								</div>
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="sales-profile-page.php?profile">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
 											<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -130,6 +130,10 @@ $conn->close();
 		<!-- Content -->
 		<div class="content-address container-fluid">
 			<div class="content-address-search container-fluid">
+				<?php
+					while($rows=$result2->fetch_assoc())
+					{
+				?>
 				<div class="content-address-search-bar row">
 					<div class="col-sm-10 d-flex">
 						<div class="content-address-selector-title">
@@ -140,10 +144,11 @@ $conn->close();
 							Delivery address</p>
 						</div>
 						<div class="content-address-selector-user">
-							<p>User (+60) 01123456789</p>
+							<p><?php echo $rows['username'];?></p>
+							<p><?php echo $rows['phone'];?></p>
 						</div>
 						<div class="content-address-selector-detail">
-							<p>No. 77, Jalan P10Z, Petaling Jaya, 64400 Selangor</p>
+							<p>No. <?php echo $rows['unit'].", ".$rows['street'].", ".$rows['city'].", ".$rows['postal'].", ".$rows['state'];?></p>
 						</div>
 					</div>
 					<div class="col-sm-2 d-flex">
@@ -151,11 +156,14 @@ $conn->close();
 							<p>Default</p>
 						</div>
 						<div class="content-address-selector-action">
-							<a href="">Change</a>
+							<a href="sales-delivery-address-page.php">Change</a>
 						</div>
 					</div>
 
 				</div>
+				<?php
+					}
+				?>
 			</div>
 		</div>
 

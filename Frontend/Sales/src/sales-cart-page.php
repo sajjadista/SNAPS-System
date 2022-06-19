@@ -5,102 +5,123 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Shopping cart</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+				integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+				crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<!--bootstrap cdn-->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-		</script>
+				integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+				crossorigin="anonymous" />
 		<link rel="stylesheet" href="style.css">
 	</head>
+	<style>
+	.cards {
+ display: flex;
+ justify-content: space-between;
+}
+	</style>
 	<body>
 
 		<!-- Navbar -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="navbar-payment container-fluid">
-				<a class="navbar-payment-brand" href="#">
-					<img width="150" src="../assets/SNAPS_PAC.png" alt="SNAPS_PAC.png">
-				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-					aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse row" id="navbarSupportedContent">
-					<div class="col-sm-3">
-						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="#">Shopping cart</a>
-							</li>
-						</ul>
+		<nav class="navbar navbar-light navbar-expand-md just">
+			<div class="container-fluid">
+					<div class="col-md-2 d-flex justify-content-center">
+							<img src="../assets/upm_logo_vertical.png" height="100" />
 					</div>
+					<div class="col">
+							<div class="row">
+									<div class="col">
+											<a class="navbar-brand justify-content-center" href="sales-home-page.php">
+													<img src="../assets/SNAPS_PAC.png" height="70" />
+											</a>
+									</div>
+									<div class="col">
+											<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+													data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+													aria-expanded="false" aria-label="Toggle navigation">
+													<span class="navbar-toggler-icon"></span>
+											</button>
+											<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+													<ul class="navbar-nav">
+															<li class="nav-item">
+																	<a class="nav-link active" href="https://www.facebook.com/pacupm/"><svg class="nav-icon"
+																					xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em"
+																					height="1em" fill="currentColor">
+																					<!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+																					<path
+																							d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z">
+																					</path>
+																			</svg><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg"
+																					viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
+																					<!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+																					<path
+																							d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
+																					</path>
+																			</svg>
+																			<span class="nav-text">Follow us</span> </a><a class="nav-link"
+																			href="#"></a>
+															</li>
 
-					<div class="col-sm-9">
-						<div class="navbar-payment-link-group">
-							<div class="d-flex fx-end">
-								<div class="navbar-payment-link">
-									<a href="">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-											fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
-											<path
-												d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
-										</svg>
-										My Purchase
-									</a>
-								</div>
-								<div class="navbar-payment-link">
-									<a href="">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-											fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-											<path
-												d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-										</svg>
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-											fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-											<path
-												d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-										</svg>
-										Follow us
-									</a>
-								</div>
-								<div class="navbar-payment-link">
-									<a href="">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-											fill="currentColor" class="bi bi-box2-fill" viewBox="0 0 16 16">
-											<path
-												d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4h-8.5ZM15 4.667V5H1v-.333L1.5 4h6V1h1v3h6l.5.667Z" />
-										</svg>
-										Services</a>
-								</div>
-								<div class="navbar-payment-link">
-									<a href="">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-											fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-											<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-											<path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-										</svg>
-										User</a>
-								</div>
+															<li class="nav-item">
+																	<a class="nav-link active" href="sales-mypurchase-page.php">
+																			<i class="fas fa-shopping-bag nav-icon"></i> <span class="nav-text">My
+																					Purchase</span>
+																	</a>
+															</li>
+															<li class="nav-item">
+																	<a class="nav-link active" href="../../Services/src/services-home-page.php">
+																			<i class="fas fa-hands-helping nav-icon"></i> <span class="nav-text">
+																					Services</span>
+																	</a>
+															</li>
+															<li class="nav-item">
+																	<a class="nav-link active" href="sales-profile-page.php?profile">
+																			<i class="fas fa-user-circle nav-icon"></i> <span class="nav-text">
+																					Profile</span>
+																	</a>
+															</li>
+															<li class="nav-item">
+																	<a class="nav-link active" href="sales-login-page.php">
+																			<i class="fas fa-sign-out nav-icon"></i> <span class="nav-text">
+																					Logout</span>
+																	</a>
+															</li>
+													</ul>
+											</div>
+									</div>
 							</div>
-							<div class="navbar-payment-lang-dropbtn">
-								<form class="container-fluid" method="post">
-									<input class="navbar-payment-form-control me-2" type="text"
-										placeholder="Search for groceries, services, anything">
-								</form>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn dropdown-toggle btn-langs" id="navbarDropdown"
-										data-bs-toggle="dropdown" aria-expanded="false">
-										EN
-									</button>
-									<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<li><a class="dropdown-item" href="#">EN</a></li>
-										<li><a class="dropdown-item" href="#">BM</a></li>
-									</ul>
-								</div>
+
+							<div class="row">
+									<div class="col-md-10">
+											<form class="form-inline md-form form-lg mt-0 pt-1">
+													<input class="form-control form-control-md ml-3 w-100" type="text"
+															placeholder="🔎 Search for groceries, services, anything" aria-label="Search" />
+											</form>
+											<p class="tagline text-center pt-1">
+													Bringing freshness closer to you!
+											</p>
+									</div>
+									<div class="col-md-2 d-flex justify-content-center">
+											<div class="row">
+													<div class="col">
+														<a class="nav-link active" href="sales-checkout-page.php">
+															<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+													</div>
+													<div class="col">
+															<div class="dropdown">
+																	<button class="btn btn-secondary dropdown-toggle" type="button"
+																			id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+																			EN
+																	</button>
+																	<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+																			<li><a class="dropdown-item" href="#">BM</a></li>
+																	</ul>
+															</div>
+													</div>
+											</div>
+									</div>
 							</div>
-						</div>
 					</div>
-				</div>
 			</div>
 		</nav>
 
@@ -153,7 +174,7 @@
 						<p><a href="">Delete</a></p>
 					</div>
 				</div>
-				
+
 				<div class="product-table-item d-flex">
 					<div class="product-table-index-la">
 						<div class="product-table-card d-flex">
@@ -183,7 +204,7 @@
 						<p><a href="">Delete</a></p>
 					</div>
 				</div>
-				
+
 				<div class="product-table-item d-flex">
 					<div class="product-table-index-la">
 						<div class="product-table-card d-flex">
@@ -213,7 +234,7 @@
 						<p><a href="">Delete</a></p>
 					</div>
 				</div>
-				
+
 				<div class="product-table-item d-flex">
 					<div class="product-table-index-la">
 						<div class="product-table-card d-flex">
@@ -243,7 +264,7 @@
 						<p><a href="">Delete</a></p>
 					</div>
 				</div>
-				
+
 				<div class="product-table-item d-flex">
 					<div class="product-table-index-la">
 						<div class="product-table-card d-flex">
@@ -276,12 +297,12 @@
 				<div class="product-table-total">
 					<div class="row">
 						<div class="col-sm-6">
-						
+
 						</div>
 						<div class="col-sm-3">
 							<div class="product-table-total-sum">
 								<p>Shopping option</p>
-								<p>Total (5 items): 
+								<p>Total (5 items):
 									<span class="total-money">RM91.90</span>
 								</p>
 							</div>

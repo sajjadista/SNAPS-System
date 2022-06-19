@@ -67,7 +67,7 @@ if ( isset($_GET['Groceries'])) {
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            <a class="navbar-brand justify-content-center" href="#">
+                            <a class="navbar-brand justify-content-center" href="sales-home-page.php">
                                 <img src="../assets/SNAPS_PAC.png" height="70" />
                             </a>
                         </div>
@@ -80,7 +80,7 @@ if ( isset($_GET['Groceries'])) {
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#"><svg class="nav-icon"
+                                        <a class="nav-link active" href="https://www.facebook.com/pacupm/"><svg class="nav-icon"
                                                 xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em"
                                                 height="1em" fill="currentColor">
                                                 <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
@@ -99,21 +99,27 @@ if ( isset($_GET['Groceries'])) {
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#">
+                                        <a class="nav-link active" href="sales-mypurchase-page.php">
                                             <i class="fas fa-shopping-bag nav-icon"></i> <span class="nav-text">My
                                                 Purchase</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#">
+                                        <a class="nav-link active" href="../../Services/src/services-home-page.php">
                                             <i class="fas fa-hands-helping nav-icon"></i> <span class="nav-text">
                                                 Services</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="sales-profile-page.php">
+                                        <a class="nav-link active" href="sales-profile-page.php?profile">
                                             <i class="fas fa-user-circle nav-icon"></i> <span class="nav-text">
-                                                User</span>
+                                                Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="sales-login-page.php">
+                                            <i class="fas fa-sign-out nav-icon"></i> <span class="nav-text">
+                                                Logout</span>
                                         </a>
                                     </li>
                                 </ul>

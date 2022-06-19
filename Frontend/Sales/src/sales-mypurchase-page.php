@@ -17,7 +17,7 @@
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="navbar-payment container-fluid">
-				<a class="navbar-payment-brand" href="#">
+				<a class="navbar-payment-brand" href="sales-home-page.php">
 					<img width="150" src="../assets/SNAPS_PAC.png" alt="SNAPS_PAC.png">
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -38,7 +38,7 @@
 						<div class="navbar-payment-link-group">
 							<div class="d-flex fx-end">
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="sales-mypurchase-page.php">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
 											<path
@@ -48,7 +48,7 @@
 									</a>
 								</div>
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="https://www.facebook.com/pacupm/">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
 											<path
@@ -63,7 +63,7 @@
 									</a>
 								</div>
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="../../Services/src/services-home-page.php">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-box2-fill" viewBox="0 0 16 16">
 											<path
@@ -72,7 +72,7 @@
 										Services</a>
 								</div>
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="sales-profile-page.php?profile">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
 											<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />

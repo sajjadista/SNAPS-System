@@ -70,7 +70,7 @@ $result = $conn->query($sql);
         <div class="col">
           <div class="row">
             <div class="col">
-              <a class="navbar-brand justify-content-center" href="#">
+              <a class="navbar-brand justify-content-center" href="sales-home-page.php">
                 <img src="../assets/SNAPS_PAC.png" height="70" />
               </a>
             </div>
@@ -92,7 +92,7 @@ $result = $conn->query($sql);
               >
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" href="#"
+                    <a class="nav-link active" href="https://www.facebook.com/pacupm/"
                       ><svg
                         class="nav-icon"
                         xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ $result = $conn->query($sql);
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="sales-mypurchase-page.php">
                       <i class="fas fa-shopping-bag nav-icon"></i> <span
                         class="nav-text"
                         >My Purchase</span
@@ -131,7 +131,7 @@ $result = $conn->query($sql);
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="../../Services/src/services-home-page.php">
                       <i class="fas fa-hands-helping nav-icon"></i> <span
                         class="nav-text"
                       >
@@ -140,7 +140,7 @@ $result = $conn->query($sql);
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="sales-profile-page.php?profile">
                       <i class="fas fa-user-circle nav-icon"></i> <span
                         class="nav-text"
                       >

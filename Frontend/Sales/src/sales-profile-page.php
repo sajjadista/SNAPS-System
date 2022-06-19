@@ -3,7 +3,56 @@ require_once '../../../Backend/pdo.php';
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "tpu");
 
+if ( isset($_GET['change'])){
+  if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_number']) && isset($_POST['unit_number']) && isset($_POST['street']) && isset($_POST['city']) && isset($_POST['state'])
+    && isset($_POST['postal_code']) && isset($_POST['inlineRadioOptions'])) {
+      $email = mysqli_real_escape_string($conn, $_POST["email"]);
+      $password = mysqli_real_escape_string($conn, ($_POST["password"]));
+      $confirm_password = mysqli_real_escape_string($conn,  ($_POST["confirm_password"]));
+      $phone_number = mysqli_real_escape_string($conn, $_POST["phone_number"]);
+      $unit_number = mysqli_real_escape_string($conn, $_POST["unit_number"]);
+      $street = mysqli_real_escape_string($conn, $_POST["street"]);
+      $city = mysqli_real_escape_string($conn,$_POST["city"]);
+      $state = mysqli_real_escape_string($conn,$_POST["state"]);
+      $postal_code = mysqli_real_escape_string($conn,$_POST["postal_code"]);
+      $inlineRadioOptions = mysqli_real_escape_string($conn,$_POST['inlineRadioOptions']);
 
+      $queryget = mysqli_query($conn, "SELECT password FROM user WHERE username='$email'") or
+      die(mysqli_error());
+      $row = mysqli_fetch_assoc($queryget);
+      $currentpasswordDB = $row['password'];
+
+      if ($password!=$currentpasswordDB){
+      if ($password == $confirm_password) {
+        $password = mysqli_real_escape_string($conn, md5($_POST["password"]));
+        $sql = "UPDATE user SET username='$email', password='$password', phone='$phone_number', unit='$unit_number', street='$street', city='$city', state='$state', postal='$postal_code', gender='$inlineRadioOptions' WHERE username='{$_SESSION["email"]}'";
+        $result = mysqli_query($conn, $sql);
+        if ($result) {
+            echo'<script>alert("Profile has been successfully updated.")</script>';
+            header('Refresh: 0; url=sales-checkout-page.php');
+        } else {
+            echo "<script>alert('Profile update has failed.')</script>";
+            header('Refresh: 0; url=sales-profile-page.php');
+        }
+      } else {
+          echo "<script>alert('Password did not match. Please try again.')</script>";
+          header('Refresh: 0; url=sales-profile-page.php');
+        }
+      }
+      else{
+      $sql = "UPDATE user SET username='$email', password='$password', phone='$phone_number', unit='$unit_number', street='$street', city='$city', state='$state', postal='$postal_code', gender='$inlineRadioOptions' WHERE username='{$_SESSION["email"]}'";
+      $result = mysqli_query($conn, $sql);
+      if ($result) {
+          echo'<script>alert("Profile has been successfully updated.")</script>';
+          header('Refresh: 0; url=sales-checkout-page.php');
+      } else {
+          echo "<script>alert('Profile update has failed.')</script>";
+          header('Refresh: 0; url=sales-profile-page.php');
+      }
+    }
+  }
+}
+if( isset($_GET['profile'])){
 if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_number']) && isset($_POST['unit_number']) && isset($_POST['street']) && isset($_POST['city']) && isset($_POST['state'])
   && isset($_POST['postal_code']) && isset($_POST['inlineRadioOptions'])) {
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
@@ -51,6 +100,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
     }
   }
 }
+}
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +144,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
 
                   <?php
 
-                  $sql = "SELECT * FROM user WHERE username='{$_SESSION["email"]}'";
+                  $sql = "SELECT * FROM user WHERE uid='{$_SESSION["uid"]}'";
                   $result = mysqli_query($conn, $sql);
                   if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {

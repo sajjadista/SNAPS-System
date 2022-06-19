@@ -1,3 +1,10 @@
+<?php
+require_once '../../../Backend/pdo.php';
+session_start();
+$conn = mysqli_connect("localhost", "root", "", "tpu");
+$uid = $_SESSION['uid'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -17,7 +24,7 @@
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="navbar-payment container-fluid">
-				<a class="navbar-payment-brand" href="#">
+				<a class="navbar-payment-brand" href="sales-home-page.php">
 					<img width="150" src="../assets/SNAPS_PAC.png" alt="SNAPS_PAC.png">
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -29,16 +36,16 @@
 					<div class="col-sm-3">
 						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="#">Checkout</a>
+								<a class="nav-link active" aria-current="page" href="#">Delivery Address</a>
 							</li>
 						</ul>
 					</div>
-					
+
 					<div class="col-sm-9">
 						<div class="navbar-payment-link-group">
 							<div class="d-flex fx-end">
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="sales-mypurchase-page.php">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 											class="bi bi-bell-fill" viewBox="0 0 16 16">
 											<path
@@ -48,7 +55,7 @@
 									</a>
 								</div>
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="https://www.facebook.com/pacupm/">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 											class="bi bi-instagram" viewBox="0 0 16 16">
 											<path
@@ -63,7 +70,7 @@
 									</a>
 								</div>
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="../../Services/src/services-home-page.php">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 											class="bi bi-box2-fill" viewBox="0 0 16 16">
 											<path
@@ -72,7 +79,7 @@
 										Services</a>
 								</div>
 								<div class="navbar-payment-link">
-									<a href="">
+									<a href="sales-profile-page.php?profile">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 											class="bi bi-person-circle" viewBox="0 0 16 16">
 											<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -84,7 +91,7 @@
 							</div>
 							<div class="navbar-payment-lang-dropbtn">
 								<!-- <form class="container-fluid" method="post">
-									<input class="navbar-payment-form-control me-2" type="text" 
+									<input class="navbar-payment-form-control me-2" type="text"
 									placeholder="Search for groceries, services, anything">
 								</form> -->
 								<div class="btn-group" role="group">
@@ -106,6 +113,7 @@
 
 
 		<!-- Content -->
+
 		<div class="content-address container-fluid">
 			<div class="content-address-search container-fluid">
 				<div class="content-address-search-bar">
@@ -113,17 +121,25 @@
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor-fill" viewBox="0 0 16 16">
 					  <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
 					</svg>
-					
+
 					Delivery address</p>
 				</div>
 			</div>
+			<?php
+			$sql = "SELECT * FROM user WHERE uid='{$_SESSION["uid"]}'";
+			$result = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($result) > 0) {
+				while ($row = mysqli_fetch_assoc($result)) {
+			?>
 			<div class="content-address-list-item container-fluid">
+
 				<div class="col-sm-8">
 					<div class="content-address-list-item-user-info row">
-						<p>User (+60) 01123456789</p>
+						<p><?php echo $row['username'];?></p>
+						<p><?php echo $row['phone'];?></p>
 					</div>
 					<div class="content-address-list-item-user-addr row">
-						<p>No. 77, Jalan P10Z, Petaling Jaya, 64400 Selangor</p>
+						<p>No. <?php echo $row['unit'].", ".$row['street'].", ".$row['city'].", ".$row['postal'].", ".$row['state'];?></p>
 					</div>
 				</div>
 				<div class="col-sm-2">
@@ -131,13 +147,16 @@
 						<label class="form-check-label" for="flexRadioDefault1">
 							Default
 						</label>
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
 					</form>
 				</div>
 				<div class="content-address-list-item-edit col-sm-2">
-					<a href="">Edit</a>
+					<a href="sales-profile-page.php?change">Edit</a>
 				</div>
 			</div>
+			<?php
+				}
+			}
+			?>
 
 
 			<button class="address-add-button container-fluid">

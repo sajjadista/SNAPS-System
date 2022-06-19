@@ -18,7 +18,7 @@
 		<!-- navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="navbar-payment container-fluid">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="sales-home-page.php">
 					<img width="150" src="../assets/SNAPS_PAC.png" alt="SNAPS_PAC.png">
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -35,7 +35,7 @@
 					<div class="navbar-payment-link-group">
 						<div class="d-flex fx-end">
 							<div class="navbar-payment-link">
-								<a href="">
+								<a href="sales-mypurchase-page.php">
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 										class="bi bi-bell-fill" viewBox="0 0 16 16">
 										<path
@@ -45,7 +45,7 @@
 								</a>
 							</div>
 							<div class="navbar-payment-link">
-								<a href="">
+								<a href="https://www.facebook.com/pacupm/">
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 										class="bi bi-instagram" viewBox="0 0 16 16">
 										<path
@@ -60,14 +60,14 @@
 								</a>
 							</div>
 							<div class="navbar-payment-link">
-								<a href="">
+								<a href="../../Services/src/services-home-page.php">
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box2-fill" viewBox="0 0 16 16">
 								  <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4h-8.5ZM15 4.667V5H1v-.333L1.5 4h6V1h1v3h6l.5.667Z"/>
 								</svg>
 								Services</a>
 							</div>
 							<div class="navbar-payment-link">
-								<a href="">
+								<a href="sales-profile-page.php?profile">
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
 								  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
 								  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
