@@ -4,15 +4,17 @@ session_start();
 $conn = mysqli_connect("localhost", "root", "", "tpu");
 
 $uid = $_SESSION['uid'];
-$sql = " SELECT * FROM cart where paymentstatus='Not payed' AND uid='$uid' ORDER BY pid DESC ";
+$sql = " SELECT cart.uid,cart.pid,cart.quantity,cart.paymentstatus,product.productname,product.price FROM cart INNER JOIN product ON cart.pid=product.pid where cart.paymentstatus='Not payed' AND cart.uid='$uid' ORDER BY cart.pid DESC ";
 $result = $conn->query($sql);
+$rowcount=mysqli_num_rows($result);
 
-if(isset($_POST["delete"])){
-	$id = $_POST["delete"];
-	$stmt = $db->prepare("DELETE FROM cart WHERE pid=:pid");
+if(isset($_GET["delete"])){
+	$id = $_GET["delete"];
+	$stmt = $pdo->prepare("DELETE FROM cart WHERE pid=:pid");
 	$stmt->execute(array(":pid"=>$id));
 
 	echo'<script>alert("Product has been successfully deleted.")</script>';
+	header('Refresh: 0; url=sales-checkout-page.php');
 }
 
 $conn->close();
@@ -178,6 +180,7 @@ $conn->close();
 				</div>
 
 				<?php
+					$grand_total = 0;
 					while($rows=$result->fetch_assoc())
 					{
 				?>
@@ -189,7 +192,7 @@ $conn->close();
 							</div>
 							<div class="product-table-card-info">
 								<div class="product-table-card-info-title">
-									<p><?php echo $rows['pid'];?></p>
+									<p><?php echo $rows['productname'];?></p>
 								</div>
 								<div class="product-table-card-info-tag">
 									<span class="badge badge-light">Local Seller</span>
@@ -198,19 +201,22 @@ $conn->close();
 						</div>
 					</div>
 					<div class="product-table-card-info-text product-table-index-sm">
-						<p>RM12.20</p>
+						<p>RM <?php echo $rows['price'];?></p>
 					</div>
 					<div class="product-table-card-info-text product-table-index-sm">
-						<p>2</p>
+						<p><?php echo $rows['quantity'];?></p>
 					</div>
 					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<p>RM24.40</p>
+						<?php $total_price = $rows['quantity'] * $rows['price']?>
+						<p>RM <?php echo $total_price?></p>
 					</div>
 					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="">Delete</a></p>
+						<br><br><br>
+						<a href="sales-checkout-page.php?delete=<?php echo $rows["pid"];?>" onClick="return confirm('Are you sure you want to remove this product?');">Delete</a>
 					</div>
 				</div>
 				<?php
+					$grand_total += $total_price;
 					}
 				?>
 
@@ -219,12 +225,12 @@ $conn->close();
 					<div class="col-sm-6">
 
 					</div>
-					<div class="col-sm-3">
+					<!-- <div class="col-sm-3">
 						<div class="product-table-total-sub">
 							<p>Merchandise Subtotal:   RM91.90</p>
 							<p>Shopping total:   RM5.00</p>
 						</div>
-					</div>
+					</div> -->
 					<div class="col-sm-3">
 
 					</div>
@@ -235,8 +241,8 @@ $conn->close();
 						</div>
 						<div class="col-sm-3">
 							<div class="product-table-total-sum">
-								<p>Total (5 items):
-									<span class="total-money">RM91.90</span>
+								<p>Total (<?php echo $rowcount;?> items):
+									<span class="total-money">RM <?php echo $grand_total;?></span>
 								</p>
 							</div>
 						</div>
