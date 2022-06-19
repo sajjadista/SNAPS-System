@@ -142,7 +142,7 @@ $result = $conn->query($sql);
 				</div>
 			</div>
 			<div class="content-payment-btn">
-				<button type="button" class="btn btn-success">Pay</button>
+				<a type="button" class="btn btn-success" href='sales-done.php'>Pay</a>
 			</div>
 		</div>
 
