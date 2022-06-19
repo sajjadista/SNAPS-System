@@ -3,16 +3,27 @@ require_once '../../../Backend/pdo.php';
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "tpu");
 
+$apid;
+
 if(isset($_GET['update'])){
 $pid =$_GET['update'];
+$apid = $pid;
 $sql = "SELECT * FROM product WHERE pid='$pid'";
 $result = $conn->query($sql);
-$conn->close();
-}
 
-// if(!isset($_SESSION["productname"])){
-//   header("Location: sales-home-page.php");
-// }
+
+  if (  isset($_POST['quantity'])) {
+
+
+      $uid = $_SESSION["uid"];
+      $quantity = $_POST['quantity'];
+      $stmt = $conn->prepare("INSERT INTO cart (uid,pid,quantity)VALUES('$uid','$pid','$quantity')");
+      $stmt->execute();
+      header("Location: sales-cart-page.php");
+      return;
+      }
+//$conn->close();
+}
 
 ?>
 <!DOCTYPE html>
@@ -187,6 +198,7 @@ $conn->close();
       </div>
     </nav>
 
+
     <!-- product -->
     <?php
 
@@ -194,6 +206,7 @@ $conn->close();
     while($rows=$result->fetch_assoc())
     {
     ?>
+    <form method="post">
     <div class="col product-info px-3">
       <div class="col description-box mx-3 py-3 my-3">
         <div class="row category-nav pt-3 mb-3">
@@ -295,23 +308,25 @@ $conn->close();
                 <span>Quantity</span>
               </div>
               <div class="col">
-                <input type="button" value="-" class="minus" /><input
-                  type="number"
-                  step="1"
-                  min="1"
-                  max=""
-                  name="quantity"
-                  value="1"
-                  title="Qty"
-                  class="input-text qty text w-25"
-                  size="4"
-                  pattern=""
-                  inputmode=""
-                /><input type="button" value="+" class="plus" />
+                <div class="quantity buttons_added">
+              	<input type="button" value="-" class="minus">
+                <input type="number"
+                        step="1"
+                        min="1"
+                        max="<?php echo $rows['quantity'];?>"
+                        name="quantity"
+                        value="1"
+                        title="Qty"
+                        class="input-text qty text"
+                        size="4"
+                        pattern=""
+                        inputmode="">
+                <input type="button" value="+" class="plus">
                 <span><?php echo $rows['quantity'];?> pieces available</span>
-              </div>
+                </div>
             </div>
-            <button type="button" class="btn btn-outline-success cart-button my-3 px-3 fw-bold w-25">
+            </div>
+            <button type="submit" class="btn btn-outline-success cart-button my-3 px-3 fw-bold w-25">
               Add to cart
             </button>
           </div>
@@ -326,7 +341,7 @@ $conn->close();
             </p>
           </div>
         </div>
-
+</form>
         <?php
           }
 

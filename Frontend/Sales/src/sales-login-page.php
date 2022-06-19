@@ -10,8 +10,10 @@ if ( isset($_POST['email']) && isset($_POST['password'])) {
     $query = "SELECT * FROM user WHERE username='$email'and password='$hash'";
     $result = mysqli_query($conn,$query) ;
     $rows = mysqli_num_rows($result);
+    $getval = $result->fetch_assoc();
         if($rows==1){
         $_SESSION['email'] = $email;
+        $_SESSION['uid'] = $getval['uid'];
 
         header("Location: sales-home-page.php");
          }else{

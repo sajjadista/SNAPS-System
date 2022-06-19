@@ -27,7 +27,7 @@ if ( isset($_GET['Groceries'])) {
 
 }
 
-$conn->close();
+//$conn->close();
 
 ?>
 <!DOCTYPE html>
