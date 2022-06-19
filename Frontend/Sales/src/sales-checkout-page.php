@@ -3,9 +3,8 @@ require_once '../../../Backend/pdo.php';
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "tpu");
 
-if (isset($_SESSION["uid"])){
 $uid = $_SESSION['uid'];
-$sql = " SELECT * FROM cart where paymentstatus='Not Payed' AND uid='$uid' ORDER BY pid DESC ";
+$sql = " SELECT * FROM cart where paymentstatus='Not payed' AND uid='$uid' ORDER BY pid DESC ";
 $result = $conn->query($sql);
 
 if(isset($_POST["delete"])){
@@ -15,7 +14,7 @@ if(isset($_POST["delete"])){
 
 	echo'<script>alert("Product has been successfully deleted.")</script>';
 }
-}
+
 $conn->close();
 
 ?>
@@ -212,129 +211,6 @@ $conn->close();
 				<?php
 					}
 				?>
-
-				<div class="product-table-item d-flex">
-					<div class="product-table-index-la">
-						<div class="product-table-card d-flex">
-							<div class="product-table-card-img">
-								<img width="100%" src="../assets/product_img1.png" >
-							</div>
-							<div class="product-table-card-info">
-								<div class="product-table-card-info-title">
-									<p>Hot sauce anchovies</p>
-								</div>
-								<div class="product-table-card-info-tag">
-									<span class="badge badge-light">Local Seller</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>RM12.20</p>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>2</p>
-					</div>
-					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<p>RM24.40</p>
-					</div>
-					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="">Delete</a></p>
-					</div>
-				</div>
-
-				<div class="product-table-item d-flex">
-					<div class="product-table-index-la">
-						<div class="product-table-card d-flex">
-							<div class="product-table-card-img">
-								<img width="100%" src="../assets/product_img1.png" >
-							</div>
-							<div class="product-table-card-info">
-								<div class="product-table-card-info-title">
-									<p>Hot sauce anchovies</p>
-								</div>
-								<div class="product-table-card-info-tag">
-									<span class="badge badge-light">Local Seller</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>RM12.20</p>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>2</p>
-					</div>
-					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<p>RM24.40</p>
-					</div>
-					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="">Delete</a></p>
-					</div>
-				</div>
-
-				<div class="product-table-item d-flex">
-					<div class="product-table-index-la">
-						<div class="product-table-card d-flex">
-							<div class="product-table-card-img">
-								<img width="100%" src="../assets/product_img1.png" >
-							</div>
-							<div class="product-table-card-info">
-								<div class="product-table-card-info-title">
-									<p>Hot sauce anchovies</p>
-								</div>
-								<div class="product-table-card-info-tag">
-									<span class="badge badge-light">Local Seller</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>RM12.20</p>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>2</p>
-					</div>
-					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<p>RM24.40</p>
-					</div>
-					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="">Delete</a></p>
-					</div>
-				</div>
-
-				<div class="product-table-item d-flex">
-					<div class="product-table-index-la">
-						<div class="product-table-card d-flex">
-							<div class="product-table-card-img">
-								<img width="100%" src="../assets/product_img1.png" >
-							</div>
-							<div class="product-table-card-info">
-								<div class="product-table-card-info-title">
-									<p>Hot sauce anchovies</p>
-								</div>
-								<div class="product-table-card-info-tag">
-									<span class="badge badge-light">Local Seller</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>RM12.20</p>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>2</p>
-					</div>
-					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<p>RM24.40</p>
-					</div>
-					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="">Delete</a></p>
-					</div>
-				</div>
-				<div class="product-table-total">
-				<div class="row">
-					<div class="col-sm-6">
 
 					</div>
 					<div class="col-sm-3">

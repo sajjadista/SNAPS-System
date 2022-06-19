@@ -17,9 +17,9 @@ $result = $conn->query($sql);
 
       $uid = $_SESSION["uid"];
       $quantity = $_POST['quantity'];
-      $stmt = $conn->prepare("INSERT INTO cart (uid,pid,quantity)VALUES('$uid','$pid','$quantity')");
+      $stmt = $conn->prepare("INSERT INTO cart (uid,pid,quantity,paymentstatus)VALUES('$uid','$pid','$quantity','Not payed')");
       $stmt->execute();
-      header("Location: sales-cart-page.php");
+      header("Location: sales-checkout-page.php");
       return;
       }
 //$conn->close();
