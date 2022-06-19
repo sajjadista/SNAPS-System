@@ -1,3 +1,13 @@
+<?php
+require_once '../../../Backend/pdo.php';
+session_start();
+$conn = mysqli_connect("localhost", "root", "", "tpu");
+$uid = $_SESSION['uid'];
+$sql = " SELECT * FROM purchase where uid = '$uid'";
+$result = $conn->query($sql);
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -133,15 +143,19 @@
 						<p>Actions</p>
 					</div>
 				</div>
+				<?php
+					while($rows=$result->fetch_assoc())
+					{
+				?>
 				<div class="product-table-item d-flex">
 					<div class="product-table-index-la">
 						<div class="product-table-card d-flex">
 							<div class="product-table-card-img">
-								<img width="100%" src="../assets/product_img1.png">
+								<img width="100%" src="../assets/product_img1.png" >
 							</div>
 							<div class="product-table-card-info">
 								<div class="product-table-card-info-title">
-									<p>Hot sauce anchovies</p>
+									<p><?php echo $rows['productname'];?></p>
 								</div>
 								<div class="product-table-card-info-tag">
 									<span class="badge badge-light">Local Seller</span>
@@ -150,140 +164,27 @@
 						</div>
 					</div>
 					<div class="product-table-card-info-text product-table-index-sm">
-						<p>RM12.20</p>
+						<p>RM <?php echo $rows['price'];?></p>
 					</div>
 					<div class="product-table-card-info-text product-table-index-sm">
-						<p>2</p>
-					</div>
-					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<p>RM24.40</p>
-					</div>
-					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="">Delete</a></p>
-					</div>
-				</div>
+						<p><?php echo $rows['quantity'];?></p>
 
-				<div class="product-table-item d-flex">
-					<div class="product-table-index-la">
-						<div class="product-table-card d-flex">
-							<div class="product-table-card-img">
-								<img width="100%" src="../assets/product_img1.png">
-							</div>
-							<div class="product-table-card-info">
-								<div class="product-table-card-info-title">
-									<p>Hot sauce anchovies</p>
-								</div>
-								<div class="product-table-card-info-tag">
-									<span class="badge badge-light">Local Seller</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>RM12.20</p>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>2</p>
 					</div>
 					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<p>RM24.40</p>
+						<?php $total_price = $rows['quantity'] * $rows['price']?>
+						<p>RM <?php echo $total_price?></p>
+						<input name="total_price" type="hidden">
 					</div>
 					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="">Delete</a></p>
-					</div>
-				</div>
-
-				<div class="product-table-item d-flex">
-					<div class="product-table-index-la">
-						<div class="product-table-card d-flex">
-							<div class="product-table-card-img">
-								<img width="100%" src="../assets/product_img1.png">
-							</div>
-							<div class="product-table-card-info">
-								<div class="product-table-card-info-title">
-									<p>Hot sauce anchovies</p>
-								</div>
-								<div class="product-table-card-info-tag">
-									<span class="badge badge-light">Local Seller</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>RM12.20</p>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>2</p>
-					</div>
-					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<p>RM24.40</p>
-					</div>
-					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="">Delete</a></p>
-					</div>
-				</div>
-
-				<div class="product-table-item d-flex">
-					<div class="product-table-index-la">
-						<div class="product-table-card d-flex">
-							<div class="product-table-card-img">
-								<img width="100%" src="../assets/product_img1.png">
-							</div>
-							<div class="product-table-card-info">
-								<div class="product-table-card-info-title">
-									<p>Hot sauce anchovies</p>
-								</div>
-								<div class="product-table-card-info-tag">
-									<span class="badge badge-light">Local Seller</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>RM12.20</p>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>2</p>
-					</div>
-					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<p>RM24.40</p>
-					</div>
-					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="">Delete</a></p>
-					</div>
-				</div>
-
-				<div class="product-table-item d-flex">
-					<div class="product-table-index-la">
-						<div class="product-table-card d-flex">
-							<div class="product-table-card-img">
-								<img width="100%" src="../assets/product_img1.png">
-							</div>
-							<div class="product-table-card-info">
-								<div class="product-table-card-info-title">
-									<p>Hot sauce anchovies</p>
-								</div>
-								<div class="product-table-card-info-tag">
-									<span class="badge badge-light">Local Seller</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>RM12.20</p>
-					</div>
-					<div class="product-table-card-info-text product-table-index-sm">
-						<p>2</p>
-					</div>
-					<div class="product-table-card-info-text-deep product-table-index-sm">
-						<p>RM24.40</p>
-					</div>
-					<div class="product-table-card-info-action product-table-index-sm">
-						<p><a href="">Delete</a></p>
+						<br><br><br>
+						<a href="sales-checkout-page.php?delete=<?php echo $rows["pid"];?>" onClick="return confirm('Are you sure you want to remove this product?');">Delete</a>
 					</div>
 				</div>
 			</div>
 		</div>
+		<?php
+			}
+		?>
 
 		<!-- Footer -->
 		<footer class="sales-footer container-fluid">
