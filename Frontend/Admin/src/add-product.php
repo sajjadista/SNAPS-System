@@ -89,15 +89,6 @@
             <div class="row my-3">
 
                 <div class="col d-flex justify-content-center">
-                    <input class="textfield-theme" type="text" id="product-variation" placeholder="Variations">
-                </div>
-
-            </div>
-
-
-            <div class="row my-3">
-
-                <div class="col d-flex justify-content-center">
 
                     <select class="textfield-theme" id="payment-method">
                         <option value="pay-in-store">Pay in Store</option>
