@@ -1,0 +1,87 @@
+.navbar {
+  box-shadow: 0 6px 7px 1px gray;
+}
+
+.card-body {
+  max-width: 300px;
+  max-height: 600px;
+}
+
+.card {
+  margin-top: 0;
+  max-width: 150px;
+  height: 200px;
+}
+
+#titleAdd {
+  position: relative;
+  bottom: 0;
+}
+
+#container_fluid {
+  background-color: #206023;
+  margin-top: 0;
+  height: 800px;
+}
+
+#snaps_logo {
+  position: relative;
+}
+
+#Admin_title {
+  padding-top: 50px;
+}
+
+#container_category {
+  background-color: #206023;
+  margin-bottom: -20px;
+  padding-top: 20px;
+}
+
+#col {
+  min-width: 200px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+row-1 {
+  margin-top: 20px;
+}
+
+#category_card {
+  max-width: 800px;
+  padding-top: 30px;
+}
+
+#addproduct {
+  bottom: 0px;
+  text-align: center;
+}
+
+.card {
+  width: 200px;
+  max-width: 220px;
+}
+
+.card-body {
+  width: 200px;
+  max-width: 200px;
+}
+
+#addbutton {
+}
+
+#category-card {
+  padding-top: 30px;
+  max-width: 2000px;
+  width: 1500px;
+}
+
+#container_fluid {
+  padding-top: 50px;
+}
+
+.navbar-brand {
+  margin-right: auto;
+}
+
