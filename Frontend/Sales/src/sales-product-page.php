@@ -319,7 +319,7 @@ $result = $conn->query($sql);
               	<input type="button" value="-" class="minus">
                 <input type="number"
                         step="1"
-                        min="1"
+                        min="0"
                         max="<?php echo $rows['quantity'];?>"
                         name="quantity"
                         value="1"

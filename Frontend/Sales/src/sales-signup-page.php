@@ -19,7 +19,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
     $stmt = $pdo->prepare("INSERT INTO user (username,password,phone,unit,street,city,state,postal,gender)VALUES('$email','$hash','$phone_number','$unit_number','$street','$city','$state','$postal_code','$inlineRadioOptions')");
     $stmt->execute();
 
- 
+
   header("Location: sales-login-page.php");
   return;
 }
@@ -92,8 +92,10 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                   </div>
                   <div class="mb-3">
                     <input
+                      id="phone_number"
                       class="form-control"
                       type="number"
+                      min="0"
                       name="phone_number"
                       placeholder="Phone Number"
                       required
@@ -103,6 +105,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                     <input
                       class="form-control"
                       type="number"
+                      min="0"
                       name="unit_number"
                       placeholder="Unit Number"
                       required
@@ -137,8 +140,11 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                   </div>
                   <div class="mb-3">
                     <input
+                      id="postal_code"
                       class="form-control"
                       type="number"
+                      min="0"
+                      max="99999"
                       name="postal_code"
                       placeholder="Postal Code"
                       required
@@ -221,6 +227,22 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
           alert("Please make sure password includes an uppercase letter.")
           return false;
         }
+      }
+      var phoneno = document.getElementById('phone_number').value;
+      if(phoneno.length < 10 || phoneno.length > 11 ){
+        if(phoneno.length<10){
+          alert("Please make sure phone number is longer than 9 digits.")
+          return false;
+        }
+        if(phoneno.length>11){
+          alert("Please make sure phone number is shorter than 12 digits.")
+          return false;
+        }
+      }
+      var postal = document.getElementById('postal_code').value;
+      if(postal.length != 5){
+        alert("Please make sure postal code is 5 digits.")
+        return false;
       }
     }
     </script>

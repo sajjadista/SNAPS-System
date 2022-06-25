@@ -140,7 +140,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                   class="fas fa-user-circle profile-icon mt-3">
                 </i>
                 <br>
-                <form class="text-center w-75" method="post">
+                <form class="text-center w-75" method="post" onsubmit="return CheckPassword()">
 
                   <?php
 
@@ -162,6 +162,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                   </div>
                   <div class="mb-3">
                     <input
+                      id="password"
                       class="form-control"
                       type="password"
                       name="password"
@@ -172,6 +173,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                   </div>
                   <div class="mb-3">
                     <input
+                      id="confirm_password"
                       class="form-control"
                       type="password"
                       name="confirm_password"
@@ -182,8 +184,10 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                   </div>
                   <div class="mb-3">
                     <input
+                      id="phone_number"
                       class="form-control"
                       type="number"
+                      min="0"
                       name="phone_number"
                       placeholder="Phone Number"
                       value = "<?php echo $row['phone']; ?>"
@@ -194,6 +198,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                     <input
                       class="form-control"
                       type="number"
+                      min="0"
                       name="unit_number"
                       placeholder="Unit Number"
                       value = "<?php echo $row['unit']; ?>"
@@ -232,8 +237,10 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                   </div>
                   <div class="mb-3">
                     <input
+                      id="postal_code"
                       class="form-control"
                       type="number"
+                      min="0"
                       name="postal_code"
                       placeholder="Postal Code"
                       value = "<?php echo $row['postal']; ?>"
@@ -288,7 +295,54 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
         </div>
       </div>
     </section>
+    <script>
+    function CheckPassword()
+    {
+      var passw = document.getElementById('password').value;
+      var passw2 = document.getElementById('confirm_password').value;
+      var upper  =/[A-Z]/;
+      var number = /[0-9]/;
 
+      if(passw.length < 8 || passw.length > 20 || passw != passw2 || !number.test(passw) || !upper.test(passw)) {
+        if(passw.length<8){
+          alert("Please make sure password is longer than 8 characters.")
+          return false;
+        }
+        if(passw.length>20){
+          alert("Please make sure password is shorter than 20 characters.")
+          return false;
+        }
+        if(passw != passw2){
+          alert("Please make sure passwords match.")
+          return false;
+        }
+        if(!number.test(passw)){
+          alert("Please make sure password includes a digit")
+          return false;
+        }
+        if(!upper.test(passw)) {
+          alert("Please make sure password includes an uppercase letter.")
+          return false;
+        }
+      }
+      var phoneno = document.getElementById('phone_number').value;
+      if(phoneno.length < 10 || phoneno.length > 11 ){
+        if(phoneno.length<10){
+          alert("Please make sure phone number is longer than 9 digits.")
+          return false;
+        }
+        if(phoneno.length>11){
+          alert("Please make sure phone number is shorter than 12 digits.")
+          return false;
+        }
+      }
+      var postal = document.getElementById('postal_code').value;
+      if(postal.length != 5){
+        alert("Please make sure postal code is 5 digits.")
+        return false;
+      }
+    }
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
