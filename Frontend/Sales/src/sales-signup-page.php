@@ -190,13 +190,7 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                       <option value="Kuala Terengganu">Kuala Terengganu</option>
                     </select>
 
-                    <!-- <input
-                      class="form-control"
-                      type="text"
-                      name="city"
-                      placeholder="City"
-                      required
-                    /> -->
+                  
                   </div>
                   <div class="mb-3">
                     <label for="cars">Select your State :  </label>
@@ -207,11 +201,11 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                       <option value="Sarawak">Sarawak</option>
                       <option value="Sabah ">Sabah </option>
                       <option value="Putrajaya ">Putrajaya </option>
-                      <option value="Pulau Pinang [Penang]">Pulau Pinang [Penang]</option>
+                      <option value="Pulau Pinang">Pulau Pinang</option>
                       <option value="Perlis">Perlis</option>
                       <option value="Perak">Perak</option>
                       <option value="Negeri Sembilan">Negeri Sembilan</option>
-                      <option value="Melaka [Malacca]">Melaka [Malacca]</option>
+                      <option value="Melaka">Melaka</option>
                       <option value="Labuan">Labuan</option>
                       <option value="Kuala Lumpur ">Kuala Lumpur </option>
                       <option value="Kelantan ">Kelantan </option>
