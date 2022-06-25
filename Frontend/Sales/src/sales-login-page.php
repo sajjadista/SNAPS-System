@@ -7,7 +7,7 @@ if ( isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $hash = md5($password);
-    $query = "SELECT * FROM user WHERE username='$email'and password='$password'";
+    $query = "SELECT * FROM user WHERE username='$email'and (password='$password' or password='$hash')";
     $result = mysqli_query($conn,$query) ;
     $rows = mysqli_num_rows($result);
     $getval = $result->fetch_assoc();
