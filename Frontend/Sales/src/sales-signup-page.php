@@ -92,10 +92,8 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                   </div>
                   <div class="mb-3">
                     <input
-                      id="phone_number"
                       class="form-control"
                       type="number"
-                      min="0"
                       name="phone_number"
                       placeholder="Phone Number"
                       required
@@ -105,7 +103,6 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                     <input
                       class="form-control"
                       type="number"
-                      min="0"
                       name="unit_number"
                       placeholder="Unit Number"
                       required
@@ -121,30 +118,112 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
                     />
                   </div>
                   <div class="mb-3">
-                    <input
+                    <label for="cars">Select your city :  </label>
+                    <select name ='city' id='city'>
+                      <option value="Batu Pahat">Batu Pahat</option>
+                      <option value="Johor Bahru">Johor Bahru</option>
+                      <option value="Kota Tinggi">Kota Tinggi</option>
+                      <option value="Kulaijaya ">Kulaijaya </option>
+                      <option value="Mersing">Mersing</option>
+                      <option value="Muar">Muar</option>
+                      <option value="Pontian">Pontian</option>
+                      <option value="Segamat ">Segamat </option>
+                      <option value="Tangkak ">Tangkak </option>
+                      <option value="Baling">Baling</option>
+                      <option value="Gua Musang">Gua Musang</option>
+                      <option value="Jeli">Jeli</option>
+                      <option value="Kecil Lojing  ">Kecil Lojing  </option>
+                      <option value="Kota Bharu">Kota Bharu</option>
+                      <option value="Kuala Krai">Kuala Krai</option>
+                      <option value="Machang">Machang</option>
+                      <option value="Pasir Mas ">Pasir Mas </option>
+                      <option value="Pasir Puteh ">Pasir Puteh </option>
+                      <option value="Tanah Merah">Tanah Merah</option>
+                      <option value="Tumpat">Tumpat</option>
+                      <option value="Kuala Lumpur">Kuala Lumpur</option>
+                      <option value="Labuan">Labuan</option>
+                      <option value="Alor Gajah">Alor Gajah</option>
+                      <option value="Jasin">Jasin</option>
+                      <option value="Melaka Tengah">Melaka Tengah</option>
+                      <option value="Jelebu">Jelebu</option>
+                      <option value="Jempol">Jempol</option>
+                      <option value="Kuala Pilah">Kuala Pilah</option>
+                      <option value="Port Dickson">Port Dickson</option>
+                      <option value="Rembau">Rembau</option>
+                      <option value="Seremban">Seremban</option>
+                      <option value="Tampin">Tampin</option>
+                      <option value="Bentong">Bentong</option>
+                      <option value="Bera">Bera</option>
+                      <option value="Cameron Highlands">Cameron Highlands</option>
+                      <option value="Jerantut">Jerantut</option>
+                      <option value="Kuantan">Kuantan</option>
+                      <option value="Lipis">Lipis</option>
+                      <option value="Maran">Maran</option>
+                      <option value="Pekan">Pekan</option>
+                      <option value="Raub">Raub</option>
+                      <option value="Rompin">Rompin</option>
+                      <option value="Temerloh">Temerloh</option>
+                      <option value="Bagan Datuk ">Bagan Datuk </option>
+                      <option value="Batang Padang">Batang Padang</option>
+                      <option value="Hilir Perak">Hilir Perak</option>
+                      <option value="Hulu Perak">Hulu Perak</option>
+                      <option value="Kampar ">Kampar </option>
+                      <option value="Kerian">Kerian</option>
+                      <option value="Kinta">Kinta</option>
+                      <option value="Kuala Kangsar">Kuala Kangsar</option>
+                      <option value="Larut dan Matang">Larut dan Matang</option>
+                      <option value="Manjung">Manjung</option>
+                      <option value="Muallim ">Muallim </option>
+                      <option value="Perak Tengah">Perak Tengah</option>
+                      <option value="Perlis">Perlis </option>
+                      <option value="Gombak">Gombak</option>
+                      <option value="Klang">Klang</option>
+                      <option value="Kuala Langat">Kuala Langat</option>
+                      <option value="Kuala Selangor">Kuala Selangor</option>
+                      <option value="Petaling">Petaling</option>
+                      <option value="Sabak Bernam">Sabak Bernam</option>
+                      <option value="Sepang">Sepang</option>
+                      <option value="Ulu Langat">Ulu Langat</option>
+                      <option value="Ulu Selangor">Ulu Selangor</option>
+                      <option value="Besut">Besut</option>
+                      <option value="Kemaman">Kemaman</option>
+                      <option value="Kuala Terengganu">Kuala Terengganu</option>
+                    </select>
+
+                    <!-- <input
                       class="form-control"
                       type="text"
                       name="city"
                       placeholder="City"
                       required
-                    />
+                    /> -->
+                  </div>
+                  <div class="mb-3">
+                    <label for="cars">Select your State :  </label>
+                    <select name ='state' id='state'>
+                      <option value="Kuala Terengganu ">Kuala Terengganu </option>
+                      <option value="Terengganu">Terengganu</option>
+                      <option value="Selangor">Selangor</option>
+                      <option value="Sarawak">Sarawak</option>
+                      <option value="Sabah ">Sabah </option>
+                      <option value="Putrajaya ">Putrajaya </option>
+                      <option value="Pulau Pinang [Penang]">Pulau Pinang [Penang]</option>
+                      <option value="Perlis">Perlis</option>
+                      <option value="Perak">Perak</option>
+                      <option value="Negeri Sembilan">Negeri Sembilan</option>
+                      <option value="Melaka [Malacca]">Melaka [Malacca]</option>
+                      <option value="Labuan">Labuan</option>
+                      <option value="Kuala Lumpur ">Kuala Lumpur </option>
+                      <option value="Kelantan ">Kelantan </option>
+                      <option value="Kedah">Kedah</option>
+                      <option value="Johor">Johor</option>
+
+                    </select>
                   </div>
                   <div class="mb-3">
                     <input
-                      class="form-control"
-                      type="text"
-                      name="state"
-                      placeholder="State"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <input
-                      id="postal_code"
                       class="form-control"
                       type="number"
-                      min="0"
-                      max="99999"
                       name="postal_code"
                       placeholder="Postal Code"
                       required
@@ -227,22 +306,6 @@ if ( isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone_
           alert("Please make sure password includes an uppercase letter.")
           return false;
         }
-      }
-      var phoneno = document.getElementById('phone_number').value;
-      if(phoneno.length < 10 || phoneno.length > 11 ){
-        if(phoneno.length<10){
-          alert("Please make sure phone number is longer than 9 digits.")
-          return false;
-        }
-        if(phoneno.length>11){
-          alert("Please make sure phone number is shorter than 12 digits.")
-          return false;
-        }
-      }
-      var postal = document.getElementById('postal_code').value;
-      if(postal.length != 5){
-        alert("Please make sure postal code is 5 digits.")
-        return false;
       }
     }
     </script>
