@@ -18,7 +18,7 @@ if(isset($_GET['message']))
 }
 
 if($_GET["type"] == "bukit"){
-    $_SESSION["type"] = "Kemudahan dan Infrastruktur";
+    $_SESSION["type"] = "Kemudahan dan Infrastruktur – CES, Gazebo, Astaka ";
 }else if($_GET["type"] == "machineries"){
     $_SESSION["type"] = "Kenderaan dan Jentera Pertanian";
 }else{

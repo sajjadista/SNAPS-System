@@ -7,7 +7,7 @@ if ( isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $hash = md5($password);
-    $query = "SELECT * FROM user WHERE username='$email'and password='$hash'";
+    $query = "SELECT * FROM user WHERE username='$email'and password='$password'";
     $result = mysqli_query($conn,$query) ;
     $rows = mysqli_num_rows($result);
     $getval = $result->fetch_assoc();
@@ -61,7 +61,7 @@ if ( isset($_POST['email']) && isset($_POST['password'])) {
                   <div class="mb-3">
                     <input
                       class="form-control"
-                      type="email"
+                      
                       name="email"
                       placeholder="Username"
                       required
